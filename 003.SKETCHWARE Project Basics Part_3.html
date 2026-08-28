@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sketchware Pro App Starting Guide - Part 3</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --ink: #172033;
+      --muted: #657189;
+      --brand: #5b4bdb;
+      --brand-light: #f0efff;
+      --line: #e5e9f2;
+      --code: #18202f;
+      --warn: #fff7df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Myanmar", sans-serif;
+    }
+    header {
+      background: linear-gradient(135deg, #4b3cc4, #7b61ff);
+      color: #ffffff;
+      padding: 52px 20px 44px;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    h1 {
+      font-size: clamp(26px, 5vw, 42px);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+    .lead {
+      max-width: 760px;
+      font-size: 17px;
+      opacity: 0.92;
+    }
+    main { padding: 28px 0 60px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 18px 0;
+      box-shadow: 0 7px 24px rgba(36, 48, 77, 0.04);
+    }
+    h2 {
+      margin: 0 0 18px;
+      color: var(--brand);
+      font-size: 22px;
+    }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .toc a {
+      background: var(--brand-light);
+      color: #4134a7;
+      padding: 7px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .toc a:hover {
+      background: var(--brand);
+      color: #ffffff;
+    }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+      background: #ffffff;
+    }
+    th {
+      background: var(--brand-light);
+      color: #39308d;
+      text-align: left;
+      font-weight: 700;
+    }
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: 0; }
+    code {
+      background: #eef0f6;
+      border-radius: 5px;
+      padding: 2px 6px;
+      color: #8b2456;
+      font-size: 0.9em;
+    }
+    footer { padding: 30px 20px 50px; }
+    .copyright-card {
+      background: linear-gradient(135deg, #ffffff, #f0efff);
+      border: 1px solid #dcd6ff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 8px 20px rgba(91, 75, 219, 0.08);
+      color: #2c3e50;
+      font-size: 15px;
+      line-height: 1.8;
+      text-align: center;
+      font-weight: 700;
+    }
+    .myatgyi-link {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 2px 8px;
+      background: rgba(91, 75, 219, 0.1);
+      border-radius: 6px;
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+    }
+    .myatgyi-link:hover {
+      background: var(--brand);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(91, 75, 219, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Sketchware Pro • Beginner Series</div>
+    <h1>App Starting Guide — Part 3</h1>
+    <p class="lead">Event များ၊ Logic အမျိုးအစားများနှင့် Block Coding စနစ်များအကြောင်း အသေးစိတ် မှတ်စု။</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Table of Contents -->
+  <div class="card">
+    <div class="toc">
+      <a href="#section1">၁။ Event Types</a>
+      <a href="#section2">၂။ Logic Category & Block Palette</a>
+    </div>
+  </div>
+
+  <!-- Header Title Card -->
+  <div class="card">
+    <h2>အခန်း (၃) - Event, Logic & Block Coding System</h2>
+  </div>
+
+  <!-- 1. Event Types -->
+  <section id="section1" class="card">
+    <h2>၁။ Event Types (အဖြစ်အပျက်နှင့် သက်ဆိုင်သော Trigger များ)</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width: 30%;">Event Category</th>
+          <th style="width: 25%;">Event Name</th>
+          <th>ရှင်းလင်းချက်</th>
+        </tr>
+        <tr>
+          <td rowspan="4"><b>Activity<br>(Life Cycle Events)</b></td>
+          <td><code>onCreate</code></td>
+          <td>App (သို့) Screen စဖွင့်ဖွင့်ချင်း ပထမဆုံး အလုပ်လုပ်မည့် Logic ရေးရန်။</td>
+        </tr>
+        <tr>
+          <td><code>onStart / onResume</code></td>
+          <td>Screen ပေါ်ထွက်လာချိန် / User ပြန်သုံးသည့်အချိန်များတွင် Data သစ်ပြန်ခေါ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><code>onPause / onStop</code></td>
+          <td>App ခဏ ပိတ်ထားချိန် သို့မဟုတ် အနောက်ရောက်သွားချိန်တွင် Data သိမ်းရန်။</td>
+        </tr>
+        <tr>
+          <td><code>onBackPressed</code></td>
+          <td>ဖုန်း၏ Back Button ကို နှိပ်လိုက်သည့်အခါ ပြုလုပ်မည့် Action ရေးရန်။</td>
+        </tr>
+        <tr>
+          <td rowspan="2"><b>View Events</b></td>
+          <td><code>onClick</code></td>
+          <td>Widget (Button/Image) ကို တစ်ချက် နှိပ်လိုက်သည့်အခါ အလုပ်လုပ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><code>onLongClick</code></td>
+          <td>Widget ကို ဖိနှိပ်ထားသည့်အခါ (Long Press) Action ပြုလုပ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Component Events</b></td>
+          <td><code>Callbacks</code></td>
+          <td>Component တစ်ခုချင်းစီ၏ Callback Event များ (ဥပမာ- Intent, Firebase Data ရောက်လာချိန်)။</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 2. Logic Category & Block Palette -->
+  <section id="section2" class="card">
+    <h2>၂။ Logic Category & Block Palette (Code Block အမျိုးအစားများ)</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width: 30%;">Category</th>
+          <th>အသုံးပြုပုံ ရှင်းလင်းချက်</th>
+        </tr>
+        <tr>
+          <td><b>Variable (ကိန်းရှင်များ)</b></td>
+          <td>Boolean (True/False), Number, String (စာသား) နှင့် Map Data များကို ယာယီသိမ်းဆည်း/ပြင်ဆင်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>List (စာရင်းများ)</b></td>
+          <td>String List, Number List သို့မဟုတ် Map List များ ဖန်တီး၍ Data များကို အစဉ်လိုက် စီမံရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Control (အကန့်အသတ်နှင့် စက်ဝန်းများ)</b></td>
+          <td>
+            <code>if ... else</code> — အခြေအနေ စစ်ဆေး၍ လုပ်ဆောင်ချက် ခွဲခြားရန်။<br>
+            <code>repeat / for loop</code> — ပေးထားသော ပမာဏအတိုင်း ထပ်ခါထပ်ခါ အလုပ်လုပ်ခိုင်းရန်။
+          </td>
+        </tr>
+        <tr>
+          <td><b>Operator & Math (တွက်ချက်မှုနှင့် စစ်ဆေးမှုများ)</b></td>
+          <td>စာသားချင်း ဆက်ရန် (<code>join</code>), သင်္ချာတွက်ချက်ရန် (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>), ညီမညီ စစ်ဆေးရန် (<code>=</code>, <code>&gt;</code>, <code>&lt;</code>)။</td>
+        </tr>
+        <tr>
+          <td><b>File (ဖိုင်စီမံခန့်ခွဲမှု)</b></td>
+          <td>ဖုန်း Storage ထဲသို့ ဖိုင် ရေးခြင်း (Write), ဖတ်ခြင်း (Read), ကူးခြင်း (Copy) နှင့် ဖျက်ခြင်း (Delete)။</td>
+        </tr>
+        <tr>
+          <td><b>View Blocks</b></td>
+          <td>UI များ၏ စာသားပြောင်းရန် (<code>setText</code>), အရောင်ပြောင်းရန် (<code>setTextColor</code>), မြင်ကွင်း ဖျောက်/ပြ လုပ်ရန် (<code>setVisible</code>)။</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="copyright-card">
+    <a href="https://t.me/MyatGyiOfficial" target="_blank" class="myatgyi-link">မြတ်ကြီး</a> မှ ယခု <a href="https://t.me/MyatGyiGroup" target="_blank" class="myatgyi-link">SKETCHWARE Event, Logic & Block Coding System</a> အား ထည့်အသုံးပြုပုံ နှင့် လင့်များအား နားလည် အသုံးပြုရလွယ်ကူစေရန် ဖန်တီးပေးထားပါသည်။
+  </div>
+</footer>
+
+</body>
+</html>

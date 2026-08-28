@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sketchware Pro App Starting Guide - Part 2</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --ink: #172033;
+      --muted: #657189;
+      --brand: #5b4bdb;
+      --brand-light: #f0efff;
+      --line: #e5e9f2;
+      --code: #18202f;
+      --warn: #fff7df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Myanmar", sans-serif;
+    }
+    header {
+      background: linear-gradient(135deg, #4b3cc4, #7b61ff);
+      color: #ffffff;
+      padding: 52px 20px 44px;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    h1 {
+      font-size: clamp(26px, 5vw, 42px);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+    .lead {
+      max-width: 760px;
+      font-size: 17px;
+      opacity: 0.92;
+    }
+    main { padding: 28px 0 60px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 18px 0;
+      box-shadow: 0 7px 24px rgba(36, 48, 77, 0.04);
+    }
+    h2 {
+      margin: 0 0 18px;
+      color: var(--brand);
+      font-size: 22px;
+    }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .toc a {
+      background: var(--brand-light);
+      color: #4134a7;
+      padding: 7px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .toc a:hover {
+      background: var(--brand);
+      color: #ffffff;
+    }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+      background: #ffffff;
+    }
+    th {
+      background: var(--brand-light);
+      color: #39308d;
+      text-align: left;
+      font-weight: 700;
+    }
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: 0; }
+    footer { padding: 30px 20px 50px; }
+    .copyright-card {
+      background: linear-gradient(135deg, #ffffff, #f0efff);
+      border: 1px solid #dcd6ff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 8px 20px rgba(91, 75, 219, 0.08);
+      color: #2c3e50;
+      font-size: 15px;
+      line-height: 1.8;
+      text-align: center;
+      font-weight: 700;
+    }
+    .myatgyi-link {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 2px 8px;
+      background: rgba(91, 75, 219, 0.1);
+      border-radius: 6px;
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+    }
+    .myatgyi-link:hover {
+      background: var(--brand);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(91, 75, 219, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Sketchware Pro • Beginner Series</div>
+    <h1>App Starting Guide — Part 2</h1>
+    <p class="lead">Widgets များ၊ Custom Libraries များနှင့် Project Configuration Settings များအကြောင်း အသေးစိတ် မှတ်စု။</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Table of Contents -->
+  <div class="card">
+    <div class="toc">
+      <a href="#section1">၁။ Basic & Advanced Widgets</a>
+      <a href="#section2">၂။ External Library Views</a>
+      <a href="#section3">၃။ Project Configuration & Injection</a>
+    </div>
+  </div>
+
+  <!-- Header Title Card -->
+  <div class="card">
+    <h2>အခန်း (၂) - Widgets, Custom Libraries & Configuration Settings</h2>
+  </div>
+
+  <!-- 1. Basic & Advanced Widgets -->
+  <section id="section1" class="card">
+    <h2>၁။ Basic & Advanced Widgets (အခြေခံနှင့် အဆင့်မြင့် View များ)</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width: 35%;">Widget</th>
+          <th>အသုံးပြုပုံ ရှင်းလင်းချက်</th>
+        </tr>
+        <tr>
+          <td><b>TextView / EditText</b></td>
+          <td>စာသားပြသရန် / အသုံးပြုသူထံမှ စာသားရိုက်ထည့်မှု လက်ခံရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Button / MaterialButton</b></td>
+          <td>နှိပ်လိုက်သည့်အခါ Action တစ်ခုခု လုပ်ဆောင်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>ImageView / CircleImageView</b></td>
+          <td>ပုံမှန် ဓာတ်ပုံ သို့မဟုတ် အဝိုင်းပုံ ဓာတ်ပုံများ ပြသရန်။</td>
+        </tr>
+        <tr>
+          <td><b>CheckBox / Switch</b></td>
+          <td>On/Off သို့မဟုတ် True/False ရွေးချယ်မှုများ ပြုလုပ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>ProgressBar / SeekBar</b></td>
+          <td>Loading ပြသရန်နှင့် Value ပမာဏ အတိုးအလျှော့ ပြုလုပ်ရန် (ဥပမာ- Sound Volume)။</td>
+        </tr>
+        <tr>
+          <td><b>ListView / RecyclerView</b></td>
+          <td>Data များကို စာရင်းလိုက် (List) ပုံစံဖြင့် အများအပြား ပြသရန်။</td>
+        </tr>
+        <tr>
+          <td><b>WebView</b></td>
+          <td>App အတွင်း Web Page / Website များ တိုက်ရိုက်ဖွင့်ကြည့်ရန်။</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 2. External Library Views -->
+  <section id="section2" class="card">
+    <h2>၂။ External Library Views (အထူးပြု Library များ)</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width: 35%;">Library View</th>
+          <th>အသုံးပြုပုံ ရှင်းလင်းချက်</th>
+        </tr>
+        <tr>
+          <td><b>LottieAnimation</b></td>
+          <td>GIF ထက် ပေါ့ပါးသော Lottie JSON Animation များ ပြသရန်။</td>
+        </tr>
+        <tr>
+          <td><b>CodeView</b></td>
+          <td>Source Code များကို Syntax Highlighting ဖြင့် ပြသရန်။</td>
+        </tr>
+        <tr>
+          <td><b>BadgeView</b></td>
+          <td>Notification Icon ပေါ်တွင် အရေအတွက် စာတွဲများ ပြသရန်။</td>
+        </tr>
+        <tr>
+          <td><b>WaveSlideBar</b></td>
+          <td>လှိုင်းပုံစံ Animation ပါသော SlideBar UI ပြုလုပ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>PatternLockView</b></td>
+          <td>Pattern လှို့ဝှက်နံပါတ် သတ်မှတ်သည့် UI စနစ် ထည့်သွင်းရန်။</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. Project Configuration & Injection Tools -->
+  <section id="section3" class="card">
+    <h2>၃။ Project Configuration & Injection Tools (အကူအညီပေးစနစ်များ)</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width: 35%;">Tool / Option</th>
+          <th>ရှင်းလင်းချက်</th>
+        </tr>
+        <tr>
+          <td><b>Library</b></td>
+          <td>AppCompact, Firebase, AdMob, Glide စသည့် Library များ Enable/Disable လုပ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>View / Image / Sound / Font</b></td>
+          <td>Screen (Activity) အသစ်များ တိုးခြင်း၊ ပုံများ၊ အသံများနှင့် Custom Font (.ttf) များ ထည့်သွင်းစီမံရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Java / Resource / Asset</b></td>
+          <td>External Java File များ၊ Native XML Resource များနှင့် Offline Asset File များ ထည့်သွင်းရန်။</td>
+        </tr>
+        <tr>
+          <td><b>AndroidManifest</b></td>
+          <td>Permission ထည့်ခြင်း၊ App Orientation နှင့် Service များ ပြင်ဆင်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Custom Blocks</b></td>
+          <td>မိမိကိုယ်ပိုင် သီးသန့် Block များ ဖန်တီး၍ သိမ်းဆည်းထားရန်။</td>
+        </tr>
+        <tr>
+          <td><b>ProGuard / StringFog</b></td>
+          <td>Code များကို မသမာသူများ Reverse Engineering မလုပ်နိုင်အောင် Obfuscate လုပ်ပြီး ကာကွယ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Show Source Code</b></td>
+          <td>Generator မှ ထွက်လာသော Java & XML Source Code များကို တိုက်ရိုက်ကြည့်ရှုရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Logcat Reader</b></td>
+          <td>App Crash ဖြစ်သည့် အမှား (Error Log) များကို စစ်ဆေးဖတ်ရှုရန်။</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="copyright-card">
+    <a href="https://t.me/MyatGyiOfficial" target="_blank" class="myatgyi-link">မြတ်ကြီး</a> မှ ယခု <a href="https://t.me/MyatGyiGroup" target="_blank" class="myatgyi-link">SKETCHWARE Widgets & Configuration Settings</a> အား ထည့်အသုံးပြုပုံ နှင့် လင့်များအား နားလည် အသုံးပြုရလွယ်ကူစေရန် ဖန်တီးပေးထားပါသည်။
+  </div>
+</footer>
+
+</body>
+</html>

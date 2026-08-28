@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sketchware Pro - Custom Block Master Specification</title>
+  <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5b4bdb;
+      --primary-light: #f0efff;
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text: #2c3e50;
+      --line: #cbd5e1;
+      --sk-bg: #f5f8fd;
+      --code-bg: #1e1e2e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Padauk', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Top Banner Header */
+    header {
+      background: linear-gradient(135deg, #5b4bdb, #3d2cb7);
+      color: #fff;
+      padding: 35px 20px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 8px 20px rgba(91, 75, 219, 0.2);
+    }
+    header h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+    header p { font-size: 14px; opacity: 0.9; }
+
+    .container {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    /* Exact Sketchware UI Screen Mockup */
+    .sk-editor {
+      background: var(--sk-bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      max-width: 420px;
+      margin: 0 auto;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    .sk-header-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .sk-back-btn { font-size: 20px; color: #334155; font-weight: bold; cursor: pointer; }
+    .sk-header-title { font-size: 18px; font-weight: 600; color: #1e293b; }
+
+    .sk-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sk-section-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: #334155;
+      margin-top: 4px;
+    }
+
+    /* Outlined Input Box with Label on Border */
+    .sk-field {
+      position: relative;
+      border: 1.5px solid #64748b;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 4px 12px;
+    }
+    .sk-field-label {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--sk-bg);
+      padding: 0 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #475569;
+    }
+    .sk-input, .sk-select {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #0f172a;
+      font-family: inherit;
+    }
+    .sk-select { cursor: pointer; }
+
+    /* Parameters Chips */
+    .sk-chips-wrapper {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 0;
+      white-space: nowrap;
+    }
+    .sk-chip {
+      background: #e0f2fe;
+      color: #0284c7;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 16px;
+      display: inline-block;
+    }
+
+    /* Block Preview Box */
+    .sk-preview-box {
+      background: #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 55px;
+      overflow-x: auto;
+    }
+    
+    .sk-block-render {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 6px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    }
+    .sk-render-regular { border-radius: 6px; background: #e91e63; }
+    .sk-render-string { border-radius: 16px; background: #e91e63; }
+    .sk-render-boolean { clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%); background: #3f51b5; padding: 6px 20px; }
+    .sk-render-number { border-radius: 16px; background: #009688; }
+    .sk-render-header { border-radius: 4px; background: #ff5722; width: 100%; justify-content: center; }
+
+    .sk-slot {
+      background: #ffffff;
+      width: 28px;
+      height: 14px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* Scrollable Code Box Container */
+    .sk-code-container {
+      background: #ffffff;
+      border: 1.5px solid #64748b;
+      border-radius: 12px;
+      padding: 10px 12px;
+      position: relative;
+    }
+    .sk-code-view {
+      font-family: 'Fira Code', monospace;
+      font-size: 12px;
+      color: #0f172a;
+      max-height: 140px;
+      overflow: auto;
+      white-space: pre;
+      line-height: 1.5;
+    }
+
+    /* Bottom Buttons */
+    .sk-actions {
+      display: flex;
+      gap: 12px;
+      padding: 12px 20px 20px;
+    }
+    .sk-btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .sk-btn-cancel { background: #e2e8f0; color: #334155; }
+    .sk-btn-save { background: #0284c7; color: #ffffff; }
+
+    /* User Defined Grid & Mini Boxes */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .mini{background:#f8f9fd;border:1px solid var(--line);padding:14px;border-radius:10px}
+    .mini code { font-family: 'Fira Code', monospace; color: var(--primary); font-weight: 600; }
+
+    /* JSON Format Box */
+    .json-code-box {
+      background: var(--code-bg);
+      color: #a6accd;
+      font-family: 'Fira Code', monospace;
+      font-size: 13px;
+      padding: 16px;
+      border-radius: 10px;
+      max-height: 250px;
+      overflow: auto;
+      white-space: pre;
+    }
+
+    /* User Requested Footer CSS */
+    footer{padding:30px 20px 50px}
+    .copyright-card{
+      background: linear-gradient(135deg, #ffffff, #f0efff);
+      border: 1px solid #dcd6ff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 8px 20px rgba(91, 75, 219, 0.08);
+      color: #2c3e50;
+      font-size: 15px;
+      line-height: 1.8;
+      text-align: center;
+      font-weight: 700;
+    }
+    .myatgyi-link{
+      color: #5b4bdb;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 2px 8px;
+      background: rgba(91, 75, 219, 0.1);
+      border-radius: 6px;
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+    }
+    .myatgyi-link:hover{
+      background: #5b4bdb;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(91, 75, 219, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sketchware Pro - Custom Block Master Specification</h1>
+  <p>Custom Block ရေးသားနည်း စည်းမျဉ်းများနှင့် Live UI Simulator Guide</p>
+</header>
+
+<div class="container">
+
+  <!-- Interactive Sketchware UI Simulator -->
+  <div class="card">
+    <div class="card-title">📱 Sketchware Interactive Edit Block UI</div>
+    
+    <div class="sk-editor">
+      <div class="sk-header-bar">
+        <span class="sk-back-btn">←</span>
+        <span class="sk-header-title">Edit block</span>
+      </div>
+
+      <div class="sk-body">
+        
+        <div class="sk-section-label">Properties</div>
+        
+        <div class="sk-field">
+          <span class="sk-field-label">Name</span>
+          <input type="text" id="skName" class="sk-input" value="Dialog_showNoInternetDialog" readonly>
+        </div>
+
+        <div class="sk-field">
+          <span class="sk-field-label">Type</span>
+          <select id="skTypeSelect" class="sk-select" onchange="handleTypeChange()">
+            <option value="regular">regular</option>
+            <option value="string">string</option>
+            <option value="boolean">boolean</option>
+            <option value="number">number</option>
+            <option value="header">header</option>
+          </select>
+        </div>
+
+        <div class="sk-field">
+          <span class="sk-field-label">Type name</span>
+          <input type="text" class="sk-input" placeholder="Type name" readonly>
+        </div>
+
+        <div class="sk-section-label">Design</div>
+        
+        <div class="sk-field" style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <span class="sk-field-label">Color</span>
+            <input type="text" id="skColorInput" class="sk-input" value="#E91E63" readonly style="width:120px;">
+          </div>
+          <span style="font-size:16px; opacity:0.6;">✏️ 🕒</span>
+        </div>
+
+        <div class="sk-section-label">Parameters</div>
+        <div class="sk-chips-wrapper">
+          <span class="sk-chip">inputOnly</span>
+          <span class="sk-chip">string</span>
+          <span class="sk-chip">boolean</span>
+          <span class="sk-chip">number</span>
+          <span class="sk-chip">map</span>
+          <span class="sk-chip">variable</span>
+        </div>
+
+        <div class="sk-field">
+          <span class="sk-field-label">Spec</span>
+          <div style="overflow-x:auto;">
+            <input type="text" id="skSpecInput" class="sk-input" value="ခေါင်းစဉ် %s စာသား %s ခလုတ် %s ဖြင့် Alert Dialog ပြမည်" readonly>
+          </div>
+        </div>
+
+        <div class="sk-section-label">Block Preview</div>
+        <div class="sk-preview-box">
+          <div id="skBlockRender" class="sk-block-render sk-render-regular">
+            ခေါင်းစဉ် <span class="sk-slot"></span> စာသား <span class="sk-slot"></span> ခလုတ် <span class="sk-slot"></span> ဖြင့် Alert Dialog ပြမည်
+          </div>
+        </div>
+
+        <div class="sk-section-label">Block import (e.g., android.view.View)</div>
+        <div class="sk-code-container">
+          <span class="sk-field-label">Enter imports line by line</span>
+          <div id="skImportView" class="sk-code-view">android.app.AlertDialog
+android.content.DialogInterface
+android.content.Intent</div>
+        </div>
+
+        <div class="sk-section-label">Block embedded code</div>
+        <div class="sk-code-container">
+          <span class="sk-field-label">Code</span>
+          <div id="skCodeView" class="sk-code-view">AlertDialog.Builder d = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Dialog_Alert);
+d.setTitle(%1$s);
+d.setMessage(%2$s);
+d.setCancelable(false);
+d.setPositiveButton(%3$s, new DialogInterface.OnClickListener() {
+	@Override
+	public void onClick(DialogInterface _dialog, int _which) {
+		Intent intent = getIntent();
+		finish();
+		startActivity(intent);
+	}
+});
+d.create().show();</div>
+        </div>
+
+      </div>
+
+      <div class="sk-actions">
+        <button class="sk-btn sk-btn-cancel">Cancel</button>
+        <button class="sk-btn sk-btn-save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Block Types -->
+  <div class="card">
+    <div class="card-title">1. BLOCK TYPES (စုစုပေါင်း ၁၂ မျိုး)</div>
+    <div class="grid">
+      <div class="mini"><code>"type": ""</code><br>Regular Block</div>
+      <div class="mini"><code>"type": "c"</code><br>If Logic Block</div>
+      <div class="mini"><code>"type": "e"</code><br>If-Else Logic Block</div>
+      <div class="mini"><code>"type": "s"</code><br>String Oval Block</div>
+      <div class="mini"><code>"type": "b"</code><br>Boolean Pointed Block</div>
+      <div class="mini"><code>"type": "d"</code><br>Number Oval Block</div>
+      <div class="mini"><code>"type": "v"</code><br>Variable Block</div>
+      <div class="mini"><code>"type": "a"</code><br>Map Data Block</div>
+      <div class="mini"><code>"type": "f"</code><br>Stop/Finish Block</div>
+      <div class="mini"><code>"type": "l"</code><br>List Selector Block</div>
+      <div class="mini"><code>"type": "p"</code><br>Component Dropdown</div>
+      <div class="mini"><code>"type": "h"</code><br>Header Category Block</div>
+    </div>
+  </div>
+
+  <!-- Spec Parameter Rules -->
+  <div class="card">
+    <div class="card-title">2. SPEC PARAMETER MASTER CODES & EMBEDDED RULES</div>
+    <p style="margin-bottom:12px; font-size:14px;">Embedded Code တွင် Parameter များ အစားထိုးသည့်အခါ အစီအစဉ်အလိုက် Position Symbol (<code>%1$s</code>, <code>%2$s</code> သို့မဟုတ် <code>%1$d</code>) ကို သုံးရပါမည်။</p>
+    <div class="grid">
+      <div class="mini"><code>%s</code> / <code>%d</code><br>Direct Text/Number Input</div>
+      <div class="mini"><code>%m.textview</code><br>TextView Dropdown Selector</div>
+      <div class="mini"><code>%m.varStr</code><br>String Variable Dropdown</div>
+      <div class="mini"><code>%m.intent</code><br>Intent Component Selector</div>
+    </div>
+  </div>
+
+  <!-- JSON Format Structure Section -->
+  <div class="card">
+    <div class="card-title">3. JSON STRUCTURE TEMPLATE</div>
+    <div class="json-code-box">[
+  {
+    "name": "Custom Dialog By Myat Gyi",
+    "type": "h",
+    "color": "#FF5722",
+    "palette": "",
+    "spec": "=== CUSTOM DIALOG BLOCK SECTION ==="
+  },
+  {
+    "name": "Dialog_showNoInternetDialog",
+    "type": "",
+    "color": "#00BCD4",
+    "palette": "",
+    "spec": "ခေါင်းစဉ် %s စာသား %s ခလုတ် %s ဖြင့် Alert Dialog ပြမည်",
+    "imports": [
+      "android.app.AlertDialog",
+      "android.content.DialogInterface",
+      "android.content.Intent"
+    ],
+    "code": "AlertDialog.Builder d = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Dialog_Alert);\nd.setTitle(%1$s);\nd.setMessage(%2$s);\nd.setCancelable(false);\nd.setPositiveButton(%3$s, new DialogInterface.OnClickListener() {\n\t@Override\n\tpublic void onClick(DialogInterface _dialog, int _which) {\n\t\tIntent intent = getIntent();\n\t\tfinish();\n\t\tstartActivity(intent);\n\t}\n});\nd.create().show();"
+  }
+]</div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="copyright-card">
+    <a href="https://t.me/MyatGyiOfficial" target="_blank" class="myatgyi-link">မြတ်ကြီး</a> မှ ယခု <a href="https://t.me/MyatGyiGroup" target="_blank" class="myatgyi-link">SKETCHWARE Block</a> များအား စိတ်ကြိုက်ဖန်တီး ထည့်အသုံးပြုပုံ နှင့်  နားလည် အသုံးပြုရလွယ်ကူစေရန် ဖန်တီးပေးထားပါသည်။
+  </div>
+</footer>
+
+<script>
+  function handleTypeChange() {
+    const type = document.getElementById('skTypeSelect').value;
+    const render = document.getElementById('skBlockRender');
+    const colorInput = document.getElementById('skColorInput');
+    const specInput = document.getElementById('skSpecInput');
+    const importView = document.getElementById('skImportView');
+    const codeView = document.getElementById('skCodeView');
+
+    render.className = 'sk-block-render';
+
+    if (type === 'regular') {
+      colorInput.value = '#E91E63';
+      specInput.value = 'ခေါင်းစဉ် %s စာသား %s ခလုတ် %s ဖြင့် Alert Dialog ပြမည်';
+      render.classList.add('sk-render-regular');
+      render.style.background = '#E91E63';
+      render.innerHTML = 'ခေါင်းစဉ် <span class="sk-slot"></span> စာသား <span class="sk-slot"></span> ခလုတ် <span class="sk-slot"></span> ဖြင့် Alert Dialog ပြမည်';
+      importView.textContent = `android.app.AlertDialog\nandroid.content.DialogInterface\nandroid.content.Intent`;
+      codeView.textContent = `AlertDialog.Builder d = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Dialog_Alert);\nd.setTitle(%1$s);\nd.setMessage(%2$s);\nd.setCancelable(false);\nd.setPositiveButton(%3$s, new DialogInterface.OnClickListener() {\n\t@Override\n\tpublic void onClick(DialogInterface _dialog, int _which) {\n\t\tIntent intent = getIntent();\n\t\tfinish();\n\t\tstartActivity(intent);\n\t}\n});\nd.create().show();`;
+    } else if (type === 'string') {
+      colorInput.value = '#E91E63';
+      specInput.value = 'App Signature Hash %s ကိုယူမည်';
+      render.classList.add('sk-render-string');
+      render.style.background = '#E91E63';
+      render.innerHTML = 'App Signature Hash <span class="sk-slot"></span> ကိုယူမည်';
+      importView.textContent = `android.content.pm.PackageManager\nandroid.content.pm.Signature`;
+      codeView.textContent = `getSignatureHash(%1$s);`;
+    } else if (type === 'boolean') {
+      colorInput.value = '#3F51B5';
+      specInput.value = 'Network ချိတ်ဆက်ထားသလား %s';
+      render.classList.add('sk-render-boolean');
+      render.style.background = '#3F51B5';
+      render.innerHTML = 'Network ချိတ်ဆက်ထားသလား <span class="sk-slot"></span>';
+      importView.textContent = `android.net.ConnectivityManager\nandroid.net.NetworkInfo`;
+      codeView.textContent = `isConnected(%1$s);`;
+    } else if (type === 'number') {
+      colorInput.value = '#009688';
+      specInput.value = 'Version Code ရယူမည် %s';
+      render.classList.add('sk-render-number');
+      render.style.background = '#009688';
+      render.innerHTML = 'Version Code ရယူမည် <span class="sk-slot"></span>';
+      importView.textContent = `android.content.pm.PackageInfo`;
+      codeView.textContent = `getVersionCode(%1$s);`;
+    } else if (type === 'header') {
+      colorInput.value = '#FF5722';
+      specInput.value = '=== CUSTOM DIALOG BLOCK SECTION ===';
+      render.classList.add('sk-render-header');
+      render.style.background = '#FF5722';
+      render.innerHTML = '=== CUSTOM DIALOG BLOCK SECTION ===';
+      importView.textContent = `// Header block တွင် Import ထည့်ရန် မလိုပါ`;
+      codeView.textContent = `// Header block တွင် Embedded code မရှိပါ`;
+    }
+  }
+</script>
+
+</body>
+</html>

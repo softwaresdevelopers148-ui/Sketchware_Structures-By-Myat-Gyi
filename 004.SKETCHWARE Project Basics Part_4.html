@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sketchware Pro App Starting Guide - Part 4</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --ink: #172033;
+      --muted: #657189;
+      --brand: #5b4bdb;
+      --brand-light: #f0efff;
+      --line: #e5e9f2;
+      --code: #18202f;
+      --warn: #fff7df;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Myanmar", sans-serif;
+    }
+    header {
+      background: linear-gradient(135deg, #4b3cc4, #7b61ff);
+      color: #ffffff;
+      padding: 52px 20px 44px;
+    }
+    .wrap {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    h1 {
+      font-size: clamp(26px, 5vw, 42px);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+    .lead {
+      max-width: 760px;
+      font-size: 17px;
+      opacity: 0.92;
+    }
+    main { padding: 28px 0 60px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 25px;
+      margin: 18px 0;
+      box-shadow: 0 7px 24px rgba(36, 48, 77, 0.04);
+    }
+    h2 {
+      margin: 0 0 18px;
+      color: var(--brand);
+      font-size: 22px;
+    }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .toc a {
+      background: var(--brand-light);
+      color: #4134a7;
+      padding: 7px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .toc a:hover {
+      background: var(--brand);
+      color: #ffffff;
+    }
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px;
+      background: #ffffff;
+    }
+    th {
+      background: var(--brand-light);
+      color: #39308d;
+      text-align: left;
+      font-weight: 700;
+    }
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: 0; }
+    code {
+      background: #eef0f6;
+      border-radius: 5px;
+      padding: 2px 6px;
+      color: #8b2456;
+      font-size: 0.9em;
+    }
+    footer { padding: 30px 20px 50px; }
+    .copyright-card {
+      background: linear-gradient(135deg, #ffffff, #f0efff);
+      border: 1px solid #dcd6ff;
+      border-radius: 16px;
+      padding: 20px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 8px 20px rgba(91, 75, 219, 0.08);
+      color: #2c3e50;
+      font-size: 15px;
+      line-height: 1.8;
+      text-align: center;
+      font-weight: 700;
+    }
+    .myatgyi-link {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 2px 8px;
+      background: rgba(91, 75, 219, 0.1);
+      border-radius: 6px;
+      transition: all 0.2s ease-in-out;
+      display: inline-block;
+    }
+    .myatgyi-link:hover {
+      background: var(--brand);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(91, 75, 219, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Sketchware Pro • Beginner Series</div>
+    <h1>App Starting Guide — Part 4</h1>
+    <p class="lead">Components များနှင့် Custom MoreBlock ရေးဆွဲနည်းဆိုင်ရာ အသေးစိတ် မှတ်စု။</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- Table of Contents -->
+  <div class="card">
+    <div class="toc">
+      <a href="#section1">၁။ Components</a>
+      <a href="#section2">၂။ MoreBlock</a>
+    </div>
+  </div>
+
+  <!-- Header Title Card -->
+  <div class="card">
+    <h2>အခန်း (၄) - Components & MoreBlocks</h2>
+  </div>
+
+  <!-- 1. Components -->
+  <section id="section1" class="card">
+    <h2>၁။ Components (အဆင့်မြင့် Function နှင့် Background Service များ)</h2>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width: 30%;">Component</th>
+          <th>အသုံးပြုပုံ ရှင်းလင်းချက်</th>
+        </tr>
+        <tr>
+          <td><b>Intent</b></td>
+          <td>Screen အသစ်တစ်ခုသို့ ကူးပြောင်းရန် သို့မဟုတ် တခြား App များသို့ Data ပို့ရန် (ဥပမာ- Browser ဖွင့်ခြင်း)။</td>
+        </tr>
+        <tr>
+          <td><b>SharedPreferences</b></td>
+          <td>App ပိတ်လိုက်သော်လည်း Data လေးများကို ဖုန်းထဲတွင် အမြဲတမ်း သိမ်းဆည်းထားရန် (ဥပမာ- Login Status, Theme Mode)။</td>
+        </tr>
+        <tr>
+          <td><b>Calendar</b></td>
+          <td>ရက်စွဲနှင့် အချိန်ဆိုင်ရာ Data များကို တွက်ချက်ရယူရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Timer</b></td>
+          <td>အချိန်ပိုင်းအလိုက် ခဏစောင့်ဆိုင်းစေရန် သို့မဟုတ် ပုံမှန် အချိန်ခြားပြီး Logic Run ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Dialog</b></td>
+          <td>Popup Box ဖိပြပြီး သတိပေးစာပြသရန် သို့မဟုတ် User ထံမှ အတည်ပြုချက်တောင်းရန်။</td>
+        </tr>
+        <tr>
+          <td><b>MediaPlayer / SoundPool</b></td>
+          <td>အသံဖိုင်များနှင့် Sound Effect များကို စီမံဖွင့်လှစ်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Firebase (DB/Auth/Storage)</b></td>
+          <td>Realtime Database သုံးရန်၊ User Account ဝင်ရန်နှင့် Cloud ပေါ် ဖိုင်တင်ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>RequestNetwork</b></td>
+          <td>API ခေါ်ယူရန်၊ Web Server များနှင့် Data အကူးအပြောင်း ပြုလုပ်ရန် (HTTP GET/POST)။</td>
+        </tr>
+        <tr>
+          <td><b>Notification</b></td>
+          <td>ဖုန်း၏ Notification Bar တွင် အကြောင်းကြားစာ ပြသရန်။</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 2. MoreBlock -->
+  <section id="section2" class="card">
+    <h2>၂။ MoreBlock (Custom Function/Block များ ဖန်တီးခြင်း)</h2>
+    
+    <div class="card" style="margin: 0 0 18px 0; background: #f8f9fd;">
+      <b>အသုံးပြုရသည့် ရည်ရွယ်ချက်:</b> Code ထပ်ခါထပ်ခါ ရေးရခြင်းမှ ရှောင်ရှားရန်နှင့် Logic များကို သန့်ရှင်းသပ်ရပ်စွာ စုစည်းထားရန်။
+    </div>
+
+    <div class="table-wrap" style="margin-bottom: 20px;">
+      <table>
+        <tr>
+          <th style="width: 30%;">Return Type</th>
+          <th>ပြန်ပေးမည့် Data အမျိုးအစား ရှင်းလင်းချက်</th>
+        </tr>
+        <tr>
+          <td><code>Void</code></td>
+          <td>မည်သည့် Data မှ ပြန်မပေးဘဲ Logic Action တစ်ခုတည်း လုပ်ဆောင်မည်။</td>
+        </tr>
+        <tr>
+          <td><code>String</code></td>
+          <td>စာသား Data ပြန်ပေးမည်။</td>
+        </tr>
+        <tr>
+          <td><code>Number</code></td>
+          <td>ကိန်းဂဏန်း Data ပြန်ပေးမည်။</td>
+        </tr>
+        <tr>
+          <td><code>Boolean</code></td>
+          <td>True / False စစ်ဆေးချက် ပြန်ပေးမည်။</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th style="width: 30%;">Parameter Type</th>
+          <th>ပါဝင်နိုင်သော Argument များနှင့် အသုံးပြုပုံ</th>
+        </tr>
+        <tr>
+          <td><b>Variable</b></td>
+          <td>MoreBlock ထဲသို့ String, Number, Map စသည့် Data ထည့်သွင်းပေးပို့ရန်။</td>
+        </tr>
+        <tr>
+          <td><b>View</b></td>
+          <td>Specific ဖြစ်သော TextView, Button, ImageView များကို Argument အဖြစ် လက်ခံရန်။</td>
+        </tr>
+        <tr>
+          <td><b>Component</b></td>
+          <td>Intent, Timer, SharedPreferences စသည်တို့ကို တိုက်ရိုက် Parameter အဖြစ် သုံးစွဲရန်။</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="copyright-card">
+    <a href="https://t.me/MyatGyiOfficial" target="_blank" class="myatgyi-link">မြတ်ကြီး</a> မှ ယခု <a href="https://t.me/MyatGyiGroup" target="_blank" class="myatgyi-link">SKETCHWARE Components & MoreBlocks Guide</a> အား ထည့်အသုံးပြုပုံ နှင့် လင့်များအား နားလည် အသုံးပြုရလွယ်ကူစေရန် ဖန်တီးပေးထားပါသည်။
+  </div>
+</footer>
+
+</body>
+</html>
