@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "id": "42656",
+      "title": "Shwedagon Pagoda",
+      "author": "Nyunt Mg Oo",
+      "cover_url": "https://mmbookshelf.sgp1.cdn.digitaloceanspaces.com/image/C6/2024/06/99adb339-dcbf-4da8-ad70-ae54ddc304f2.png",
+      "author_url": "https://mbookshelf.naingdroidapps.com/author/2720-nyunt-mg-oo/books",
+      "category_url": "https://mbookshelf.naingdroidapps.com/category/6-history/books",
+      "file_size": "16.41 MB",
+      "pages": "138",
+      "download_count": "4068",
+      "description": "Official page record. The PDF URL is intentionally not stored here; the app uses the website's Download form.",
+      "price_type": "free",
+      "download_allowed": true,
+      "pdf_url": "",
+      "official_page_url": "https://mbookshelf.naingdroidapps.com/book/42656-shwedagon-pagoda"
+    }
+  ]
+}

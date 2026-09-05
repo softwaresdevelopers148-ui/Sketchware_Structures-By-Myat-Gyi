@@ -1,0 +1,26 @@
+{
+  "books": [
+    {
+      "id": "authorized-demo-001",
+      "title": "Authorized Free PDF Example",
+      "author": "Rights Holder",
+      "cover_url": "https://YOUR-AUTHORIZED-DOMAIN.example/images/demo.png",
+      "description": "Replace this record with a book for which you have download permission.",
+      "price_type": "free",
+      "download_allowed": true,
+      "pdf_url": "https://YOUR-AUTHORIZED-DOMAIN.example/files/demo.pdf",
+      "official_page_url": "https://YOUR-AUTHORIZED-DOMAIN.example/books/authorized-demo-001"
+    },
+    {
+      "id": "authorized-paid-001",
+      "title": "Paid Example",
+      "author": "Rights Holder",
+      "cover_url": "https://YOUR-AUTHORIZED-DOMAIN.example/images/paid.png",
+      "description": "This record is shown but cannot be downloaded in the app.",
+      "price_type": "paid",
+      "download_allowed": false,
+      "pdf_url": null,
+      "official_page_url": "https://YOUR-AUTHORIZED-DOMAIN.example/books/authorized-paid-001"
+    }
+  ]
+}

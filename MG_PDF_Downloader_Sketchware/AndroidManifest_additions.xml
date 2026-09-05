@@ -1,0 +1,5 @@
+<!-- Add these inside AndroidManifest.xml, outside the <application> element. -->
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+<!-- No storage permission is required by this template: files are placed in the app-specific Downloads directory. -->

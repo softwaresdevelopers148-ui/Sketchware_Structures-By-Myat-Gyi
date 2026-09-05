@@ -1,0 +1,8 @@
+Primary     #1976C8
+Download    #2C7ECD
+Background  #F5F7FB
+Card        #FFFFFF
+Text        #1B263B
+Secondary   #5C677D
+Success     #2E9D67
+Warning     #E39B2D
