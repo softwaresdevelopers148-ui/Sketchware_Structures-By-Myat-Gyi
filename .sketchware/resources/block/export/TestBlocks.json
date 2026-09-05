@@ -1,0 +1,32 @@
+[
+  {
+    "code": "",
+    "imports": "",
+    "color": "#FF000000",
+    "name": "Custom-Dialog-By-Myat Gyi",
+    "typeName": "",
+    "palette": "33",
+    "type": "h",
+    "spec": "Custom Dialog ပြုလုပ်နည်းစနစ်များ By မြတ်ကြီး"
+  },
+  {
+    "code": "",
+    "imports": "",
+    "color": "#FF000000",
+    "name": "Activity-Custom-Dialog-Header",
+    "typeName": "",
+    "palette": "33",
+    "type": "h",
+    "spec": "Activity အတွင်း အသုံးပြုရန် \u003d\u003d\u003e"
+  },
+  {
+    "code": "%1$s \u003d new AlertDialog.Builder(%3$s.this).create();\nLayoutInflater %1$sLI \u003d getLayoutInflater();\nView %1$sCV \u003d (View) %1$sLI.inflate(R.layout.%2$s, null);\n%1$s.getWindow().setBackgroundDrawableResource(android.R.color.transparent);\n%1$s.setView(%1$sCV);",
+    "imports": "",
+    "color": "#FF00BCD4",
+    "name": "Create-Custom-Dialog",
+    "typeName": "",
+    "palette": "33",
+    "type": " ",
+    "spec": "%m.activity တွင် %m.customViews Layout ဖြင့် CustomDialog %m.dialog ဖန်တီးမည်"
+  }
+]
