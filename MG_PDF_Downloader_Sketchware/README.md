@@ -18,6 +18,7 @@
 - `NATIVE_UI_DESIGN.md` — App UI layout tree၊ colors နှင့် View IDs
 - `native_ui_colors.txt` — UI color palette
 - `MmBookshelf_MODE.md` — Website-specific mode အသုံးပြုနည်း
+- `GUIDE_ALIGNMENT.md` — GitHub Sketchware Structures guide နှင့် pack mapping
 - `AndroidManifest_additions.xml` — လိုအပ်သော permission
 - `catalog.example.json` — generic authorized API အတွက် example
 - `catalog.mbookshelf.example.json` — MmBookshelf official page record example
