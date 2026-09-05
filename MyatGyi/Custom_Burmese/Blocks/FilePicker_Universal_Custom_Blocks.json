@@ -1,0 +1,449 @@
+[
+  {
+    "name": "FilePicker Component - Configuration",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FILEPICKER CONFIGURATION ==="
+  },
+  {
+    "name": "FilePicker_setMimeType",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker ၏ Select MIME Type ကို %s ဟု သတ်မှတ်မည်",
+    "code": "%1$s.setType(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_setAllFiles",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် All Files ရွေးချယ်မှု သတ်မှတ်မည်",
+    "code": "%1$s.setType(\"*/*\");",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_setImageFiles",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် Image Files ရွေးချယ်မှု သတ်မှတ်မည်",
+    "code": "%1$s.setType(\"image/*\");",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_setAudioFiles",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် Audio Files ရွေးချယ်မှု သတ်မှတ်မည်",
+    "code": "%1$s.setType(\"audio/*\");",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_setTextFiles",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် Text Files ရွေးချယ်မှု သတ်မှတ်မည်",
+    "code": "%1$s.setType(\"text/*\");",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_setAction",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker ၏ Action ကို %s ဟု သတ်မှတ်မည်",
+    "code": "%1$s.setAction(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_setAllowMultiple",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် File အများအပြား ရွေးချယ်ခွင့်ကို %b ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.putExtra(android.content.Intent.EXTRA_ALLOW_MULTIPLE, %2$s);",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "FilePicker_setLocalOnly",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် Local File သာ ရွေးချယ်ခွင့်ကို %b ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.putExtra(android.content.Intent.EXTRA_LOCAL_ONLY, %2$s);",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "FilePicker_addIntentFlags",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker သို့ Intent Flag %m.intentFlags ကို ထည့်မည်",
+    "code": "%1$s.addFlags(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_addReadPermission",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် URI ဖတ်ရှုခွင့် ထည့်မည်",
+    "code": "%1$s.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "FilePicker_addWritePermission",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် URI ရေးသားခွင့် ထည့်မည်",
+    "code": "%1$s.addFlags(android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION);",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "FilePicker_addPersistablePermission",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် Persistable URI Permission ထည့်မည်",
+    "code": "%1$s.addFlags(android.content.Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "FilePicker_isAvailable",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker ကို ဖွင့်နိုင်သော App ရှိမရှိ စစ်မည်",
+    "code": "%1$s.resolveActivity(getPackageManager()) != null",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_getMimeType",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker ၏ လက်ရှိ MIME Type ကို ရယူမည်",
+    "code": "(%1$s.getType() != null ? %1$s.getType() : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_isMultipleEnabled",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "FilePicker %m.filepicker တွင် File အများအပြား ရွေးချယ်ခွင့် ဖွင့်ထားခြင်း ရှိမရှိ စစ်မည်",
+    "code": "%1$s.getBooleanExtra(android.content.Intent.EXTRA_ALLOW_MULTIPLE, false)",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "FilePicker Component - Launch and Events",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FILEPICKER LAUNCH AND EVENTS ==="
+  },
+  {
+    "name": "FilePicker_launchNote",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "Built-in filepickerstartpickfiles Block သုံး၍ FilePicker စတင်ဖွင့်မည်"
+  },
+  {
+    "name": "FilePicker Component - onFilesPicked Results",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== USE THESE BLOCKS INSIDE onFilesPicked EVENT ==="
+  },
+  {
+    "name": "FilePicker_pickedFileCount",
+    "type": "d",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ ရွေးထားသော File အရေအတွက်ကို ရယူမည်",
+    "code": "_filePath.size()",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_pickedFileAt",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ File Index %d ၏ Path ကို ရယူမည်",
+    "code": "(_filePath.size() > (int)%1$d ? _filePath.get((int)%1$d) : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_firstPickedFile",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ ပထမဆုံး File ၏ Path ကို ရယူမည်",
+    "code": "(!_filePath.isEmpty() ? _filePath.get(0) : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_lastPickedFile",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ နောက်ဆုံး File ၏ Path ကို ရယူမည်",
+    "code": "(!_filePath.isEmpty() ? _filePath.get(_filePath.size() - 1) : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_pickedFilesExist",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ File တစ်ခုခု ရွေးထားခြင်း ရှိမရှိ စစ်မည်",
+    "code": "!_filePath.isEmpty()",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_pickedFilesEmpty",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ File မရွေးထားခြင်း ရှိမရှိ စစ်မည်",
+    "code": "_filePath.isEmpty()",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_joinPickedPaths",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ File Path များကို ခြားစာ %s ဖြင့် ပေါင်းမည်",
+    "code": "android.text.TextUtils.join(%1$s, _filePath)",
+    "imports": "android.text.TextUtils"
+  },
+  {
+    "name": "FilePicker_copyPickedPathsToList",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ File Path များကို List %m.listStr ထဲသို့ ကူးထည့်မည်",
+    "code": "%1$s.clear();\n%1$s.addAll(_filePath);",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_clearPickedPaths",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ ရွေးထားသော File Path များကို ရှင်းလင်းမည်",
+    "code": "_filePath.clear();",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_pickedFileAtOrDefault",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "onFilesPicked Event မှ File Index %d ကို ရယူမည်၊ မရှိပါက Default %s ပြန်ပေးမည်",
+    "code": "(_filePath.size() > (int)%1$d ? _filePath.get((int)%1$d) : %2$s)",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker Component - File Validation",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FILEPICKER FILE PATH VALIDATION ==="
+  },
+  {
+    "name": "FilePicker_pathExists",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s တည်ရှိနေခြင်း ရှိမရှိ စစ်မည်",
+    "code": "new java.io.File(%1$s).exists()",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_isRegularFile",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s သည် ပုံမှန် File ဖြစ်မဖြစ် စစ်မည်",
+    "code": "new java.io.File(%1$s).isFile()",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_isDirectory",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s သည် Folder ဖြစ်မဖြစ် စစ်မည်",
+    "code": "new java.io.File(%1$s).isDirectory()",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_canRead",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s ကို ဖတ်ရှုနိုင်ခြင်း ရှိမရှိ စစ်မည်",
+    "code": "new java.io.File(%1$s).canRead()",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_getFileSize",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s ၏ Size ကို Bytes အဖြစ် စာသားပြန်ပေးမည်",
+    "code": "String.valueOf(new java.io.File(%1$s).length())",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_getFileName",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s မှ File Name ကို ရယူမည်",
+    "code": "new java.io.File(%1$s).getName()",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_getParentPath",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s ၏ Parent Folder Path ကို ရယူမည်",
+    "code": "(new java.io.File(%1$s).getParent() != null ? new java.io.File(%1$s).getParent() : \"\")",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_getFileExtension",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s ၏ Extension ကို ရယူမည်",
+    "code": "(new java.io.File(%1$s).getName().lastIndexOf('.') > 0 ? new java.io.File(%1$s).getName().substring(new java.io.File(%1$s).getName().lastIndexOf('.') + 1).toLowerCase(java.util.Locale.US) : \"\")",
+    "imports": "java.io.File\njava.util.Locale"
+  },
+  {
+    "name": "FilePicker_guessMimeType",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s ၏ MIME Type ကို ခန့်မှန်းရယူမည်",
+    "code": "(new java.io.File(%1$s).getName().lastIndexOf('.') > 0 && android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(new java.io.File(%1$s).getName().substring(new java.io.File(%1$s).getName().lastIndexOf('.') + 1).toLowerCase(java.util.Locale.US)) != null ? android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(new java.io.File(%1$s).getName().substring(new java.io.File(%1$s).getName().lastIndexOf('.') + 1).toLowerCase(java.util.Locale.US) : \"\")",
+    "imports": "android.webkit.MimeTypeMap\njava.io.File\njava.util.Locale"
+  },
+  {
+    "name": "FilePicker_hasExtension",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path %s သည် Extension %s ဖြင့် ကိုက်ညီမှု ရှိမရှိ စစ်မည်",
+    "code": "(%2$s != null && %2$s.length() > 0 && new java.io.File(%1$s).getName().toLowerCase(java.util.Locale.US).endsWith(%2$s.toLowerCase(java.util.Locale.US).startsWith(\".\") ? %2$s.toLowerCase(java.util.Locale.US) : \".\" + %2$s.toLowerCase(java.util.Locale.US)))",
+    "imports": "java.io.File\njava.util.Locale"
+  },
+  {
+    "name": "FilePicker Component - List Production Utilities",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FILEPICKER LIST PRODUCTION UTILITIES ==="
+  },
+  {
+    "name": "FilePicker_listCount",
+    "type": "d",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr ၏ အရေအတွက်ကို ရယူမည်",
+    "code": "%1$s.size()",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_listPathAt",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr မှ Index %d ၏ Path ကို ရယူမည်",
+    "code": "(%1$s.size() > (int)%2$d ? %1$s.get((int)%2$d) : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_listIsEmpty",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr သည် အလွတ်ဖြစ်မဖြစ် စစ်မည်",
+    "code": "%1$s.isEmpty()",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_listContainsPath",
+    "type": "b",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr တွင် Path %s ပါဝင်မှု ရှိမရှိ စစ်မည်",
+    "code": "%1$s.contains(%2$s)",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_joinPathList",
+    "type": "s",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr ကို ခြားစာ %s ဖြင့် ပေါင်းမည်",
+    "code": "android.text.TextUtils.join(%2$s, %1$s)",
+    "imports": "android.text.TextUtils"
+  },
+  {
+    "name": "FilePicker_removePathAt",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr မှ Index %d ကို ဖယ်ရှားမည်",
+    "code": "if (%1$s.size() > (int)%2$d) {\n\t%1$s.remove((int)%2$d);\n}",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_clearPathList",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr ထဲရှိ Path အားလုံးကို ရှင်းလင်းမည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_removeMissingPaths",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr ထဲမှ မတည်ရှိတော့သော Path များကို ဖယ်ရှားမည်",
+    "code": "{\n\tfor (int _index = %1$s.size() - 1; _index >= 0; _index--) {\n\t\tif (!new java.io.File(%1$s.get(_index)).exists()) {\n\t\t\t%1$s.remove(_index);\n\t\t}\n\t}\n}",
+    "imports": "java.io.File"
+  },
+  {
+    "name": "FilePicker_removeDuplicatePaths",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr ထဲမှ ထပ်နေသော Path များကို ဖယ်ရှားမည်",
+    "code": "{\n\tfor (int _index = %1$s.size() - 1; _index >= 0; _index--) {\n\t\tif (%1$s.indexOf(%1$s.get(_index)) != _index) {\n\t\t\t%1$s.remove(_index);\n\t\t}\n\t}\n}",
+    "imports": ""
+  },
+  {
+    "name": "FilePicker_filterPathsByExtension",
+    "type": " ",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "File Path List %m.listStr ကို Extension %s ဖြင့် စစ်ထုတ်မည်",
+    "code": "{\n\tString _extension = %2$s.toLowerCase(java.util.Locale.US);\n\tif (!_extension.startsWith(\".\")) {\n\t\t_extension = \".\" + _extension;\n\t}\n\tfor (int _index = %1$s.size() - 1; _index >= 0; _index--) {\n\t\tif (!new java.io.File(%1$s.get(_index)).getName().toLowerCase(java.util.Locale.US).endsWith(_extension)) {\n\t\t\t%1$s.remove(_index);\n\t\t}\n\t}\n}",
+    "imports": "java.io.File\njava.util.Locale"
+  }
+]

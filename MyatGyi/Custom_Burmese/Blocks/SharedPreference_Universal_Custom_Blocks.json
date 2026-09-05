@@ -1,0 +1,325 @@
+[
+  {
+    "name": "SharedPreference Component - Basic Reads",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SHARED PREFERENCE BASIC READS ==="
+  },
+  {
+    "name": "SharedPreference_getString",
+    "type": "s",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ၏ String Value ကို Default %s ဖြင့် ရယူမည်",
+    "code": "%1$s.getString(%2$s, %3$s)",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_getStringOrEmpty",
+    "type": "s",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ၏ String Value ကို မရှိပါက အလွတ်စာသား ပြန်ပေးမည်",
+    "code": "%1$s.getString(%2$s, \"\")",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_getNumber",
+    "type": "d",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ၏ Number Value ကို Default %d ဖြင့် ရယူမည်",
+    "code": "%1$s.getInt(%2$s, %3$s)",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_getBoolean",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ၏ Boolean Value ကို Default %b ဖြင့် ရယူမည်",
+    "code": "%1$s.getBoolean(%2$s, %3$s)",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_getLong",
+    "type": "d",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ၏ Long Value ကို Default %d ဖြင့် ရယူမည်",
+    "code": "%1$s.getLong(%2$s, (long)%3$s)",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_getFloat",
+    "type": "d",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ၏ Decimal Value ကို Default %d ဖြင့် ရယူမည်",
+    "code": "%1$s.getFloat(%2$s, (float)%3$s)",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_contains",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file တွင် Key %s ပါဝင်မှု ရှိမရှိ စစ်မည်",
+    "code": "%1$s.contains(%2$s)",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_getAll",
+    "type": "a",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file ထဲရှိ Data အားလုံးကို Map အဖြစ် ရယူမည်",
+    "code": "%1$s.getAll()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference Component - Write and Persist",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SHARED PREFERENCE WRITE AND PERSIST ==="
+  },
+  {
+    "name": "SharedPreference_putString",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် String Value %s ကို သိမ်းမည်",
+    "code": "%1$s.edit().putString(%2$s, %3$s).apply();",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putNumber",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် Number Value %d ကို သိမ်းမည်",
+    "code": "%1$s.edit().putInt(%2$s, %3$s).apply();",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putBoolean",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် Boolean Value %b ကို သိမ်းမည်",
+    "code": "%1$s.edit().putBoolean(%2$s, %3$s).apply();",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putLong",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် Long Value %d ကို သိမ်းမည်",
+    "code": "%1$s.edit().putLong(%2$s, (long)%3$s).apply();",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putFloat",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် Decimal Value %d ကို သိမ်းမည်",
+    "code": "%1$s.edit().putFloat(%2$s, (float)%3$s).apply();",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_remove",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ကို ဖယ်ရှားမည်",
+    "code": "%1$s.edit().remove(%2$s).apply();",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_clear",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file ထဲရှိ Data အားလုံးကို ရှင်းလင်းမည်",
+    "code": "%1$s.edit().clear().apply();",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putStringCommit",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် String Value %s ကို Synchronously သိမ်းပြီး အောင်မြင်မှု ပြန်ပေးမည်",
+    "code": "%1$s.edit().putString(%2$s, %3$s).commit()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putNumberCommit",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် Number Value %d ကို Synchronously သိမ်းပြီး အောင်မြင်မှု ပြန်ပေးမည်",
+    "code": "%1$s.edit().putInt(%2$s, %3$s).commit()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putBooleanCommit",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် Boolean Value %b ကို Synchronously သိမ်းပြီး အောင်မြင်မှု ပြန်ပေးမည်",
+    "code": "%1$s.edit().putBoolean(%2$s, %3$s).commit()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_removeCommit",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ကို ဖယ်ရှားပြီး အောင်မြင်မှု ပြန်ပေးမည်",
+    "code": "%1$s.edit().remove(%2$s).commit()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_clearCommit",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file ထဲရှိ Data အားလုံးကို ရှင်းလင်းပြီး အောင်မြင်မှု ပြန်ပေးမည်",
+    "code": "%1$s.edit().clear().commit()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference Component - Lists and Map Inspection",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SHARED PREFERENCE LISTS AND MAP INSPECTION ==="
+  },
+  {
+    "name": "SharedPreference_putStringList",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file သို့ Key %s နှင့် String List %m.listStr ကို သိမ်းမည်",
+    "code": "%1$s.edit().putStringSet(%2$s, new java.util.HashSet<String>(%3$s)).apply();",
+    "imports": "java.util.HashSet"
+  },
+  {
+    "name": "SharedPreference_getStringList",
+    "type": "l",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file မှ Key %s ၏ String List ကို ရယူမည်",
+    "code": "new java.util.ArrayList<String>(%1$s.getStringSet(%2$s, new java.util.HashSet<String>()))",
+    "imports": "java.util.ArrayList\njava.util.HashSet"
+  },
+  {
+    "name": "SharedPreference_getKeyCount",
+    "type": "d",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file ထဲရှိ Key အရေအတွက်ကို ရယူမည်",
+    "code": "%1$s.getAll().size()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_hasAnyData",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file ထဲတွင် Data တစ်ခုခု ရှိမရှိ စစ်မည်",
+    "code": "!%1$s.getAll().isEmpty()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_isEmpty",
+    "type": "b",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file ထဲတွင် Data မရှိခြင်း ရှိမရှိ စစ်မည်",
+    "code": "%1$s.getAll().isEmpty()",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference Component - Safe Utility Operations",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SHARED PREFERENCE SAFE UTILITY OPERATIONS ==="
+  },
+  {
+    "name": "SharedPreference_putStringIfAbsent",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file တွင် Key %s မရှိမှ String Value %s ကို သိမ်းမည်",
+    "code": "if (!%1$s.contains(%2$s)) {\n\t%1$s.edit().putString(%2$s, %3$s).apply();\n}",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putNumberIfAbsent",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file တွင် Key %s မရှိမှ Number Value %d ကို သိမ်းမည်",
+    "code": "if (!%1$s.contains(%2$s)) {\n\t%1$s.edit().putInt(%2$s, %3$s).apply();\n}",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_putBooleanIfAbsent",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file တွင် Key %s မရှိမှ Boolean Value %b ကို သိမ်းမည်",
+    "code": "if (!%1$s.contains(%2$s)) {\n\t%1$s.edit().putBoolean(%2$s, %3$s).apply();\n}",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_removeIfPresent",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file တွင် Key %s ရှိမှ ဖယ်ရှားမည်",
+    "code": "if (%1$s.contains(%2$s)) {\n\t%1$s.edit().remove(%2$s).apply();\n}",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_clearIfNotEmpty",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file ထဲတွင် Data ရှိမှ အားလုံးကို ရှင်းလင်းမည်",
+    "code": "if (!%1$s.getAll().isEmpty()) {\n\t%1$s.edit().clear().apply();\n}",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference Component - Migration Helpers",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SHARED PREFERENCE MIGRATION HELPERS ==="
+  },
+  {
+    "name": "SharedPreference_migrateStringKey",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file တွင် Old Key %s ရှိပါက New Key %s သို့ String Value ပြောင်းသိမ်းမည်",
+    "code": "if (%1$s.contains(%2$s)) {\n\tString _migratedValue = %1$s.getString(%2$s, \"\");\n\t%1$s.edit().putString(%3$s, _migratedValue).remove(%2$s).apply();\n}",
+    "imports": ""
+  },
+  {
+    "name": "SharedPreference_migrateNumberKey",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "SharedPreference %m.file တွင် Old Key %s ရှိပါက New Key %s သို့ Number Value ပြောင်းသိမ်းမည်",
+    "code": "if (%1$s.contains(%2$s)) {\n\tint _migratedValue = %1$s.getInt(%2$s, 0);\n\t%1$s.edit().putInt(%3$s, _migratedValue).remove(%2$s).apply();\n}",
+    "imports": ""
+  }
+]

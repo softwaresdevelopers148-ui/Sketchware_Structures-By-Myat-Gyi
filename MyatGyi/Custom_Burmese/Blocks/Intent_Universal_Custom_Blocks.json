@@ -1,0 +1,352 @@
+[
+  {
+    "name": "Intent Component - Basic Configuration",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== INTENT BASIC CONFIGURATION ==="
+  },
+  {
+    "name": "Intent_setAction",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Action ကို %s ဟု သတ်မှတ်မည်",
+    "code": "%1$s.setAction(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_setActionFromSelector",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Action ကို %m.intentAction ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setAction(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_setType",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ MIME Type ကို %s ဟု သတ်မှတ်မည်",
+    "code": "%1$s.setType(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_setDataUri",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Data URI ကို %s ဟု သတ်မှတ်မည်",
+    "code": "%1$s.setData(android.net.Uri.parse(%2$s));",
+    "imports": "android.net.Uri"
+  },
+  {
+    "name": "Intent_setDataAndType",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ URI %s နှင့် MIME Type %s ကို သတ်မှတ်မည်",
+    "code": "%1$s.setDataAndType(android.net.Uri.parse(%2$s), %3$s);",
+    "imports": "android.net.Uri"
+  },
+  {
+    "name": "Intent_addCategory",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent သို့ Category %s ကို ထည့်မည်",
+    "code": "%1$s.addCategory(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_removeCategory",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent မှ Category %s ကို ဖယ်ရှားမည်",
+    "code": "%1$s.removeCategory(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent Component - Target and Flags",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== INTENT TARGET AND FLAGS ==="
+  },
+  {
+    "name": "Intent_addFlags",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent သို့ Flag %m.intentFlags ကို ထည့်မည်",
+    "code": "%1$s.addFlags(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_setFlags",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Flags ကို %m.intentFlags ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setFlags(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_setPackage",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ကို Package %s အတွက် သတ်မှတ်မည်",
+    "code": "%1$s.setPackage(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_setClassName",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Package %s နှင့် Activity Class %s ကို သတ်မှတ်မည်",
+    "code": "%1$s.setClassName(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_setComponent",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Component ကို Package %s နှင့် Class %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setComponent(new android.content.ComponentName(%2$s, %3$s));",
+    "imports": "android.content.ComponentName"
+  },
+  {
+    "name": "Intent_setSelector",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent အတွက် Selector Intent %m.intent ကို သတ်မှတ်မည်",
+    "code": "%1$s.setSelector(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_hasCategory",
+    "type": "b",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent တွင် Category %s ပါဝင်မှု ရှိမရှိ စစ်မည်",
+    "code": "%1$s.hasCategory(%2$s)",
+    "imports": ""
+  },
+  {
+    "name": "Intent_getFlags",
+    "type": "d",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ လက်ရှိ Flags ကို ရယူမည်",
+    "code": "%1$s.getFlags()",
+    "imports": ""
+  },
+  {
+    "name": "Intent Component - Extras",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== INTENT EXTRAS ==="
+  },
+  {
+    "name": "Intent_putStringExtra",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent သို့ Key %s နှင့် String Value %s ကို Extra အဖြစ် ထည့်မည်",
+    "code": "%1$s.putExtra(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_putNumberExtra",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent သို့ Key %s နှင့် Number Value %d ကို Extra အဖြစ် ထည့်မည်",
+    "code": "%1$s.putExtra(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_putBooleanExtra",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent သို့ Key %s နှင့် Boolean Value %b ကို Extra အဖြစ် ထည့်မည်",
+    "code": "%1$s.putExtra(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_putStringListExtra",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent သို့ Key %s နှင့် String List %m.listStr ကို Extra အဖြစ် ထည့်မည်",
+    "code": "%1$s.putStringArrayListExtra(%2$s, %3$s);",
+    "imports": "java.util.ArrayList"
+  },
+  {
+    "name": "Intent_removeExtra",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent မှ Extra Key %s ကို ဖယ်ရှားမည်",
+    "code": "%1$s.removeExtra(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_hasExtra",
+    "type": "b",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent တွင် Extra Key %s ပါဝင်မှု ရှိမရှိ စစ်မည်",
+    "code": "%1$s.hasExtra(%2$s)",
+    "imports": ""
+  },
+  {
+    "name": "Intent_getStringExtra",
+    "type": "s",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent မှ Extra Key %s ၏ String Value ကို ရယူမည်",
+    "code": "(%1$s.hasExtra(%2$s) && %1$s.getStringExtra(%2$s) != null ? %1$s.getStringExtra(%2$s) : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "Intent_getNumberExtra",
+    "type": "d",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent မှ Key %s ၏ Number Value ကို Default %d ဖြင့် ရယူမည်",
+    "code": "%1$s.getIntExtra(%2$s, %3$s)",
+    "imports": ""
+  },
+  {
+    "name": "Intent_getBooleanExtra",
+    "type": "b",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent မှ Key %s ၏ Boolean Value ကို Default %b ဖြင့် ရယူမည်",
+    "code": "%1$s.getBooleanExtra(%2$s, %3$s)",
+    "imports": ""
+  },
+  {
+    "name": "Intent Component - Data and State",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== INTENT DATA AND STATE ==="
+  },
+  {
+    "name": "Intent_getAction",
+    "type": "s",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Action ကို စာသားအဖြစ် ရယူမည်",
+    "code": "(%1$s.getAction() != null ? %1$s.getAction() : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "Intent_getDataString",
+    "type": "s",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Data URI ကို စာသားအဖြစ် ရယူမည်",
+    "code": "(%1$s.getDataString() != null ? %1$s.getDataString() : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "Intent_getPackage",
+    "type": "s",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ သတ်မှတ်ထားသော Package Name ကို ရယူမည်",
+    "code": "(%1$s.getPackage() != null ? %1$s.getPackage() : \"\")",
+    "imports": ""
+  },
+  {
+    "name": "Intent_addUriReadPermission",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent တွင် URI ဖတ်ရှုခွင့် Flag ထည့်မည်",
+    "code": "%1$s.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "Intent_addUriWritePermission",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent တွင် URI ရေးသားခွင့် Flag ထည့်မည်",
+    "code": "%1$s.addFlags(android.content.Intent.FLAG_GRANT_WRITE_URI_PERMISSION);",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "Intent Component - Launch and Safety",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== INTENT LAUNCH AND SAFETY ==="
+  },
+  {
+    "name": "Intent_startActivitySafe",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ကို အသုံးပြုနိုင်သော App ရှိမှ Activity ဖွင့်မည်",
+    "code": "if (%1$s.resolveActivity(getPackageManager()) != null) {\n\tstartActivity(%1$s);\n}",
+    "imports": ""
+  },
+  {
+    "name": "Intent_startChooserSafe",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ကို Chooser Title %s ဖြင့် လုံခြုံစွာ ဖွင့်မည်",
+    "code": "if (%1$s.resolveActivity(getPackageManager()) != null) {\n\tstartActivity(android.content.Intent.createChooser(%1$s, %2$s));\n}",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "Intent_startActivityNewTaskSafe",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ကို New Task အဖြစ် လုံခြုံစွာ ဖွင့်မည်",
+    "code": "{\n\t%1$s.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);\n\tif (%1$s.resolveActivity(getPackageManager()) != null) {\n\t\tgetApplicationContext().startActivity(%1$s);\n\t}\n}",
+    "imports": "android.content.Intent"
+  },
+  {
+    "name": "Intent_startActivityForResultSafe",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ကို Result Request Code %d ဖြင့် လုံခြုံစွာ ဖွင့်မည်",
+    "code": "if (%1$s.resolveActivity(getPackageManager()) != null) {\n\tstartActivityForResult(%1$s, %2$s);\n}",
+    "imports": ""
+  },
+  {
+    "name": "Intent_clearData",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Data URI ကို ရှင်းလင်းမည်",
+    "code": "%1$s.setData(null);",
+    "imports": ""
+  },
+  {
+    "name": "Intent_clearExtras",
+    "type": " ",
+    "color": "#7E57C2",
+    "palette": "",
+    "spec": "Intent %m.intent ၏ Extras အားလုံးကို ရှင်းလင်းမည်",
+    "code": "%1$s.replaceExtras((android.os.Bundle) null);",
+    "imports": "android.os.Bundle"
+  }
+]
