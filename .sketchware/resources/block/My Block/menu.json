@@ -1,0 +1,71 @@
+[
+  {
+    "data": [
+      "View",
+      "ViewGroup",
+      "LinearLayout",
+      "RelativeLayout",
+      "ScrollView",
+      "HorizontalScrollView",
+      "TextView",
+      "EditText",
+      "Button",
+      "RadioButton",
+      "CheckBox",
+      "Switch",
+      "ImageView",
+      "SeekBar",
+      "ListView",
+      "Spinner",
+      "WebView",
+      "MapView",
+      "ProgressBar"
+    ],
+    "name": "typeview",
+    "title": "Select typeview:"
+  },
+  {
+    "data": [
+      "ONLINE",
+      "OFFLINE",
+      "BUSY",
+      "IDLE"
+    ],
+    "name": "MKstatus",
+    "title": "Select Status"
+  },
+  {
+    "data": [
+      "Red : #F44336",
+      "Green : #4CAF50",
+      "Blue : #0000FF",
+      "Yellow : #FFEB3B",
+      "White : #FFFFFF",
+      "Black : #000000",
+      "Purple : #800080",
+      "Pink : #E91E63",
+      "Orange : #FFA500",
+      "Gold : #FFD700",
+      "IndianRed : #CD5C5C",
+      "DarkRed : #8B0000",
+      "DeepPink : #FF1493",
+      "Fuchsia : #FF00FF",
+      "BlueViolet : #8A2BE2",
+      "Indigo : #4B0082",
+      "Lime : #00FF00",
+      "Navy : #000080"
+    ],
+    "name": "MKcolor",
+    "title": "Select Color Name"
+  },
+  {
+    "data": [
+      "Pending",
+      "Downloading",
+      "Complete",
+      "Failed"
+    ],
+    "name": "MKdownload",
+    "title": "Select Download State"
+  }
+]
