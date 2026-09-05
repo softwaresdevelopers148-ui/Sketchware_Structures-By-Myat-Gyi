@@ -1,4 +1,4 @@
-# YouWare / AI Agent project-start prompt
+# AI Agent project-start prompt
 
 Before working on this Sketchware project, do the following:
 
