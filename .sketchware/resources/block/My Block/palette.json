@@ -1,0 +1,122 @@
+[
+  {
+    "color": "#FF6200EA",
+    "name": "Assest_Custom_Blocks"
+  },
+  {
+    "color": "#4CAF50",
+    "name": "Widgets_Custom"
+  },
+  {
+    "color": "#7E57C2",
+    "name": "Intent"
+  },
+  {
+    "color": "#00897B",
+    "name": "Shared_Prefrence"
+  },
+  {
+    "color": "#1565C0",
+    "name": "File_Picker"
+  },
+  {
+    "color": "#4CAF50",
+    "name": "Calendar"
+  },
+  {
+    "color": "#FF9800",
+    "name": "Timer"
+  },
+  {
+    "color": "#9C27B0",
+    "name": "Dialog"
+  },
+  {
+    "color": "#4CAF50",
+    "name": "Univeral_Dialog_Blocks"
+  },
+  {
+    "color": "#FF5722",
+    "name": "Media_Player"
+  },
+  {
+    "color": "#FFC107",
+    "name": "Sound_Pool"
+  },
+  {
+    "color": "#E91E63",
+    "name": "Object_Animator"
+  },
+  {
+    "color": "#2196F3",
+    "name": "Request_Network"
+  },
+  {
+    "color": "#009688",
+    "name": "Bluetooth_Connect"
+  },
+  {
+    "color": "#3F51B5",
+    "name": "Location_Manager"
+  },
+  {
+    "color": "#607D8B",
+    "name": "Progress_Dialog"
+  },
+  {
+    "color": "#00BCD4",
+    "name": "Date_Picker"
+  },
+  {
+    "color": "#03A9F4",
+    "name": "Time_Picker_Dialog"
+  },
+  {
+    "color": "#F44336",
+    "name": "Notification"
+  },
+  {
+    "color": "#4CAF50",
+    "name": "Supabase"
+  },
+  {
+    "color": "#673AB7",
+    "name": "Fragment_Adapter"
+  },
+  {
+    "color": "#FF6F00",
+    "name": "Firebase_DB"
+  },
+  {
+    "color": "#FFA000",
+    "name": "Firebase_Storage"
+  },
+  {
+    "color": "#1976D2",
+    "name": "Firebase_Auth"
+  },
+  {
+    "color": "#388E3C",
+    "name": "Firebase_Phone_Auth"
+  },
+  {
+    "color": "#00897B",
+    "name": "Firebase_Cloud_Message"
+  },
+  {
+    "color": "#3949AB",
+    "name": "Firebase_Google_Login"
+  },
+  {
+    "color": "#795548",
+    "name": "Async_Task"
+  },
+  {
+    "color": "#FF00A877",
+    "name": "Supabase_Original"
+  },
+  {
+    "color": "#9C27B0",
+    "name": "More"
+  }
+]
