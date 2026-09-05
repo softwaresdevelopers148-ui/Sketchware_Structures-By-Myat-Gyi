@@ -1,0 +1,377 @@
+[
+  {
+    "name": "Notification_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== NOTIFICATION • အခြေခံ Content သတ်မှတ်ခြင်း ==="
+  },
+  {
+    "name": "Notification_Set_Title",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.notification ၏ Title ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setContentTitle(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Text",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.notification ၏ Content Text ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setContentText(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Sub_Text",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.notification ၏ Sub Text ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setSubText(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Small_Icon",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.notification ၏ Small Icon Resource ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setSmallIcon(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Channel_Id",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.notification ၏ Channel ID ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setChannelId(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Auto_Cancel",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.notification ကို နှိပ်ပြီးနောက် အလိုအလျောက် ပျောက်ရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setAutoCancel(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Ongoing",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.notification ကို Ongoing အဖြစ် %b သတ်မှတ်မည်",
+    "code": "%1$s.setOngoing(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Post_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== NOTIFICATION • Post နှင့် Cancel ==="
+  },
+  {
+    "name": "Notification_Notify",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.notification ကို ID %d ဖြင့် ပြသမည်",
+    "code": "%1$s.notify((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Cancel",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Notification ID %d ကို %m.notification ဖြင့် ပိတ်မည်",
+    "code": "%1$s.cancel((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Cancel_All",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.notification ၏ Notification အားလုံးကို ပိတ်မည်",
+    "code": "%1$s.cancelAll();",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Priority",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.notification ၏ Priority ကို %d သတ်မှတ်မည်",
+    "code": "%1$s.setPriority((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_When",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.notification ၏ Timestamp ကို %d milliseconds သတ်မှတ်မည်",
+    "code": "%1$s.setWhen((long) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Show_When",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.notification တွင် Timestamp ပြရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setShowWhen(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Channel_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== NOTIFICATION • Channel စီမံခြင်း ==="
+  },
+  {
+    "name": "Notification_Create_Channel",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.notification တွင် Channel ID %s၊ Name %s နှင့် Description %s ကို Importance %d ဖြင့် ဖန်တီးမည်",
+    "code": "%1$s.createChannel(%2$s, %3$s, %4$s, (int) %5$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Create_Default_Channel",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.notification တွင် Default Channel ID %s ကို ဖန်တီးမည်",
+    "code": "%1$s.createChannel(%2$s, %3$s, %4$s, android.app.NotificationManager.IMPORTANCE_DEFAULT);",
+    "imports": "android.app.NotificationManager"
+  },
+  {
+    "name": "Notification_Create_High_Channel",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.notification တွင် High Importance Channel ID %s ကို ဖန်တီးမည်",
+    "code": "%1$s.createChannel(%2$s, %3$s, %4$s, android.app.NotificationManager.IMPORTANCE_HIGH);",
+    "imports": "android.app.NotificationManager"
+  },
+  {
+    "name": "Notification_Create_Low_Channel",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.notification တွင် Low Importance Channel ID %s ကို ဖန်တီးမည်",
+    "code": "%1$s.createChannel(%2$s, %3$s, %4$s, android.app.NotificationManager.IMPORTANCE_LOW);",
+    "imports": "android.app.NotificationManager"
+  },
+  {
+    "name": "Notification_Delete_Channel",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.notification မှ Channel ID %s ကို ဖျက်မည်",
+    "code": "%1$s.deleteChannel(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Progress_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== NOTIFICATION • Progress နှင့် Group ==="
+  },
+  {
+    "name": "Notification_Set_Progress",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.notification ၏ Progress ကို Max %d၊ Current %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setProgress((int) Math.max(1, %2$d), (int) Math.max(0, Math.min(%2$d, %3$d)), false);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Indeterminate_Progress",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.notification တွင် Indeterminate Progress ပြမည်",
+    "code": "%1$s.setProgress(0, 0, true);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Clear_Progress",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.notification ၏ Progress ကို ဖယ်မည်",
+    "code": "%1$s.setProgress(0, 0, false);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Group",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.notification ကို Group Key %s ထဲ ထည့်မည်",
+    "code": "%1$s.setGroup(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Group_Summary",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.notification ကို Group Summary အဖြစ် %b သတ်မှတ်မည်",
+    "code": "%1$s.setGroupSummary(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Only_Alert_Once",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.notification ကို တစ်ကြိမ်သာ Alert ပြရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setOnlyAlertOnce(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== NOTIFICATION • Safe Permission နှင့် Content ==="
+  },
+  {
+    "name": "Notification_Post_With_Channel",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Channel %s ရှိပါက %m.notification ကို ID %d ဖြင့် ပြသမည်",
+    "code": "if (%2$s != null && %1$s != null && !%1$s.toString().trim().isEmpty()) { %2$s.setChannelId(%1$s); %2$s.notify((int) %3$d); }",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Title_If_Not_Empty",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Title %s မလွတ်လပ်လျှင် %m.notification တွင် သတ်မှတ်မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.setContentTitle(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Text_If_Not_Empty",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Text %s မလွတ်လပ်လျှင် %m.notification တွင် သတ်မှတ်မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.setContentText(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Progress_Safely",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.notification ၏ Progress ကို Max %d၊ Current %d ဖြင့် Safe သတ်မှတ်မည်",
+    "code": "%1$s.setProgress((int) Math.max(1, %2$d), (int) Math.max(0, Math.min(%2$d, %3$d)), false);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Notify_If_Valid_Id",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Notification ID %d မှန်ကန်လျှင် %m.notification ကို ပြသမည်",
+    "code": "if ((int) %2$d >= 0) { %1$s.notify((int) %2$d); }",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== NOTIFICATION • Professional Workflow ==="
+  },
+  {
+    "name": "Notification_Create_Channel_If_Required",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Channel ID %s မလွတ်လပ်လျှင် %m.notification တွင် Channel ဖန်တီးမည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.createChannel(%2$s, %3$s, %4$s, (int) %5$d); }",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Update_Progress",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.notification ကို ID %d ဖြင့် Max %d၊ Current %d အဖြစ် Update လုပ်မည်",
+    "code": "%1$s.setProgress((int) Math.max(1, %3$d), (int) Math.max(0, Math.min(%3$d, %4$d)), false); %1$s.notify((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Finish_Progress",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.notification ၏ Progress ကို ပြီးဆုံးအဖြစ် ပြပြီး ID %d ဖြင့် Update လုပ်မည်",
+    "code": "%1$s.setProgress(100, 100, false); %1$s.setContentText(%3$s); %1$s.notify((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Big_Text",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.notification ၏ Big Text ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setBigTextStyle(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Content_Intent",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.notification ကို နှိပ်လျှင် PendingIntent %s ကို ဖွင့်မည်",
+    "code": "%1$s.setContentIntent(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Visibility",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.notification ၏ Visibility ကို %d သတ်မှတ်မည်",
+    "code": "%1$s.setVisibility((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Set_Silent",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.notification ကို အသံမထွက်စေရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setSilent(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "Notification_Stop_And_Cancel",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "လုပ်ငန်းပြီးဆုံးသောအခါ %m.notification ကို ID %d ဖြင့် ပိတ်မည်",
+    "code": "%1$s.cancel((int) %2$d);",
+    "imports": ""
+  }
+]

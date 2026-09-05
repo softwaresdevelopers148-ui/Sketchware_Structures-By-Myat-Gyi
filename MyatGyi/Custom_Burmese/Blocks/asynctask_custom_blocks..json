@@ -1,0 +1,405 @@
+[
+  {
+    "name": "AsyncTask_Basic_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== ASYNC TASK • အခြေခံ Execute နှင့် Status ==="
+  },
+  {
+    "name": "AsyncTask_Execute",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.asynctask ကို Execute လုပ်မည်",
+    "code": "%1$s.execute();",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Execute_With_Input",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.asynctask ကို Input %s ဖြင့် Execute လုပ်မည်",
+    "code": "%1$s.execute(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Cancel",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.asynctask ကို Cancel လုပ်မည်",
+    "code": "%1$s.cancel(true);",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Is_Cancelled",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.asynctask ကို Cancel လုပ်ထားသလား စစ်မည်",
+    "code": "%1$s.isCancelled()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Is_Finished",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.asynctask ပြီးဆုံးပြီလား စစ်မည်",
+    "code": "%1$s.getStatus() == android.os.AsyncTask.Status.FINISHED",
+    "imports": "android.os.AsyncTask",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Is_Running",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.asynctask အလုပ်လုပ်နေသလား စစ်မည်",
+    "code": "%1$s.getStatus() == android.os.AsyncTask.Status.RUNNING",
+    "imports": "android.os.AsyncTask",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_PreExecute_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== ASYNC TASK • onPreExecute Event ==="
+  },
+  {
+    "name": "AsyncTask_Pre_Show_Loading",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onPreExecute တွင် Loading State %s ကို ပြမည်",
+    "code": "%1$s = true;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Pre_Reset_Progress",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onPreExecute တွင် Progress Variable %s ကို သုညထားမည်",
+    "code": "%1$s = 0;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Pre_Clear_Result",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onPreExecute တွင် Result Variable %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Pre_Action",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onPreExecute တွင် Action Code လုပ်မည်",
+    "code": "%1$s;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Background_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== ASYNC TASK • doInBackground Event ==="
+  },
+  {
+    "name": "AsyncTask_Background_Is_Cancelled",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "doInBackground အတွင်း %m.asynctask ကို Cancel လုပ်ထားသလား စစ်မည်",
+    "code": "%1$s.isCancelled()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Background_Return_Result",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "doInBackground Result %s ကို Return ပြန်မည်",
+    "code": "return %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Background_Safe_Input",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Background Input %s သည် မလွတ်ဘဲ ရှိသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Background_Cancel_If_Requested",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Cancel ဖြစ်လျှင် Background Loop ကို ရပ်မည်",
+    "code": "if (%1$s.isCancelled()) { return %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Background_Sleep_Safely",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Background တွင် %d milliseconds ခဏစောင့်မည်",
+    "code": "try { Thread.sleep(Math.max(0L, (long) %1$d)); } catch (InterruptedException _e) { Thread.currentThread().interrupt(); }",
+    "imports": "java.lang.Thread"
+  },
+  {
+    "name": "AsyncTask_Background_Progress",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "doInBackground မှ Progress %d ကို Publish လုပ်မည်",
+    "code": "%1$s.publishProgress(%2$d);",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Progress_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== ASYNC TASK • onProgressUpdate Event ==="
+  },
+  {
+    "name": "AsyncTask_Progress_Set_Value",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onProgressUpdate Progress %d ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "%2$s = Math.max(0, Math.min(100, (int) %1$d));",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Progress_To_Text",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Progress %d ကို Text %s Format ဖြင့် ပြမည်",
+    "code": "%2$s = String.valueOf(Math.max(0, Math.min(100, (int) %1$d))) + \"%\";",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Progress_Is_Valid",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Progress %d သည် 0 မှ 100 အတွင်း ရှိသလား စစ်မည်",
+    "code": "((int) %1$d >= 0 && (int) %1$d <= 100)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Progress_Update_Action",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onProgressUpdate Progress %d ရလျှင် Action Code လုပ်မည်",
+    "code": "%2$s;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_PostExecute_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== ASYNC TASK • onPostExecute Event ==="
+  },
+  {
+    "name": "AsyncTask_Post_Hide_Loading",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "onPostExecute တွင် Loading State %s ကို ပိတ်မည်",
+    "code": "%1$s = false;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Post_Save_Result",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "onPostExecute Result %s ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "%2$s = %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Post_Result_Is_Valid",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Post Result %s သည် မလွတ်ဘဲ ရှိသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Post_Success_Action",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "onPostExecute Success ဖြစ်လျှင် Action Code လုပ်မည်",
+    "code": "%1$s;",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Post_Cancel_Action",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Task Cancel ဖြစ်လျှင် Cancel Action Code လုပ်မည်",
+    "code": "if (%1$s.isCancelled()) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Validation_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== ASYNC TASK • Result နှင့် Error Handling ==="
+  },
+  {
+    "name": "AsyncTask_Is_Empty_Result",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Result %s သည် Empty ဖြစ်သလား စစ်မည်",
+    "code": "%1$s == null || %1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Error_Summary",
+    "type": "s",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Async Error %s ကို Safe Summary အဖြစ် ပြောင်းမည်",
+    "code": "(%1$s == null || %1$s.toString().trim().isEmpty()) ? \"Background task failed\" : String.valueOf(%1$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "AsyncTask_Clamp_Progress",
+    "type": "d",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Progress %d ကို 0 မှ 100 အတွင်း ကန့်သတ်မည်",
+    "code": "Math.max(0, Math.min(100, (int) %1$d))",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "AsyncTask_Clamp_Delay",
+    "type": "d",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Delay %d milliseconds ကို အနုတ်မဖြစ်အောင် ပြင်မည်",
+    "code": "Math.max(0L, (long) %1$d)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "AsyncTask_Action_If_Complete",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.asynctask ပြီးဆုံးလျှင် Action Code လုပ်မည်",
+    "code": "if (%1$s.getStatus() == android.os.AsyncTask.Status.FINISHED) { %2$s; }",
+    "imports": "android.os.AsyncTask"
+  },
+  {
+    "name": "AsyncTask_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== ASYNC TASK • Professional Lifecycle နှင့် Thread Safety ==="
+  },
+  {
+    "name": "AsyncTask_Execute_If_Not_Running",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.asynctask အလုပ်မလုပ်သေးလျှင် Execute လုပ်မည်",
+    "code": "if (%1$s.getStatus() == android.os.AsyncTask.Status.PENDING) { %1$s.execute(); }",
+    "imports": "android.os.AsyncTask"
+  },
+  {
+    "name": "AsyncTask_Cancel_If_Running",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.asynctask အလုပ်လုပ်နေမှသာ Cancel လုပ်မည်",
+    "code": "if (%1$s.getStatus() == android.os.AsyncTask.Status.RUNNING) { %1$s.cancel(true); }",
+    "imports": "android.os.AsyncTask"
+  },
+  {
+    "name": "AsyncTask_Background_Checkpoint",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Loop တစ်ကြိမ်စီတွင် %m.asynctask Cancel စစ်ပြီး မဖြစ်လျှင် ဆက်လုပ်မည်",
+    "code": "if (!%1$s.isCancelled()) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Prevent_Duplicate",
+    "type": "b",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Task %m.asynctask ကို တစ်ကြိမ်သာ Execute လုပ်ရန် စစ်မည်",
+    "code": "%1$s.getStatus() == android.os.AsyncTask.Status.PENDING",
+    "imports": "android.os.AsyncTask",
+    "typeName": "boolean"
+  },
+  {
+    "name": "AsyncTask_Clear_Sensitive_Input",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Sensitive Input Variable %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Run_UI_Action_Note",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "UI Action ကို onPostExecute/onProgressUpdate တွင်သာ လုပ်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Update Android views only from onPreExecute, onProgressUpdate, or onPostExecute.",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Deprecation_Note",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "AsyncTask သည် API 30 မှ Deprecated ဖြစ်ကြောင်း မှတ်ချက်ထားမည်",
+    "code": "// AsyncTask is deprecated on API 30+. Prefer Executor, java.util.concurrent, or Kotlin coroutines for new code.",
+    "imports": ""
+  },
+  {
+    "name": "AsyncTask_Release_Cancel_Note",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Screen ပိတ်ချိန်တွင် Task Cancel/Lifecycle စစ်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Cancel or detach work when the owner is destroyed; avoid updating a destroyed Activity.",
+    "imports": ""
+  }
+]

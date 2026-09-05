@@ -1,0 +1,363 @@
+[
+  {
+    "name": "TimePickerDialog_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIME PICKER DIALOG • အခြေခံ Show နှင့် Time သတ်မှတ်ခြင်း ==="
+  },
+  {
+    "name": "TimePickerDialog_Show",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timepickerdialog ကို ပြသမည်",
+    "code": "%1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Dismiss",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timepickerdialog ကို ပိတ်မည်",
+    "code": "%1$s.dismiss();",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Is_Showing",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timepickerdialog ပြသနေသလား စစ်မည်",
+    "code": "%1$s.isShowing()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "TimePickerDialog_Update_Time",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timepickerdialog ၏ Time ကို Hour %d၊ Minute %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.updateTime((int) Math.max(0, Math.min(23, %2$d)), (int) Math.max(0, Math.min(59, %3$d)));",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Update_Time_Safely",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Valid Hour %d၊ Minute %d ကို %m.timepickerdialog တွင် သတ်မှတ်မည်",
+    "code": "if (%2$d >= 0 && %2$d <= 23 && %3$d >= 0 && %3$d <= 59) { %1$s.updateTime((int) %2$d, (int) %3$d); }",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Set_Title",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timepickerdialog ၏ Title ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setTitle(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Set_Cancelable",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timepickerdialog ကို Back နှိပ်လျှင် ပိတ်နိုင်ရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setCancelable(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Set_Outside_Cancel",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timepickerdialog ကို အပြင်ဘက်နှိပ်လျှင် ပိတ်နိုင်ရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setCanceledOnTouchOutside(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Values_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIME PICKER DIALOG • Hour/Minute နှင့် Conversion ==="
+  },
+  {
+    "name": "TimePickerDialog_Get_Total_Minutes",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Hour %d နှင့် Minute %d ကို တစ်နေ့တာ Total Minutes အဖြစ် ပြောင်းမည်",
+    "code": "Math.max(0, Math.min(1439, ((int) %1$d * 60) + (int) %2$d))",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Get_Total_Seconds",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Hour %d၊ Minute %d၊ Second %d ကို တစ်နေ့တာ Total Seconds အဖြစ် ပြောင်းမည်",
+    "code": "Math.max(0, Math.min(86399, ((int) %1$d * 3600) + ((int) %2$d * 60) + (int) %3$d))",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Get_Hour_From_Minutes",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Total Minutes %d မှ Hour ကို ရယူမည်",
+    "code": "Math.floorMod((int) %1$d, 1440) / 60",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Get_Minute_From_Minutes",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Total Minutes %d မှ Minute ကို ရယူမည်",
+    "code": "Math.floorMod((int) %1$d, 60)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Format_24_Hour",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Hour %d နှင့် Minute %d ကို HH:mm Format ဖြင့် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d\", Math.max(0, Math.min(23, (int) %1$d)), Math.max(0, Math.min(59, (int) %2$d)))",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "TimePickerDialog_Format_12_Hour",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Hour %d နှင့် Minute %d ကို hh:mm a Format ဖြင့် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d %s\", (((int) %1$d % 12) == 0 ? 12 : ((int) %1$d % 12)), Math.max(0, Math.min(59, (int) %2$d)), ((int) %1$d < 12 ? \"AM\" : \"PM\"))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "TimePickerDialog_Is_Valid_Time",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Hour %d နှင့် Minute %d သည် မှန်ကန်သော Time ဟုတ်မဟုတ် စစ်မည်",
+    "code": "((int) %1$d >= 0 && (int) %1$d <= 23 && (int) %2$d >= 0 && (int) %2$d <= 59)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "TimePickerDialog_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIME PICKER DIALOG • Safe Control ==="
+  },
+  {
+    "name": "TimePickerDialog_Show_If_Hidden",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.timepickerdialog မပြသသေးလျှင် ပြသမည်",
+    "code": "if (!%1$s.isShowing()) { %1$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Dismiss_If_Showing",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.timepickerdialog ပြသနေမှသာ ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Set_24_Hour_Safely",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Hour %d နှင့် Minute %d မှန်ကန်လျှင် %m.timepickerdialog ကို ပြင်ဆင်မည်",
+    "code": "if ((int) %2$d >= 0 && (int) %2$d <= 23 && (int) %3$d >= 0 && (int) %3$d <= 59) { %1$s.updateTime((int) %2$d, (int) %3$d); }",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Set_Title_If_Visible",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.timepickerdialog ပြသနေပါက Title ကို %s ပြောင်းမည်",
+    "code": "if (%1$s.isShowing()) { %1$s.setTitle(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Cancel_And_Dismiss",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.timepickerdialog ကို Cancelable ပြုလုပ်ပြီး ပိတ်မည်",
+    "code": "%1$s.setCancelable(true); if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Compare_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIME PICKER DIALOG • Time Compare နှင့် Duration ==="
+  },
+  {
+    "name": "TimePickerDialog_Is_Before",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Time %d သည် Time %d ထက် အရင်ဖြစ်သလား စစ်မည်",
+    "code": "(int) %1$d < (int) %2$d",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "TimePickerDialog_Is_After",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Time %d သည် Time %d ထက် နောက်ဖြစ်သလား စစ်မည်",
+    "code": "(int) %1$d > (int) %2$d",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "TimePickerDialog_Duration_Minutes",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Start Total Minutes %d နှင့် End Total Minutes %d ကြား ကြာချိန်ကို တွက်မည်",
+    "code": "Math.floorMod((int) %2$d - (int) %1$d, 1440)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Is_In_Range",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Time %d သည် Start %d နှင့် End %d ကြားတွင် ရှိသလား စစ်မည်",
+    "code": "((int) %2$d <= (int) %3$d ? ((int) %1$d >= (int) %2$d && (int) %1$d <= (int) %3$d) : ((int) %1$d >= (int) %2$d || (int) %1$d <= (int) %3$d))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "TimePickerDialog_Add_Minutes",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Total Minutes %d သို့ %d Minutes ပေါင်းပြီး တစ်နေ့အတွင်း ပြန်ညှိမည်",
+    "code": "Math.floorMod((int) %1$d + (int) %2$d, 1440)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Round_To_Interval",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Total Minutes %d ကို %d Minutes interval သို့ Round လုပ်မည်",
+    "code": "(Math.floorMod((int) %1$d, 1440) / Math.max(1, (int) %2$d)) * Math.max(1, (int) %2$d)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIME PICKER DIALOG • Professional onTimeSet Workflow ==="
+  },
+  {
+    "name": "TimePickerDialog_OnTimeSet_Format_24",
+    "type": "s",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "onTimeSet ၏ Hour %d နှင့် Minute %d ကို HH:mm အဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d\", Math.max(0, Math.min(23, (int) %1$d)), Math.max(0, Math.min(59, (int) %2$d)))",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "TimePickerDialog_OnTimeSet_Format_12",
+    "type": "s",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "onTimeSet ၏ Hour %d နှင့် Minute %d ကို 12-hour AM/PM အဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d %s\", (((int) %1$d % 12) == 0 ? 12 : ((int) %1$d % 12)), Math.max(0, Math.min(59, (int) %2$d)), ((int) %1$d < 12 ? \"AM\" : \"PM\"))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "TimePickerDialog_OnTimeSet_To_Epoch",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "onTimeSet ၏ Hour %d နှင့် Minute %d ကို ယနေ့အတွက် Epoch milliseconds အဖြစ် ပြောင်းမည်",
+    "code": "java.util.Calendar _tp_c = java.util.Calendar.getInstance(); _tp_c.set(java.util.Calendar.HOUR_OF_DAY, Math.max(0, Math.min(23, (int) %1$d))); _tp_c.set(java.util.Calendar.MINUTE, Math.max(0, Math.min(59, (int) %2$d))); _tp_c.set(java.util.Calendar.SECOND, 0); _tp_c.set(java.util.Calendar.MILLISECOND, 0); _tp_c.getTimeInMillis()",
+    "imports": "java.util.Calendar",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Current_Hour",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "လက်ရှိ Local Hour ကို ရယူမည်",
+    "code": "java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)",
+    "imports": "java.util.Calendar",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Current_Minute",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "လက်ရှိ Local Minute ကို ရယူမည်",
+    "code": "java.util.Calendar.getInstance().get(java.util.Calendar.MINUTE)",
+    "imports": "java.util.Calendar",
+    "typeName": "double"
+  },
+  {
+    "name": "TimePickerDialog_Is_Now_In_Range",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "လက်ရှိ Time သည် Start %d နှင့် End %d ကြားတွင် ရှိသလား စစ်မည်",
+    "code": "((int) %1$d <= (int) %2$d ? (java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY) * 60 + java.util.Calendar.getInstance().get(java.util.Calendar.MINUTE) >= (int) %1$d && java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY) * 60 + java.util.Calendar.getInstance().get(java.util.Calendar.MINUTE) <= (int) %2$d) : (java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY) * 60 + java.util.Calendar.getInstance().get(java.util.Calendar.MINUTE) >= (int) %1$d || java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY) * 60 + java.util.Calendar.getInstance().get(java.util.Calendar.MINUTE) <= (int) %2$d))",
+    "imports": "java.util.Calendar",
+    "typeName": "boolean"
+  },
+  {
+    "name": "TimePickerDialog_Dismiss_After_Set",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.timepickerdialog ကို Time ရွေးပြီးနောက် လုံခြုံစွာ ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "TimePickerDialog_Lifecycle_Dismiss",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Screen Lifecycle ပြောင်းသောအခါ %m.timepickerdialog ကို ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  }
+]

@@ -1,0 +1,403 @@
+[
+  {
+    "name": "PhoneAuth_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE PHONE AUTH • အခြေခံ Verification Flow ==="
+  },
+  {
+    "name": "PhoneAuth_Send_Code",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.phoneauth သို့ Phone %s အတွက် Verification Code ပို့မည်",
+    "code": "%1$s.sendVerificationCode(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Send_Code_With_Timeout",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.phoneauth သို့ Phone %s အတွက် %d Seconds Timeout ဖြင့် Code ပို့မည်",
+    "code": "%1$s.sendVerificationCode(%2$s, (long) Math.max(0, %3$d));",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Verify_Code",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.phoneauth တွင် Verification ID %s နှင့် Code %s ဖြင့် Verify လုပ်မည်",
+    "code": "%1$s.verifyCode(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Sign_In_With_Code",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.phoneauth တွင် Verification ID %s နှင့် Code %s ဖြင့် Sign in ဝင်မည်",
+    "code": "%1$s.signInWithPhoneAuth(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Get_Verification_ID",
+    "type": "s",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Verification ID %s ကို သိမ်းမည်",
+    "code": "%1$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "PhoneAuth_Is_Verification_Active",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Verification Process ဖွင့်ထားသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Reset_State",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Phone Auth State %s နှင့် Verification ID %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\"; %2$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Validation_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE PHONE AUTH • Input Validation ==="
+  },
+  {
+    "name": "PhoneAuth_Is_Valid_Phone",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Phone Number %s သည် E.164 Format မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"^\\\\+[1-9]\\\\d{7,14}$\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Is_Valid_Code",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "SMS Code %s သည် 6 Digit မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"^\\\\d{6}$\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Is_Not_Empty",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Phone Auth Input %s သည် မလွတ်ဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Normalize_Phone",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Phone Number %s ၏ ရှေ့/နောက် Space ကို ဖယ်မည်",
+    "code": "%1$s == null ? \"\" : %1$s.toString().trim().replace(\" \", \"\")",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "PhoneAuth_Normalize_Code",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "SMS Code %s ၏ Space ကို ဖယ်မည်",
+    "code": "%1$s == null ? \"\" : %1$s.toString().trim().replace(\" \", \"\")",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "PhoneAuth_Safe_Send_Code",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Phone %s မှန်ကန်လျှင် %m.phoneauth သို့ Code ပို့မည်",
+    "code": "if (%2$s != null && %2$s.matches(\"^\\\\+[1-9]\\\\d{7,14}$\")) { %1$s.sendVerificationCode(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Safe_Verify_Code",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Verification ID %s နှင့် Code %s မှန်ကန်လျှင် %m.phoneauth တွင် Verify လုပ်မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty() && %3$s != null && %3$s.matches(\"^\\\\d{6}$\")) { %1$s.verifyCode(%2$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_CodeSent_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE PHONE AUTH • onCodeSent Event ==="
+  },
+  {
+    "name": "PhoneAuth_OnCodeSent_Save_ID",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "onCodeSent Event မှ Verification ID %s ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "%2$s = %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_OnCodeSent_Set_Resend_State",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "onCodeSent Event ဖြစ်လျှင် Resend State ကို %b သတ်မှတ်မည်",
+    "code": "%1$b;",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_OnCodeSent_Start_Cooldown",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "onCodeSent Event ဖြစ်လျှင် Resend Cooldown %d Seconds စတင်မည်",
+    "code": "long _pa_cooldown_end = System.currentTimeMillis() + Math.max(0L, (long) %1$d) * 1000L;",
+    "imports": "java.lang.System"
+  },
+  {
+    "name": "PhoneAuth_Can_Resend",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Cooldown End %d milliseconds ကျော်လွန်ပြီလား စစ်မည်",
+    "code": "System.currentTimeMillis() >= (long) %1$d",
+    "imports": "java.lang.System",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Format_Resend_Message",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "ကျန်ရှိသော %d Seconds ကို Resend စာသားအဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"Resend in %ds\", Math.max(0, (int) %1$d))",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "PhoneAuth_Complete_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE PHONE AUTH • onVerificationComplete Event ==="
+  },
+  {
+    "name": "PhoneAuth_OnVerificationComplete_Success",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onVerificationComplete Event အောင်မြင်လျှင် %m.phoneauth ဖြင့် Sign in ဝင်မည်",
+    "code": "%1$s.signInWithPhoneAuth(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Clear_After_Success",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Verification အောင်မြင်ပြီးနောက် Phone %s၊ Code %s နှင့် ID %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\"; %2$s = \"\"; %3$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Is_Auto_Verification",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Verification Complete State %s သည် Auto Verification ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && String.valueOf(%1$s).toLowerCase().contains(\"auto\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Event_Success",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Phone Auth Event Success %b ကို စစ်မည်",
+    "code": "%1$b",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Event_Error_Summary",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Phone Auth Error %s ကို Safe Summary အဖြစ် ပြောင်းမည်",
+    "code": "(%1$s == null || %1$s.toString().trim().isEmpty()) ? \"Phone verification failed\" : String.valueOf(%1$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "PhoneAuth_Failed_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE PHONE AUTH • onVerificationFailed Event ==="
+  },
+  {
+    "name": "PhoneAuth_Error_Is_Invalid_Number",
+    "type": "b",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "Auth Error %s သည် Phone Number မမှန်သော Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"invalid-phone\") || String.valueOf(%1$s).toLowerCase().contains(\"invalid phone\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Error_Is_Invalid_Code",
+    "type": "b",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "Auth Error %s သည် Verification Code မမှန်သော Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"invalid-verification-code\") || String.valueOf(%1$s).toLowerCase().contains(\"invalid code\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Error_Is_Quota",
+    "type": "b",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "Auth Error %s သည် SMS Quota/Too Many Requests Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"quota\") || String.valueOf(%1$s).toLowerCase().contains(\"too-many\") || String.valueOf(%1$s).toLowerCase().contains(\"too many\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Error_Is_Network",
+    "type": "b",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "Auth Error %s သည် Network Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"network\") || String.valueOf(%1$s).toLowerCase().contains(\"timeout\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Error_Is_Captcha",
+    "type": "b",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "Auth Error %s သည် App Verification/reCAPTCHA Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"captcha\") || String.valueOf(%1$s).toLowerCase().contains(\"integrity\") || String.valueOf(%1$s).toLowerCase().contains(\"verification failed\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "PhoneAuth_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE PHONE AUTH • Professional Security နှင့် Lifecycle ==="
+  },
+  {
+    "name": "PhoneAuth_Start_If_Not_Active",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Verification ID %s မရှိသေးလျှင် Phone %s အတွက် %m.phoneauth သို့ Code ပို့မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty() && (%3$s == null || %3$s.toString().trim().isEmpty())) { %1$s.sendVerificationCode(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Verify_If_Ready",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Verification ID %s နှင့် Code %s ရှိလျှင် %m.phoneauth တွင် Sign in ဝင်မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty() && %3$s != null && %3$s.matches(\"^\\\\d{6}$\")) { %1$s.signInWithPhoneAuth(%2$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Clear_Code_Only",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "SMS Code Variable %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Clear_Phone_And_ID",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Phone Variable %s နှင့် Verification ID %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\"; %2$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Set_Language",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.phoneauth ၏ Auth Language ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setLanguageCode(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Require_Authenticated",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.phoneauth တွင် User Login ဝင်ထားလျှင် Action Code ကို လုပ်မည်",
+    "code": "if (%1$s.isLoggedIn()) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Safe_Error_And_Reset",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Error %s ဖြစ်လျှင် State Variable %s ကို ရှင်းပြီး Safe Message ပြင်ဆင်မည်",
+    "code": "String _pa_error = (%1$s == null || %1$s.toString().trim().isEmpty()) ? \"Phone verification failed\" : String.valueOf(%1$s); %2$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "PhoneAuth_Resend_With_Cooldown",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Cooldown End %d ကျော်ပြီး Phone %s မှန်လျှင် %m.phoneauth သို့ Code ပြန်ပို့မည်",
+    "code": "if (System.currentTimeMillis() >= (long) %2$d && %3$s != null && %3$s.matches(\"^\\\\+[1-9]\\\\d{7,14}$\")) { %1$s.sendVerificationCode(%3$s); }",
+    "imports": "java.lang.System"
+  },
+  {
+    "name": "PhoneAuth_Provider_Note",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Phone Auth Provider ကို Firebase Console တွင် Enable လုပ်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Enable Phone provider, configure SMS region policy, and app verification in Firebase Console.",
+    "imports": ""
+  }
+]

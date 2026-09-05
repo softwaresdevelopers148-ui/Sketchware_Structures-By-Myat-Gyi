@@ -1,0 +1,388 @@
+[
+  {
+    "name": "BluetoothConnect_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== BLUETOOTH CONNECT • အခြေခံ Bluetooth စစ်ဆေးခြင်း ==="
+  },
+  {
+    "name": "BluetoothConnect_Is_Available",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.bluetoothconnect တွင် Bluetooth အသုံးပြုနိုင်သလား စစ်မည်",
+    "code": "%1$s.isBluetoothEnabled()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "BluetoothConnect_Is_Activated",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.bluetoothconnect တွင် Bluetooth ဖွင့်ထားသလား စစ်မည်",
+    "code": "%1$s.isBluetoothActivated()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "BluetoothConnect_Activate",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ၏ Bluetooth ကို ဖွင့်ရန် တောင်းဆိုမည်",
+    "code": "%1$s.activateBluetooth();",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Get_Random_UUID",
+    "type": "s",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Bluetooth အတွက် Random UUID တစ်ခု ရယူမည်",
+    "code": "%1$s.getRandomUUID()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "BluetoothConnect_Get_Paired_Devices",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ၏ Paired Device များကို %m.listmap ထဲသို့ ထည့်မည်",
+    "code": "%1$s.getPairedDevices(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Connection_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== BLUETOOTH CONNECT • Connection Setup ==="
+  },
+  {
+    "name": "BluetoothConnect_Ready_Default",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ကို Default UUID ဖြင့် Connection လက်ခံရန် ပြင်ဆင်မည်",
+    "code": "%1$s.readyConnection(_bluetoothConnect_bluetoothConnectionListener, %2$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Ready_UUID",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ကို UUID %s ဖြင့် Connection လက်ခံရန် ပြင်ဆင်မည်",
+    "code": "%1$s.readyConnection(_bluetoothConnect_bluetoothConnectionListener, %2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Start_Default",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ဖြင့် Device Address %s ကို Tag %s နှင့် ချိတ်ဆက်မည်",
+    "code": "%1$s.startConnection(_bluetoothConnect_bluetoothConnectionListener, %2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Start_UUID",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ဖြင့် UUID %s၊ Device Address %s နှင့် Tag %s ကို ချိတ်ဆက်မည်",
+    "code": "%1$s.startConnection(_bluetoothConnect_bluetoothConnectionListener, %2$s, %3$s, %4$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Stop",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ၏ Connection ကို Tag %s ဖြင့် ရပ်မည်",
+    "code": "%1$s.stopConnection(_bluetoothConnect_bluetoothConnectionListener, %2$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Send_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== BLUETOOTH CONNECT • Data ပို့ခြင်း ==="
+  },
+  {
+    "name": "BluetoothConnect_Send_Text",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.bluetoothconnect မှ Text %s ကို Tag %s ဖြင့် ပို့မည်",
+    "code": "%1$s.sendData(_bluetoothConnect_bluetoothConnectionListener, %2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Send_Text_Newline",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.bluetoothconnect မှ Text %s ကို Newline ဖြင့် Tag %s သို့ ပို့မည်",
+    "code": "%1$s.sendData(_bluetoothConnect_bluetoothConnectionListener, %2$s + \"\\n\", %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Send_Command",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.bluetoothconnect မှ Command %s နှင့် Value %s ကို `=` ဖြင့်ပေါင်းပြီး Tag %s သို့ ပို့မည်",
+    "code": "%1$s.sendData(_bluetoothConnect_bluetoothConnectionListener, %2$s + \"=\" + %3$s + \"\\n\", %4$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Send_If_Ready",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Text %s မလွတ်လပ်လျှင် %m.bluetoothconnect မှ Tag %s ဖြင့် ပို့မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.sendData(_bluetoothConnect_bluetoothConnectionListener, %2$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Data_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== BLUETOOTH CONNECT • Data Conversion နှင့် Parsing ==="
+  },
+  {
+    "name": "BluetoothConnect_Bytes_To_Text",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Received Data %s ကို UTF-8 Text အဖြစ် ပြောင်းမည်",
+    "code": "new String((byte[]) %1$s, \"UTF-8\")",
+    "imports": "java.nio.charset.StandardCharsets",
+    "typeName": "String"
+  },
+  {
+    "name": "BluetoothConnect_Text_Is_Not_Empty",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Received Text %s သည် လွတ်မနေဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "BluetoothConnect_Text_Trim",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Received Text %s ၏ အစနှင့်အဆုံးနေရာလွတ်များ ဖယ်မည်",
+    "code": "%1$s == null ? \"\" : %1$s.toString().trim()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "BluetoothConnect_Text_Contains",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Text %s ထဲတွင် %s ပါဝင်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.contains(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "BluetoothConnect_Get_Byte_Count",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Received Data %s ၏ Byte အရေအတွက်ကို ရယူမည်",
+    "code": "((byte[]) %1$s).length",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "BluetoothConnect_Text_Split_Lines",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Text %s ကို Newline ဖြင့် ခွဲပြီး List String ထဲထည့်မည်",
+    "code": "java.util.Arrays.asList(%1$s.toString().split(\\\"\\\\r?\\\\n\\\"))",
+    "imports": "java.util.Arrays",
+    "typeName": "String"
+  },
+  {
+    "name": "BluetoothConnect_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== BLUETOOTH CONNECT • Safe Connection Control ==="
+  },
+  {
+    "name": "BluetoothConnect_Activate_If_Needed",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.bluetoothconnect တွင် Bluetooth မဖွင့်ထားလျှင် ဖွင့်ရန်တောင်းဆိုမည်",
+    "code": "if (!%1$s.isBluetoothActivated()) { %1$s.activateBluetooth(); }",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Start_Default_Safely",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Bluetooth ရရှိနိုင်လျှင် Device Address %s ကို %m.bluetoothconnect ဖြင့် ချိတ်ဆက်မည်",
+    "code": "if (%2$s.isBluetoothEnabled() && %1$s != null && !%1$s.toString().trim().isEmpty()) { %2$s.startConnection(_bluetoothConnect_bluetoothConnectionListener, %1$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Start_UUID_Safely",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Bluetooth ရရှိပြီး UUID/Address မှန်လျှင် %m.bluetoothconnect ဖြင့် ချိတ်ဆက်မည်",
+    "code": "if (%3$s.isBluetoothEnabled() && %2$s != null && !%2$s.toString().trim().isEmpty() && %1$s != null && !%1$s.toString().trim().isEmpty()) { %3$s.startConnection(_bluetoothConnect_bluetoothConnectionListener, %1$s, %2$s, %4$s); }",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Send_Command_Safely",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Text Command %s မလွတ်လပ်လျှင် %m.bluetoothconnect မှ ပို့မည်",
+    "code": "if (%1$s != null && !%1$s.toString().trim().isEmpty()) { %2$s.sendData(_bluetoothConnect_bluetoothConnectionListener, %1$s + \"\\n\", %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Stop_Safely",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.bluetoothconnect ၏ Connection ကို လုံခြုံစွာ ရပ်မည်",
+    "code": "%1$s.stopConnection(_bluetoothConnect_bluetoothConnectionListener, %2$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== BLUETOOTH CONNECT • Professional Workflow ==="
+  },
+  {
+    "name": "BluetoothConnect_Is_Address_Format",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Bluetooth Address %s သည် အခြေခံ Format မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"(?i)[0-9a-f]{2}(:[0-9a-f]{2}){5}\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "BluetoothConnect_Is_UUID_Format",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "UUID %s သည် အခြေခံ Format မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"(?i)[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "BluetoothConnect_Prepare_Default_Connection",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Bluetooth ရရှိလျှင် %m.bluetoothconnect ကို Default UUID ဖြင့် Tag %s အတွက် ပြင်ဆင်မည်",
+    "code": "if (%1$s.isBluetoothActivated()) { %1$s.readyConnection(_bluetoothConnect_bluetoothConnectionListener, %2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Prepare_UUID_Connection",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Bluetooth ရရှိလျှင် UUID %s ဖြင့် %m.bluetoothconnect ကို Tag %s အတွက် ပြင်ဆင်မည်",
+    "code": "if (%2$s.isBluetoothActivated()) { %2$s.readyConnection(_bluetoothConnect_bluetoothConnectionListener, %1$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Send_JSON_Line",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "JSON Text %s ကို Newline ဖြင့် %m.bluetoothconnect မှ Tag %s သို့ ပို့မည်",
+    "code": "%2$s.sendData(_bluetoothConnect_bluetoothConnectionListener, %1$s + \"\\n\", %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Send_Heartbeat",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.bluetoothconnect မှ Heartbeat စာသားကို Tag %s ဖြင့် ပို့မည်",
+    "code": "%1$s.sendData(_bluetoothConnect_bluetoothConnectionListener, \"PING\\n\", %2$s);",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Received_Has_Terminator",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Received Text %s တွင် Message Terminator %s ပါဝင်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.contains(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "BluetoothConnect_Connection_Error_Text",
+    "type": "s",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Connection State %s နှင့် Error Message %s ကို ဖော်ပြရန် စာသားဖန်တီးမည်",
+    "code": "\"Bluetooth Error [\" + %1$s + \"]: \" + %2$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "BluetoothConnect_Event_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== BLUETOOTH CONNECT • Event Workflow ==="
+  },
+  {
+    "name": "BluetoothConnect_Reset_Device_List",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.listmap ထဲရှိ Device စာရင်းကို ရှင်းမည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Clear_Received_Text",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Received Text Variable %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "BluetoothConnect_Clear_Send_Text",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Send Text Variable %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\";",
+    "imports": ""
+  }
+]

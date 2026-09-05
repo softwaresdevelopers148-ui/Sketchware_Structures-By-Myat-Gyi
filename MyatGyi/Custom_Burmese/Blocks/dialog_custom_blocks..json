@@ -1,0 +1,235 @@
+[
+  {
+    "name": "Dialog_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DIALOG • အခြေခံ ပြင်ဆင်ခြင်း ==="
+  },
+  {
+    "name": "Dialog_Set_Title",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ၏ ခေါင်းစဉ်ကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setTitle(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Set_Message",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ၏ အကြောင်းအရာကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setMessage(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Show",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ကို ပြသမည်",
+    "code": "%1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Set_Title_And_Message",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog တွင် ခေါင်းစဉ် %s နှင့် အကြောင်းအရာ %s သတ်မှတ်မည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Buttons_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DIALOG • Button များ ထည့်ခြင်း ==="
+  },
+  {
+    "name": "Dialog_Set_Positive_Button",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ အတည်ပြုခလုတ်စာသားကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setPositiveButton(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Set_Negative_Button",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ ပယ်ဖျက်ခလုတ်စာသားကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setNegativeButton(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Set_Neutral_Button",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ အလယ်ခလုတ်စာသားကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setNeutralButton(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Set_Confirm_Cancel",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog တွင် အတည်ပြု %s နှင့် ပယ်ဖျက် %s ခလုတ် ထည့်မည်",
+    "code": "%1$s.setPositiveButton(%2$s); %1$s.setNegativeButton(%3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Set_All_Buttons",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog တွင် အတည်ပြု %s၊ ပယ်ဖျက် %s၊ အလယ် %s ခလုတ်များ ထည့်မည်",
+    "code": "%1$s.setPositiveButton(%2$s); %1$s.setNegativeButton(%3$s); %1$s.setNeutralButton(%4$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Presets_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DIALOG • အသင့်သုံး ပုံစံများ ==="
+  },
+  {
+    "name": "Dialog_Prepare_Info",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ကို Info Dialog အဖြစ် ခေါင်းစဉ် %s၊ စာသား %s ဖြင့် ပြင်ဆင်မည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setPositiveButton(\"OK\");",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Prepare_Confirm",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ကို Confirm Dialog အဖြစ် ခေါင်းစဉ် %s၊ စာသား %s၊ အတည်ပြု %s၊ ပယ်ဖျက် %s ဖြင့် ပြင်ဆင်မည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setPositiveButton(%4$s); %1$s.setNegativeButton(%5$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Prepare_Choice",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ကို Choice Dialog အဖြစ် ခေါင်းစဉ် %s၊ စာသား %s နှင့် ခလုတ် ၃ ခုဖြင့် ပြင်ဆင်မည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setPositiveButton(%4$s); %1$s.setNegativeButton(%5$s); %1$s.setNeutralButton(%6$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Prepare_And_Show",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ကို ခေါင်းစဉ် %s၊ စာသား %s ဖြင့် ပြင်ဆင်ပြီး ပြသမည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Confirm_And_Show",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ကို ခေါင်းစဉ် %s၊ စာသား %s၊ အတည်ပြု %s၊ ပယ်ဖျက် %s ဖြင့် ပြင်ဆင်ပြီး ပြသမည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setPositiveButton(%4$s); %1$s.setNegativeButton(%5$s); %1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DIALOG • Safe Validation ==="
+  },
+  {
+    "name": "Dialog_Show_If_Message_Not_Empty",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "စာသား %s မလွတ်လပ်လျှင် %m.dialog ကို ပြသမည်",
+    "code": "if (%1$s != null && !%1$s.toString().trim().isEmpty()) { %2$s.setMessage(%1$s); %2$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Show_Info_If_Message_Not_Empty",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "စာသား %s မလွတ်လပ်လျှင် ခေါင်းစဉ် %s ဖြင့် %m.dialog ကို ပြသမည်",
+    "code": "if (%1$s != null && !%1$s.toString().trim().isEmpty()) { %3$s.setTitle(%2$s); %3$s.setMessage(%1$s); %3$s.setPositiveButton(\"OK\"); %3$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Set_Confirm_And_Show_If_Valid",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.dialog တွင် ခေါင်းစဉ် %s နှင့် စာသား %s ရှိမှ %s၊ %s ခလုတ်များဖြင့် ပြသမည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %3$s.setTitle(%1$s); %3$s.setMessage(%2$s); %3$s.setPositiveButton(%4$s); %3$s.setNegativeButton(%5$s); %3$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DIALOG • Professional Workflow ==="
+  },
+  {
+    "name": "Dialog_Set_And_Show_All_Buttons",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.dialog ကို ခေါင်းစဉ် %s၊ စာသား %s၊ အတည်ပြု %s၊ ပယ်ဖျက် %s၊ အလယ် %s ဖြင့် ပြသမည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setPositiveButton(%4$s); %1$s.setNegativeButton(%5$s); %1$s.setNeutralButton(%6$s); %1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Show_Only_After_Setup",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.dialog ကို ပြသရန် အသင့်ဖြစ်ပြီးမှ ပြသမည်",
+    "code": "%1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Reset_Content",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.dialog ၏ ခေါင်းစဉ်နှင့် အကြောင်းအရာကို %s၊ %s အဖြစ် ပြန်သတ်မှတ်မည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Prepare_Three_Choice_And_Show",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.dialog ကို ခေါင်းစဉ် %s၊ စာသား %s နှင့် ရွေးချယ်စရာ %s၊ %s၊ %s ဖြင့် ပြသမည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setPositiveButton(%4$s); %1$s.setNegativeButton(%5$s); %1$s.setNeutralButton(%6$s); %1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "Dialog_Show_Error_If_Invalid",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "စာသား %s လွတ်လပ်လျှင် Error Dialog ပြမည်",
+    "code": "if (%1$s == null || %1$s.toString().trim().isEmpty()) { %2$s.setTitle(%3$s); %2$s.setMessage(%4$s); %2$s.setPositiveButton(\"OK\"); %2$s.show(); }",
+    "imports": ""
+  }
+]

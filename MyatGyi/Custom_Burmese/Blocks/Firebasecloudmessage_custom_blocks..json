@@ -1,0 +1,388 @@
+[
+  {
+    "name": "CloudMessage_Basic_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE CLOUD MESSAGE • အခြေခံ Registration နှင့် Token ==="
+  },
+  {
+    "name": "CloudMessage_Register",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.cloudmessage ကို FCM တွင် Register လုပ်မည်",
+    "code": "%1$s.registerDevice();",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Get_Token",
+    "type": "s",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.cloudmessage ၏ Registration Token ကို ရယူမည်",
+    "code": "%1$s.getToken()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "CloudMessage_Is_Token_Valid",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "FCM Token %s သည် မလွတ်ဘဲ မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Clear_Token",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "FCM Token Variable %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Is_Register_Success",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Register Success %b ဖြစ်သလား စစ်မည်",
+    "code": "%1$b",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Topic_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE CLOUD MESSAGE • Topic Subscribe နှင့် Unsubscribe ==="
+  },
+  {
+    "name": "CloudMessage_Subscribe_Topic",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.cloudmessage ဖြင့် Topic %s ကို Subscribe လုပ်မည်",
+    "code": "%1$s.subscribeToTopic(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Unsubscribe_Topic",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.cloudmessage ဖြင့် Topic %s ကို Unsubscribe လုပ်မည်",
+    "code": "%1$s.unsubscribeFromTopic(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Is_Valid_Topic",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Topic %s သည် မလွတ်ဘဲ မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"^[a-zA-Z0-9-_.~%]{1,900}$\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Safe_Subscribe",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Topic %s မှန်ကန်လျှင် %m.cloudmessage ဖြင့် Subscribe လုပ်မည်",
+    "code": "if (%2$s != null && %2$s.matches(\"^[a-zA-Z0-9-_.~%]{1,900}$\")) { %1$s.subscribeToTopic(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Safe_Unsubscribe",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Topic %s မှန်ကန်လျှင် %m.cloudmessage ဖြင့် Unsubscribe လုပ်မည်",
+    "code": "if (%2$s != null && %2$s.matches(\"^[a-zA-Z0-9-_.~%]{1,900}$\")) { %1$s.unsubscribeFromTopic(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Normalize_Topic",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Topic %s ၏ ရှေ့/နောက် Space နှင့် Slash ကို ဖယ်မည်",
+    "code": "%1$s == null ? \"\" : %1$s.toString().trim().replace(\"/\", \"\")",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "CloudMessage_Payload_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE CLOUD MESSAGE • Notification/Data Payload Helpers ==="
+  },
+  {
+    "name": "CloudMessage_Is_Valid_Title",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Notification Title %s သည် မလွတ်ဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Is_Valid_Body",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Notification Body %s သည် မလွတ်ဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Build_Data_Pair",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Data Key %s နှင့် Value %s ကို Map %s ထဲ ထည့်မည်",
+    "code": "if (%3$s != null && %1$s != null && !%1$s.toString().trim().isEmpty()) { %3$s.put(%1$s, %2$s == null ? \"\" : %2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Get_Data_Value",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Data Map %s မှ Key %s ၏ Value ကို ရယူမည်",
+    "code": "%1$s != null && %1$s.containsKey(%2$s) ? String.valueOf(%1$s.get(%2$s)) : \"\"",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "CloudMessage_Has_Data_Key",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Data Map %s တွင် Key %s ပါသလား စစ်မည်",
+    "code": "%1$s != null && %1$s.containsKey(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Is_Data_Payload",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Data Map %s သည် Empty မဟုတ်ဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Safe_Notification_Text",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Notification Text %s ကို Safe Text အဖြစ် ပြောင်းမည်",
+    "code": "%1$s == null ? \"\" : %1$s.toString().trim()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "CloudMessage_Event_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE CLOUD MESSAGE • onCompleteRegister Event ==="
+  },
+  {
+    "name": "CloudMessage_Event_Save_Token",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onCompleteRegister Event မှ Token %s ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "%2$s = %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Event_Is_Success",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onCompleteRegister Event Success %b ဖြစ်သလား စစ်မည်",
+    "code": "%1$b",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Event_Error_Is_Not_Empty",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onCompleteRegister Error %s ရှိသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Event_Error_Summary",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Cloud Message Error %s ကို Safe Summary အဖြစ် ပြောင်းမည်",
+    "code": "(%1$s == null || %1$s.toString().trim().isEmpty()) ? \"Cloud Message registration failed\" : String.valueOf(%1$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "CloudMessage_Event_Registration_Flow",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Register Success %b ဖြစ်ပြီး Token %s ရှိလျှင် Action Code လုပ်မည်",
+    "code": "if (%1$b && %2$s != null && !%2$s.toString().trim().isEmpty()) { %3$s; }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Event_Failure_Flow",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Register Success %b မဖြစ်လျှင် Error %s ဖြင့် Failure Code လုပ်မည်",
+    "code": "if (!%1$b) { String _cm_error = (%2$s == null || %2$s.toString().trim().isEmpty()) ? \"Registration failed\" : String.valueOf(%2$s); %3$s; }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Notification_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE CLOUD MESSAGE • Android Notification Safety ==="
+  },
+  {
+    "name": "CloudMessage_Is_Notification_Permission_Granted",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Notification Permission Granted %b ဖြစ်သလား စစ်မည်",
+    "code": "%1$b",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Is_Valid_Channel_ID",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Notification Channel ID %s သည် မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"^[a-zA-Z0-9._-]{1,100}$\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Is_Valid_Notification_ID",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Notification ID %d သည် မှန်ကန်သလား စစ်မည်",
+    "code": "((int) %1$d >= 0)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Notification_Permission_Note",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Android 13+ Notification Permission အတွက် မှတ်ချက်ထားမည်",
+    "code": "// Request android.permission.POST_NOTIFICATIONS on API 33+ before showing notifications.",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Channel_Note",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Android 8+ Notification Channel %s အသုံးပြုရန် မှတ်ချက်ထားမည်",
+    "code": "// Create and configure the notification channel before posting notifications: %1$s",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE CLOUD MESSAGE • Professional Token/Topic Control ==="
+  },
+  {
+    "name": "CloudMessage_Register_If_Token_Empty",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Token %s မရှိသေးလျှင် %m.cloudmessage ကို Register လုပ်မည်",
+    "code": "if (%2$s == null || %2$s.toString().trim().isEmpty()) { %1$s.registerDevice(); }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Subscribe_Once",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Topic %s များထဲမှ Topic %s မပါသေးလျှင် Subscribe လုပ်မည်",
+    "code": "if (%1$s != null && %2$s != null && !%1$s.contains(%2$s) && %2$s.matches(\"^[a-zA-Z0-9-_.~%]{1,900}$\")) { %1$s.add(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Exponential_Backoff",
+    "type": "d",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Retry Attempt %d အတွက် Backoff Milliseconds ကို တွက်မည်",
+    "code": "Math.min(300000L, (long) Math.pow(2, Math.max(0, Math.min(10, (int) %1$d))) * 1000L)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "CloudMessage_Is_Retryable_Error",
+    "type": "b",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Cloud Message Error %s သည် Retry လုပ်နိုင်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"network\") || String.valueOf(%1$s).toLowerCase().contains(\"timeout\") || String.valueOf(%1$s).toLowerCase().contains(\"unavailable\") || String.valueOf(%1$s).toLowerCase().contains(\"quota\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "CloudMessage_Clear_Sensitive_Data",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "FCM Token Variable %s နှင့် Payload Map %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\"; if (%2$s != null) { %2$s.clear(); }",
+    "imports": ""
+  },
+  {
+    "name": "CloudMessage_Safe_Token_For_Log",
+    "type": "s",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Token %s ကို Log အတွက် အပြည့်မဖော်ပြဘဲ Mask လုပ်မည်",
+    "code": "(%1$s == null || %1$s.length() < 8) ? \"[hidden]\" : %1$s.substring(0, 4) + \"…\" + %1$s.substring(%1$s.length() - 4)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "CloudMessage_Provider_Note",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "FCM Server Key/Service Account ကို Client ထဲ မထည့်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Never embed FCM server keys or service-account credentials in the Android client.",
+    "imports": ""
+  }
+]

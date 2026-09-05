@@ -1,0 +1,456 @@
+[
+  {
+    "name": "FirebaseDB_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE DB • အခြေခံ Read/Write ==="
+  },
+  {
+    "name": "FirebaseDB_Get_Data",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb မှ Tag %s ၏ Data ကို ဖတ်မည်",
+    "code": "%1$s.getData(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Set_Data",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Tag %s သို့ Data %s ကို သိမ်းမည်",
+    "code": "%1$s.setData(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Push_Data",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Tag %s အောက်သို့ Data %s ကို Push လုပ်မည်",
+    "code": "%1$s.pushData(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Delete_Data",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb မှ Tag %s ၏ Data ကို ဖျက်မည်",
+    "code": "%1$s.deleteData(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Update_Data",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Tag %s ၏ Child Data %s ကို Update လုပ်မည်",
+    "code": "%1$s.updateData(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Set_String",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Tag %s သို့ String %s ကို သိမ်းမည်",
+    "code": "%1$s.setData(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Set_Number",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Tag %s သို့ Number %d ကို သိမ်းမည်",
+    "code": "%1$s.setData(%2$s, %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Set_Map",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Tag %s သို့ Map %s ကို သိမ်းမည်",
+    "code": "%1$s.setData(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Data_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE DB • Snapshot နှင့် Map Data ==="
+  },
+  {
+    "name": "FirebaseDB_Get_Snapshot_Key",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Child Key %s ကို ရယူမည်",
+    "code": "%1$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseDB_Get_Map_Value",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Map %s ထဲမှ Key %s ၏ Value ကို ရယူမည်",
+    "code": "%1$s.get(%2$s)",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Map_Contains_Key",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Map %s ထဲတွင် Key %s ပါဝင်သလား စစ်မည်",
+    "code": "%1$s.containsKey(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseDB_Map_Is_Not_Empty",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Map %s သည် လွတ်မနေဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseDB_Map_Get_String",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Map %s ထဲမှ Key %s ၏ Text ကို ရယူမည်",
+    "code": "String.valueOf(%1$s.get(%2$s))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseDB_Map_Get_Number",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Map %s ထဲမှ Key %s ၏ Number ကို ရယူမည်",
+    "code": "Double.parseDouble(String.valueOf(%1$s.get(%2$s)))",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "FirebaseDB_Map_Remove_Key",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Map %s ထဲမှ Key %s ကို ဖယ်မည်",
+    "code": "%1$s.remove(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Query_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE DB • Query နှင့် List စီမံခြင်း ==="
+  },
+  {
+    "name": "FirebaseDB_Order_By_Child",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s ကို Child Field %s ဖြင့် စီမည်",
+    "code": "%1$s.orderByChild(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Order_By_Key",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s ကို Key ဖြင့် စီမည်",
+    "code": "%1$s.orderByKey(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Limit_To_First",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s မှ ပထမဆုံး %d ခုကိုသာ ဖတ်မည်",
+    "code": "%1$s.limitToFirst(%2$s, (int) Math.max(0, %3$d));",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Limit_To_Last",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s မှ နောက်ဆုံး %d ခုကိုသာ ဖတ်မည်",
+    "code": "%1$s.limitToLast(%2$s, (int) Math.max(0, %3$d));",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Start_At",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s ကို Value %s မှစ၍ Query လုပ်မည်",
+    "code": "%1$s.startAt(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_End_At",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s ကို Value %s အထိ Query လုပ်မည်",
+    "code": "%1$s.endAt(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Clear_List",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "List %s ထဲရှိ Data အားလုံးကို ရှင်းမည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_List_Size",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "List %s ၏ အရေအတွက်ကို ရယူမည်",
+    "code": "%1$s.size()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "FirebaseDB_Events_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE DB • Child Event Workflow ==="
+  },
+  {
+    "name": "FirebaseDB_OnChildAdded_Key",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onChildAdded Event မှ Child Key %s ကို အသုံးပြုမည်",
+    "code": "%1$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseDB_OnChildChanged_Key",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onChildChanged Event မှ Child Key %s ကို အသုံးပြုမည်",
+    "code": "%1$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseDB_OnChildRemoved_Key",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onChildRemoved Event မှ Child Key %s ကို အသုံးပြုမည်",
+    "code": "%1$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseDB_OnChild_Cancelled_Message",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onChildCancelled Event ၏ Error Message %s ကို ရယူမည်",
+    "code": "%1$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseDB_Previous_Key_Is_Not_Empty",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Previous Child Key %s ရှိသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseDB_Add_Map_To_List",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Map %s ကို List %s ထဲသို့ ထည့်မည်",
+    "code": "%2$s.add(%1$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Remove_By_Key",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "List Map %s ထဲမှ Child Key %s နှင့် ကိုက်ညီသော Row ကို ဖယ်မည်",
+    "code": "for (int _fb_i = %1$s.size() - 1; _fb_i >= 0; _fb_i--) { Object _fb_k = %1$s.get(_fb_i).get(%3$s); if (_fb_k != null && String.valueOf(_fb_k).equals(String.valueOf(%2$s))) { %1$s.remove(_fb_i); } }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Update_By_Key",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "List Map %s ထဲမှ Child Key %s နှင့် ကိုက်ညီသော Row ကို Map %s ဖြင့် Update လုပ်မည်",
+    "code": "for (int _fb_i = 0; _fb_i < %1$s.size(); _fb_i++) { Object _fb_k = %1$s.get(_fb_i).get(%4$s); if (_fb_k != null && String.valueOf(_fb_k).equals(String.valueOf(%2$s))) { %1$s.set(_fb_i, %3$s); break; } }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE DB • Safe Validation နှင့် Error ==="
+  },
+  {
+    "name": "FirebaseDB_Set_If_Tag_Valid",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Tag %s နှင့် Data %s မလွတ်လပ်လျှင် %m.firebasedb တွင် သိမ်းမည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.setData(%2$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Get_If_Tag_Valid",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Tag %s မလွတ်လပ်လျှင် %m.firebasedb မှ Data ဖတ်မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.getData(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Delete_If_Tag_Valid",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Tag %s မလွတ်လပ်လျှင် %m.firebasedb မှ Data ဖျက်မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.deleteData(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Push_If_Data_Valid",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Tag %s နှင့် Data %s မလွတ်လပ်လျှင် %m.firebasedb သို့ Push လုပ်မည်",
+    "code": "if (%2$s != null && !%2$s.toString().trim().isEmpty()) { %1$s.pushData(%2$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Error_Is_Permission",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Firebase Error %s သည် Permission Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"permission\") || String.valueOf(%1$s).toLowerCase().contains(\"denied\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseDB_Error_Is_Network",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Firebase Error %s သည် Network Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"network\") || String.valueOf(%1$s).toLowerCase().contains(\"timeout\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseDB_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE DB • Professional Data Workflow ==="
+  },
+  {
+    "name": "FirebaseDB_Push_Key_From_Path",
+    "type": "s",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s မှ Push Key ကို ရယူမည်",
+    "code": "%1$s.push().getKey()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseDB_Set_Child_Path",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Parent Tag %s ၏ Child Path %s သို့ Data %s ကို သိမ်းမည်",
+    "code": "%1$s.setData(%2$s + \"/\" + %3$s, %4$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Delete_Child_Path",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Parent Tag %s ၏ Child Path %s ကို ဖျက်မည်",
+    "code": "%1$s.deleteData(%2$s + \"/\" + %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Update_Child_Map",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.firebasedb တွင် Tag %s ၏ Child Map %s ကို Update လုပ်မည်",
+    "code": "%1$s.updateData(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseDB_Child_Key_Is_Valid",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Child Key %s သည် Firebase Key အဖြစ် မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().isEmpty() && !%1$s.toString().matches(\".*[.#$\\[\\]/].*\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseDB_Tag_Path_Is_Valid",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Firebase Tag Path %s သည် မလွတ်ဘဲ မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty() && !%1$s.toString().contains(\"//\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseDB_Listener_Detach",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.firebasedb ၏ Tag %s Listener ကို ဖယ်မည်",
+    "code": "%1$s.removeChildEventListener();",
+    "imports": ""
+  }
+]

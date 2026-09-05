@@ -1,0 +1,460 @@
+[
+  {
+    "name": "ObjectAnimator_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== OBJECT ANIMATOR • အခြေခံ Setup ==="
+  },
+  {
+    "name": "ObjectAnimator_Set_Target",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Target ကို %m.view အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setTarget(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Property",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.objectanimator တွင် %s property ကို Animation ပြုလုပ်မည်",
+    "code": "%1$s.setPropertyName(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Value",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Animation value ကို %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setFloatValues((float) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Values_From_To",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.objectanimator ကို %d မှ %d အထိ Animation ပြုလုပ်မည်",
+    "code": "%1$s.setFloatValues((float) %2$d, (float) %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Duration",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ ကြာချိန်ကို %d milliseconds ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setDuration((long) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Start",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.objectanimator ကို စတင်မည်",
+    "code": "%1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Cancel",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ပယ်ဖျက်မည်",
+    "code": "%1$s.cancel();",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Is_Running",
+    "type": "b",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.objectanimator အလုပ်လုပ်နေသလား စစ်မည်",
+    "code": "%1$s.isRunning()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "ObjectAnimator_View_Presets_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== OBJECT ANIMATOR • View Property Presets ==="
+  },
+  {
+    "name": "ObjectAnimator_Set_Rotation_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို လှည့်ခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"rotation\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_RotationX_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို X ဝင်ရိုးလှည့်ခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"rotationX\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_RotationY_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို Y ဝင်ရိုးလှည့်ခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"rotationY\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_TranslationX_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို အလျားလိုက်ရွှေ့ခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"translationX\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_TranslationY_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ဒေါင်လိုက်ရွှေ့ခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"translationY\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Alpha_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ဖျော့/ပြတ်ပြောင်းခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"alpha\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_ScaleX_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို အလျားလိုက်ချဲ့ခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"scaleX\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_ScaleY_Property",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ဒေါင်လိုက်ချဲ့ခြင်း property အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setPropertyName(\"scaleY\");",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Animate_View_From_To",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.objectanimator ဖြင့် %m.view ၏ %s property ကို %d မှ %d အထိ ပြင်ဆင်ပြီး စတင်မည်",
+    "code": "%1$s.setTarget(%2$s); %1$s.setPropertyName(%3$s); %1$s.setFloatValues((float) %4$d, (float) %5$d); %1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Timing_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== OBJECT ANIMATOR • Timing နှင့် Repeat ==="
+  },
+  {
+    "name": "ObjectAnimator_Set_Start_Delay",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.objectanimator စတင်ရန် %d milliseconds ကြန့်ကြာမည်",
+    "code": "%1$s.setStartDelay((long) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Repeat_Count",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.objectanimator ကို %d ကြိမ် ထပ်လုပ်မည်",
+    "code": "%1$s.setRepeatCount((int) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Repeat_Infinite",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.objectanimator ကို အဆုံးမရှိ ထပ်လုပ်မည်",
+    "code": "%1$s.setRepeatCount(android.animation.ValueAnimator.INFINITE);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Repeat_Restart",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Repeat Mode ကို RESTART သတ်မှတ်မည်",
+    "code": "%1$s.setRepeatMode(android.animation.ValueAnimator.RESTART);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Repeat_Reverse",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Repeat Mode ကို REVERSE သတ်မှတ်မည်",
+    "code": "%1$s.setRepeatMode(android.animation.ValueAnimator.REVERSE);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Auto_Cancel",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Auto Cancel ကို %b ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setAutoCancel(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Interpolator_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== OBJECT ANIMATOR • Interpolator ==="
+  },
+  {
+    "name": "ObjectAnimator_Set_Linear_Interpolator",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Interpolator ကို Linear အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setInterpolator(new LinearInterpolator());",
+    "imports": "android.view.animation.LinearInterpolator"
+  },
+  {
+    "name": "ObjectAnimator_Set_Accelerate_Interpolator",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Interpolator ကို Accelerate အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setInterpolator(new AccelerateInterpolator());",
+    "imports": "android.view.animation.AccelerateInterpolator"
+  },
+  {
+    "name": "ObjectAnimator_Set_Decelerate_Interpolator",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Interpolator ကို Decelerate အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setInterpolator(new DecelerateInterpolator());",
+    "imports": "android.view.animation.DecelerateInterpolator"
+  },
+  {
+    "name": "ObjectAnimator_Set_AccelerateDecelerate_Interpolator",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Interpolator ကို Accelerate-Decelerate အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setInterpolator(new AccelerateDecelerateInterpolator());",
+    "imports": "android.view.animation.AccelerateDecelerateInterpolator"
+  },
+  {
+    "name": "ObjectAnimator_Set_Bounce_Interpolator",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Interpolator ကို Bounce အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setInterpolator(new BounceInterpolator());",
+    "imports": "android.view.animation.BounceInterpolator"
+  },
+  {
+    "name": "ObjectAnimator_Set_Overshoot_Interpolator",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Interpolator ကို Overshoot အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setInterpolator(new OvershootInterpolator());",
+    "imports": "android.view.animation.OvershootInterpolator"
+  },
+  {
+    "name": "ObjectAnimator_Set_Anticipate_Interpolator",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Interpolator ကို Anticipate အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setInterpolator(new AnticipateInterpolator());",
+    "imports": "android.view.animation.AnticipateInterpolator"
+  },
+  {
+    "name": "ObjectAnimator_Control_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== OBJECT ANIMATOR • Runtime Control ==="
+  },
+  {
+    "name": "ObjectAnimator_Reverse",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ပြောင်းပြန် Animation ပြုလုပ်မည်",
+    "code": "%1$s.reverse();",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_End",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ချက်ချင်းအဆုံးသတ်မည်",
+    "code": "%1$s.end();",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Current_Play_Time",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ လက်ရှိအချိန်ကို %d milliseconds သို့ သတ်မှတ်မည်",
+    "code": "%1$s.setCurrentPlayTime((long) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Get_Animated_Fraction",
+    "type": "d",
+    "color": "#26A69A",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ ပြီးစီးရာခိုင်နှုန်းကို ရယူမည်",
+    "code": "%1$s.getAnimatedFraction() * 100.0f",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "ObjectAnimator_Get_Current_Play_Time",
+    "type": "d",
+    "color": "#26A69A",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ လက်ရှိ Animation အချိန်ကို ရယူမည်",
+    "code": "%1$s.getCurrentPlayTime()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "ObjectAnimator_Get_Total_Duration",
+    "type": "d",
+    "color": "#26A69A",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ စုစုပေါင်းကြာချိန်ကို ရယူမည်",
+    "code": "%1$s.getTotalDuration()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "ObjectAnimator_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== OBJECT ANIMATOR • Safe Workflow ==="
+  },
+  {
+    "name": "ObjectAnimator_Start_If_Stopped",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.objectanimator မအလုပ်လုပ်သေးလျှင် စတင်မည်",
+    "code": "if (!%1$s.isRunning()) { %1$s.start(); }",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Cancel_If_Running",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.objectanimator အလုပ်လုပ်နေမှသာ ပယ်ဖျက်မည်",
+    "code": "if (%1$s.isRunning()) { %1$s.cancel(); }",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Start_From_Beginning",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.objectanimator ကို အစမှ ပြန်စတင်မည်",
+    "code": "%1$s.cancel(); %1$s.setCurrentPlayTime(0); %1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Animate_View_Safely",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.view ၏ %s property ကို %d မှ %d အထိ လုံခြုံစွာ Animation ပြုလုပ်မည်",
+    "code": "%1$s.setTarget(%2$s); %1$s.setPropertyName(%3$s); %1$s.setFloatValues((float) %4$d, (float) %5$d); if (!%1$s.isRunning()) { %1$s.start(); }",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== OBJECT ANIMATOR • Professional Utilities ==="
+  },
+  {
+    "name": "ObjectAnimator_Set_Safe_Duration",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ ကြာချိန်ကို အနည်းဆုံး %d milliseconds ဖြစ်အောင် သတ်မှတ်မည်",
+    "code": "%1$s.setDuration((long) Math.max(1, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Set_Safe_Repeat_Count",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.objectanimator ၏ Repeat Count ကို %d ထက် မကျော်အောင် သတ်မှတ်မည်",
+    "code": "%1$s.setRepeatCount((int) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Cancel_And_Reset",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ပယ်ဖျက်ပြီး အစအချိန်သို့ ပြန်ထားမည်",
+    "code": "%1$s.cancel(); %1$s.setCurrentPlayTime(0);",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Pause_If_Running",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.objectanimator အလုပ်လုပ်နေမှသာ ခဏရပ်မည်",
+    "code": "if (%1$s.isRunning()) { %1$s.pause(); }",
+    "imports": ""
+  },
+  {
+    "name": "ObjectAnimator_Resume",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.objectanimator ကို ပြန်လည်ဆက်လုပ်မည်",
+    "code": "%1$s.resume();",
+    "imports": ""
+  }
+]

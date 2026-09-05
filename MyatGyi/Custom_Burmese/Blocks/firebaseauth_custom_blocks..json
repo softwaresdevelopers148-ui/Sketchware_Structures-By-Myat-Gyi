@@ -1,0 +1,473 @@
+[
+  {
+    "name": "FirebaseAuth_Basic_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE AUTH • အခြေခံ Account နှင့် Session ==="
+  },
+  {
+    "name": "FirebaseAuth_Create_User",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth ဖြင့် Email %s နှင့် Password ကို အသုံးပြုပြီး Account ဖန်တီးမည်",
+    "code": "%1$s.createUserWithEmailAndPassword(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Sign_In_User",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth ဖြင့် Email %s နှင့် Password ကို အသုံးပြုပြီး Sign in ဝင်မည်",
+    "code": "%1$s.signInWithEmailAndPassword(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Sign_In_Anonymously",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth ဖြင့် Anonymous Sign in ဝင်မည်",
+    "code": "%1$s.signInAnonymously();",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Sign_Out",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth မှ Sign out ထွက်မည်",
+    "code": "%1$s.signOut();",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Is_Logged_In",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth တွင် User ဝင်ထားသလား စစ်မည်",
+    "code": "%1$s.isLoggedIn()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Get_Email",
+    "type": "s",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ လက်ရှိ User Email ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getEmail()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseAuth_Get_UID",
+    "type": "s",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ လက်ရှိ User UID ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getUid()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseAuth_Is_Email_Verified",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Email Verified ဖြစ်သလား စစ်မည်",
+    "code": "%1$s.getCurrentUser().isEmailVerified()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Email_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE AUTH • Email Verification နှင့် Password ==="
+  },
+  {
+    "name": "FirebaseAuth_Send_Verification_Email",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ လက်ရှိ User ထံ Verification Email ပို့မည်",
+    "code": "%1$s.sendEmailVerification();",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Send_Reset_Email",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.firebaseauth သို့ Email %s အတွက် Password Reset Email ပို့မည်",
+    "code": "%1$s.sendPasswordResetEmail(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Update_Email",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Email ကို %s သို့ ပြောင်းမည်",
+    "code": "%1$s.updateEmail(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Update_Password",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Password ကို %s သို့ ပြောင်းမည်",
+    "code": "%1$s.updatePassword(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Reauthenticate_Email",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.firebaseauth ကို Email %s နှင့် Password ဖြင့် Re-authenticate လုပ်မည်",
+    "code": "%1$s.reauthenticateWithEmailAndPassword(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Update_Language",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Auth Email Language ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setLanguageCode(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Profile_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE AUTH • Profile နှင့် Account Management ==="
+  },
+  {
+    "name": "FirebaseAuth_Update_Profile",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Display Name ကို %s နှင့် Photo URL ကို %s ဖြင့် Update လုပ်မည်",
+    "code": "%1$s.updateProfile(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Get_Display_Name",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Display Name ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getDisplayName()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseAuth_Get_Photo_URL",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Photo URL ကို ရယူမည်",
+    "code": "String.valueOf(%1$s.getCurrentUser().getPhotoUrl())",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseAuth_Delete_User",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ လက်ရှိ User Account ကို ဖျက်မည်",
+    "code": "%1$s.deleteUser();",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Get_Provider_ID",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ လက်ရှိ Provider ID ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getProviderId()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseAuth_Reload_User",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ လက်ရှိ User Data ကို ပြန်ဖတ်မည်",
+    "code": "%1$s.reloadUser();",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Google_Phone_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE AUTH • Google နှင့် Phone Auth ==="
+  },
+  {
+    "name": "FirebaseAuth_Google_Sign_In",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.firebaseauth ဖြင့် Google Sign in စတင်မည်",
+    "code": "%1$s.signInWithGoogle();",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Google_Sign_In_With_Token",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.firebaseauth ဖြင့် Google ID Token %s ကို အသုံးပြုပြီး Sign in ဝင်မည်",
+    "code": "%1$s.signInWithGoogleToken(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Send_Phone_Code",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.firebaseauth သို့ Phone %s အတွက် Verification Code ပို့မည်",
+    "code": "%1$s.sendPhoneVerificationCode(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Sign_In_Phone",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.firebaseauth တွင် Phone Verification ID %s နှင့် Code %s ဖြင့် Sign in ဝင်မည်",
+    "code": "%1$s.signInWithPhoneAuth(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Set_Phone_Timeout",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Phone Verification Timeout ကို %d Seconds သတ်မှတ်မည်",
+    "code": "%1$s.setPhoneAuthTimeout((long) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Is_Valid_Phone",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Phone Number %s သည် E.164 ပုံစံနှင့် နီးစပ်မှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"^\\\\+[1-9]\\\\d{7,14}$\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Validation_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE AUTH • Input Validation နှင့် Safe Flow ==="
+  },
+  {
+    "name": "FirebaseAuth_Is_Valid_Email",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Email %s သည် ပုံစံမှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"^[^\\\\s@]+@[^\\\\s@]+\\\\.[^\\\\s@]+$\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Is_Valid_Password",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Password %s သည် အနည်းဆုံး Character %d ရှိသလား စစ်မည်",
+    "code": "%1$s != null && %1$s.length() >= Math.max(6, (int) %2$d)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Passwords_Match",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Password %s နှင့် Confirm Password %s တူညီသလား စစ်မည်",
+    "code": "%1$s != null && %1$s.equals(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Is_Not_Empty",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Auth Input %s သည် မလွတ်ဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Safe_Sign_In",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Email %s နှင့် Password %s မှန်ကန်လျှင် %m.firebaseauth ဖြင့် Sign in ဝင်မည်",
+    "code": "if (%2$s != null && %2$s.matches(\"^[^\\\\s@]+@[^\\\\s@]+\\\\.[^\\\\s@]+$\") && %3$s != null && %3$s.length() >= 6) { %1$s.signInWithEmailAndPassword(%2$s, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Safe_Reset_Email",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Email %s မှန်ကန်လျှင် %m.firebaseauth သို့ Reset Email ပို့မည်",
+    "code": "if (%2$s != null && %2$s.matches(\"^[^\\\\s@]+@[^\\\\s@]+\\\\.[^\\\\s@]+$\")) { %1$s.sendPasswordResetEmail(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Event_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE AUTH • Complete Event Result Helpers ==="
+  },
+  {
+    "name": "FirebaseAuth_Event_Success",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Event Success အခြေအနေ %b ကို စစ်မည်",
+    "code": "%1$b",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Event_Error_Is_Not_Empty",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Event Error %s ရှိသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Event_Error_Summary",
+    "type": "s",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Event Error %s ကို Safe Summary အဖြစ် ပြောင်းမည်",
+    "code": "(%1$s == null || %1$s.toString().trim().isEmpty()) ? \"Unknown authentication error\" : String.valueOf(%1$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FirebaseAuth_Event_Provider_Success",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "onGoogleSignin Event အောင်မြင်လျှင် %s ကို ဆက်လုပ်မည်",
+    "code": "if (%1$b) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Event_Complete_Then_Signed_In",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Complete Event အောင်မြင်ပြီး Login ဝင်ထားလျှင် %m.firebaseauth ကို စစ်မည်",
+    "code": "if (%2$b && %1$s.isLoggedIn()) { %3$s; }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE AUTH • Professional Security နှင့် Session ==="
+  },
+  {
+    "name": "FirebaseAuth_Require_Signed_In",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.firebaseauth တွင် Login ဝင်ထားမှသာ Action Code ကို လုပ်မည်",
+    "code": "if (%1$s.isLoggedIn()) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Require_Verified_Email",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ Email Verified ဖြစ်မှသာ Action Code ကို လုပ်မည်",
+    "code": "if (%1$s.isLoggedIn() && %1$s.getCurrentUser().isEmailVerified()) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Is_Recent_Login_Error",
+    "type": "b",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Auth Error %s သည် Recent Login လိုအပ်သော Error ဖြစ်သလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"recent-login\") || String.valueOf(%1$s).toLowerCase().contains(\"requires-recent-login\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Clear_Sensitive_Input",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Sensitive Input %s ကို လုံခြုံစွာ ရှင်းမည်",
+    "code": "if (%1$s != null) { %1$s = \"\"; }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Safe_Sign_Out_And_Clear",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.firebaseauth မှ Sign out ထွက်ပြီး Sensitive Input %s ကို ရှင်းမည်",
+    "code": "%1$s.signOut(); if (%2$s != null) { %2$s = \"\"; }",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Get_ID_Token",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ ID Token ကို Refresh %b ဖြင့် ရယူမည်",
+    "code": "%1$s.getIdToken(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "FirebaseAuth_Is_Anonymous",
+    "type": "b",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.firebaseauth ၏ လက်ရှိ User သည် Anonymous ဖြစ်သလား စစ်မည်",
+    "code": "%1$s.getCurrentUser().isAnonymous()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FirebaseAuth_Provider_Enabled_Note",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Provider %s ကို Firebase Console တွင် Enable လုပ်ထားသလား စစ်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Verify provider configuration for: %1$s",
+    "imports": ""
+  }
+]

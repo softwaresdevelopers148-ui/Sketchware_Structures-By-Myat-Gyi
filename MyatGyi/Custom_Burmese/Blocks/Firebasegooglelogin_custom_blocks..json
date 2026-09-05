@@ -1,0 +1,384 @@
+[
+  {
+    "name": "GoogleLogin_Basic_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE GOOGLE LOGIN • အခြေခံ Account Picker နှင့် Sign in ==="
+  },
+  {
+    "name": "GoogleLogin_Start_Picker",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.googlelogin ဖြင့် Google Account Picker ကို စတင်မည်",
+    "code": "%1$s.startAccountPicker();",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Sign_In_With_Token",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.googlelogin ဖြင့် Google ID Token %s ကို အသုံးပြုပြီး Sign in ဝင်မည်",
+    "code": "%1$s.signInWithGoogleToken(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Sign_In_With_Credential",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.googlelogin ဖြင့် Google Credential %s ကို အသုံးပြုပြီး Sign in ဝင်မည်",
+    "code": "%1$s.signInWithCredential(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Sign_Out",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.googlelogin မှ Google Sign out ထွက်မည်",
+    "code": "%1$s.signOut();",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Is_Logged_In",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.googlelogin တွင် User Login ဝင်ထားသလား စစ်မည်",
+    "code": "%1$s.isLoggedIn()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Get_Email",
+    "type": "s",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ လက်ရှိ Google Account Email ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getEmail()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "GoogleLogin_Get_UID",
+    "type": "s",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ လက်ရှိ Firebase UID ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getUid()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "GoogleLogin_Profile_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE GOOGLE LOGIN • Profile နှင့် Provider Data ==="
+  },
+  {
+    "name": "GoogleLogin_Get_Display_Name",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ Display Name ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getDisplayName()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "GoogleLogin_Get_Photo_URL",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ Profile Photo URL ကို ရယူမည်",
+    "code": "String.valueOf(%1$s.getCurrentUser().getPhotoUrl())",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "GoogleLogin_Get_Provider_ID",
+    "type": "s",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ Provider ID ကို ရယူမည်",
+    "code": "%1$s.getCurrentUser().getProviderId()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "GoogleLogin_Is_Google_Provider",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ လက်ရှိ User သည် Google Provider ဖြစ်သလား စစ်မည်",
+    "code": "%1$s.isGoogleProvider()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Get_ID_Token",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ Firebase ID Token ကို Refresh %b ဖြင့် ရယူမည်",
+    "code": "%1$s.getIdToken(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Reload_User",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ လက်ရှိ User Profile ကို ပြန်ဖတ်မည်",
+    "code": "%1$s.reloadUser();",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_AccountPicker_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE GOOGLE LOGIN • onAccountPicker Event ==="
+  },
+  {
+    "name": "GoogleLogin_OnPicker_Save_Email",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "onAccountPicker Event မှ Account Email %s ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "%2$s = %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_OnPicker_Save_Token",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "onAccountPicker Event မှ ID Token %s ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "%2$s = %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_OnPicker_Sign_In",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "onAccountPicker Event မှ Token %s ရလျှင် %m.googlelogin ဖြင့် Sign in ဝင်မည်",
+    "code": "%1$s.signInWithGoogleToken(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_OnPicker_Success_Flow",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Account Picker Success %b ဖြစ်လျှင် Action Code လုပ်မည်",
+    "code": "if (%1$b) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Event_Success",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Google Login Event Success %b ဖြစ်သလား စစ်မည်",
+    "code": "%1$b",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Event_Error_Summary",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Google Login Error %s ကို Safe Summary အဖြစ် ပြောင်းမည်",
+    "code": "(%1$s == null || %1$s.toString().trim().isEmpty()) ? \"Google sign-in failed\" : String.valueOf(%1$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "GoogleLogin_Cancel_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE GOOGLE LOGIN • onAccountPickerCancelled Event ==="
+  },
+  {
+    "name": "GoogleLogin_Cancel_Is_User_Action",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Cancel Error %s သည် User ကိုယ်တိုင် Picker ပိတ်ခြင်း ဖြစ်သလား စစ်မည်",
+    "code": "%1$s == null || %1$s.toString().trim().isEmpty() || String.valueOf(%1$s).toLowerCase().contains(\"cancel\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Cancel_Retry",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Account Picker Cancel ဖြစ်လျှင် %m.googlelogin ကို ပြန်စတင်မည်",
+    "code": "%1$s.startAccountPicker();",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Cancel_Clear_State",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Cancel ဖြစ်လျှင် Account Variable %s နှင့် Token Variable %s ကို ရှင်းမည်",
+    "code": "%1$s = \"\"; %2$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Cancel_Action",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "onAccountPickerCancelled ဖြစ်လျှင် Cancel Action Code လုပ်မည်",
+    "code": "%1$s;",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Is_Empty_Error",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Google Login Error %s သည် Empty ဖြစ်သလား စစ်မည်",
+    "code": "%1$s == null || %1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Validation_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE GOOGLE LOGIN • Input နှင့် Session Validation ==="
+  },
+  {
+    "name": "GoogleLogin_Is_Valid_Email",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Google Account Email %s သည် ပုံစံမှန်ကန်သလား စစ်မည်",
+    "code": "%1$s != null && %1$s.matches(\"^[^\\\\s@]+@[^\\\\s@]+\\\\.[^\\\\s@]+$\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Is_Valid_Token",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Google ID Token %s သည် မလွတ်ဘဲ ရှိသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Is_Valid_Client_ID",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "OAuth Client ID %s သည် မလွတ်ဘဲ ရှိသလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Require_Signed_In",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.googlelogin တွင် Login ဝင်ထားလျှင် Action Code ကို လုပ်မည်",
+    "code": "if (%1$s.isLoggedIn()) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Safe_Token_For_Log",
+    "type": "s",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Google Token %s ကို Log အတွက် Mask လုပ်မည်",
+    "code": "(%1$s == null || %1$s.length() < 8) ? \"[hidden]\" : %1$s.substring(0, 4) + \"…\" + %1$s.substring(%1$s.length() - 4)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "GoogleLogin_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FIREBASE GOOGLE LOGIN • Professional Security နှင့် Lifecycle ==="
+  },
+  {
+    "name": "GoogleLogin_Sign_In_If_Not_Logged_In",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Login မဝင်သေးလျှင် %m.googlelogin ဖြင့် Account Picker စတင်မည်",
+    "code": "if (!%1$s.isLoggedIn()) { %1$s.startAccountPicker(); }",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Require_Profile",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.googlelogin တွင် Login ဝင်ထားပြီး Profile ရှိလျှင် Action Code လုပ်မည်",
+    "code": "if (%1$s.isLoggedIn() && %1$s.getCurrentUser() != null) { %2$s; }",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Safe_Sign_Out",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.googlelogin မှ Sign out ထွက်ပြီး Token Variable %s ကို ရှင်းမည်",
+    "code": "%1$s.signOut(); %2$s = \"\";",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Clear_Credential_State",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.googlelogin ၏ Credential State ကို ရှင်းမည်",
+    "code": "%1$s.clearCredentialState();",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Is_Recent_Auth_Error",
+    "type": "b",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Google Auth Error %s သည် Re-authentication လိုသလား စစ်မည်",
+    "code": "%1$s != null && (String.valueOf(%1$s).toLowerCase().contains(\"recent\") || String.valueOf(%1$s).toLowerCase().contains(\"reauth\"))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "GoogleLogin_Provider_Configuration_Note",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Google Provider နှင့် OAuth Client ID setup အတွက် မှတ်ချက်ထားမည်",
+    "code": "// Enable Google provider, configure SHA fingerprints, OAuth client ID, and updated Firebase config.",
+    "imports": ""
+  },
+  {
+    "name": "GoogleLogin_Credential_Security_Note",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Google ID Token/Credential ကို မသိမ်းရန် မှတ်ချက်ထားမည်",
+    "code": "// Do not log, hard-code, or persist Google ID tokens and credentials in public storage.",
+    "imports": ""
+  }
+]

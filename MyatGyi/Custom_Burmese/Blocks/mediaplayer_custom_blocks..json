@@ -1,0 +1,386 @@
+[
+  {
+    "name": "MediaPlayer_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== MEDIA PLAYER • အခြေခံ Playback ==="
+  },
+  {
+    "name": "MediaPlayer_Start",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို ဖွင့်မည်",
+    "code": "%1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Pause",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို ခဏရပ်မည်",
+    "code": "%1$s.pause();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Stop",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို ရပ်မည်",
+    "code": "%1$s.stop();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Reset",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို မူလအခြေအနေသို့ ပြန်ထားမည်",
+    "code": "%1$s.reset();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Release",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ resource များကို လွှတ်ပေးမည်",
+    "code": "%1$s.release();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Is_Playing",
+    "type": "b",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.mediaplayer သီချင်းဖွင့်နေသလား စစ်မည်",
+    "code": "%1$s.isPlaying()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "MediaPlayer_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== MEDIA PLAYER • Safe Playback Control ==="
+  },
+  {
+    "name": "MediaPlayer_Start_If_Paused",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.mediaplayer မဖွင့်နေမှသာ ဖွင့်မည်",
+    "code": "if (!%1$s.isPlaying()) { %1$s.start(); }",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Pause_If_Playing",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.mediaplayer ဖွင့်နေမှသာ ခဏရပ်မည်",
+    "code": "if (%1$s.isPlaying()) { %1$s.pause(); }",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Stop_And_Reset",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို ရပ်ပြီး ပြန်ပြင်ဆင်နိုင်အောင် reset လုပ်မည်",
+    "code": "%1$s.stop(); %1$s.reset();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Pause_Or_Start",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.mediaplayer ဖွင့်နေပါက ရပ်ပြီး မဖွင့်နေပါက ဖွင့်မည်",
+    "code": "if (%1$s.isPlaying()) { %1$s.pause(); } else { %1$s.start(); }",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Release_If_Ready",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို အသုံးပြုပြီးပါက resource လွှတ်ပေးမည်",
+    "code": "%1$s.release();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Position_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== MEDIA PLAYER • Position နှင့် Duration ==="
+  },
+  {
+    "name": "MediaPlayer_Get_Current_Position",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ လက်ရှိဖွင့်နေရာ milliseconds ကို ရယူမည်",
+    "code": "%1$s.getCurrentPosition()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "MediaPlayer_Get_Duration",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ စုစုပေါင်းကြာချိန် milliseconds ကို ရယူမည်",
+    "code": "%1$s.getDuration()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "MediaPlayer_Seek_To_Millis",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d milliseconds နေရာသို့ ရွှေ့မည်",
+    "code": "%1$s.seekTo((int) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Seek_To_Percent",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d ရာခိုင်နှုန်းနေရာသို့ ရွှေ့မည်",
+    "code": "%1$s.seekTo((int) Math.max(0, Math.min(%1$s.getDuration(), %1$s.getDuration() * (%2$d / 100.0))));",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Get_Progress_Percent",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ ဖွင့်ပြီးသော ရာခိုင်နှုန်းကို ရယူမည်",
+    "code": "(%1$s.getDuration() > 0 ? (%1$s.getCurrentPosition() * 100.0 / %1$s.getDuration()) : 0.0)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "MediaPlayer_Get_Remaining_Millis",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ ကျန်ရှိသော milliseconds ကို ရယူမည်",
+    "code": "Math.max(0, %1$s.getDuration() - %1$s.getCurrentPosition())",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "MediaPlayer_Seek_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== MEDIA PLAYER • Forward / Backward Seek ==="
+  },
+  {
+    "name": "MediaPlayer_Seek_Forward",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d milliseconds ရှေ့သို့ ရွှေ့မည်",
+    "code": "%1$s.seekTo((int) Math.min(%1$s.getDuration(), %1$s.getCurrentPosition() + Math.max(0, %2$d)));",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Seek_Backward",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d milliseconds နောက်သို့ ရွှေ့မည်",
+    "code": "%1$s.seekTo((int) Math.max(0, %1$s.getCurrentPosition() - Math.max(0, %2$d)));",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Seek_Forward_Seconds",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d seconds ရှေ့သို့ ရွှေ့မည်",
+    "code": "%1$s.seekTo((int) Math.min(%1$s.getDuration(), %1$s.getCurrentPosition() + Math.max(0, %2$d * 1000L)));",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Seek_Backward_Seconds",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d seconds နောက်သို့ ရွှေ့မည်",
+    "code": "%1$s.seekTo((int) Math.max(0, %1$s.getCurrentPosition() - Math.max(0, %2$d * 1000L)));",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Volume_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== MEDIA PLAYER • Volume နှင့် Loop ==="
+  },
+  {
+    "name": "MediaPlayer_Set_Volume",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ ဘယ်/ညာအသံကို %d နှင့် %d အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setVolume((float) %2$d, (float) %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Set_Stereo_Volume",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ အသံကို %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setVolume((float) Math.max(0, Math.min(1, %2$d)), (float) Math.max(0, Math.min(1, %2$d)));",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Mute",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.mediaplayer အသံကို ပိတ်မည်",
+    "code": "%1$s.setVolume(0.0f, 0.0f);",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Unmute",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.mediaplayer အသံကို အပြည့်ပြန်ဖွင့်မည်",
+    "code": "%1$s.setVolume(1.0f, 1.0f);",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Set_Looping",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %b ဖြင့် ထပ်ခါဖွင့်မည်",
+    "code": "%1$s.setLooping(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Is_Looping",
+    "type": "b",
+    "color": "#BA68C8",
+    "palette": "",
+    "spec": "%m.mediaplayer သည် Loop ဖွင့်ထားသလား စစ်မည်",
+    "code": "%1$s.isLooping()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "MediaPlayer_Format_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== MEDIA PLAYER • Time Format ==="
+  },
+  {
+    "name": "MediaPlayer_Format_Millis",
+    "type": "s",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%d milliseconds ကို MM:ss စာသားအဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d\", Math.max(0L, (long) %1$d) / 60000L, (Math.max(0L, (long) %1$d) / 1000L) % 60L)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "MediaPlayer_Format_Millis_Hours",
+    "type": "s",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%d milliseconds ကို HH:mm:ss စာသားအဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d:%02d\", Math.max(0L, (long) %1$d) / 3600000L, (Math.max(0L, (long) %1$d) / 60000L) % 60L, (Math.max(0L, (long) %1$d) / 1000L) % 60L)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "MediaPlayer_Get_Remaining_Text",
+    "type": "s",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ ကျန်ချိန်ကို MM:ss စာသားအဖြစ် ရယူမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d\", Math.max(0L, (long) (%1$s.getDuration() - %1$s.getCurrentPosition())) / 60000L, (Math.max(0L, (long) (%1$s.getDuration() - %1$s.getCurrentPosition())) / 1000L) % 60L)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "MediaPlayer_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== MEDIA PLAYER • Professional Utilities ==="
+  },
+  {
+    "name": "MediaPlayer_Set_Progress_Safely",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d ရာခိုင်နှုန်းနေရာသို့ လုံခြုံစွာ ရွှေ့မည်",
+    "code": "if (%1$s.getDuration() > 0) { %1$s.seekTo((int) Math.max(0, Math.min(%1$s.getDuration(), %1$s.getDuration() * (Math.max(0, Math.min(100, %2$d)) / 100.0)))); }",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Get_Audio_Session_Id",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ Audio Session ID ကို ရယူမည်",
+    "code": "%1$s.getAudioSessionId()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "MediaPlayer_Start_At_Percent",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို %d ရာခိုင်နှုန်းနေရာမှ စတင်ဖွင့်မည်",
+    "code": "if (%1$s.getDuration() > 0) { %1$s.seekTo((int) Math.max(0, Math.min(%1$s.getDuration(), %1$s.getDuration() * (Math.max(0, Math.min(100, %2$d)) / 100.0)))); } %1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Stop_Release",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို ရပ်ပြီး resource အားလုံး လွှတ်ပေးမည်",
+    "code": "%1$s.stop(); %1$s.release();",
+    "imports": ""
+  },
+  {
+    "name": "MediaPlayer_Is_At_End",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.mediaplayer ၏ အဆုံးသို့ ရောက်ပြီလား စစ်မည်",
+    "code": "(%1$s.getDuration() > 0 && %1$s.getCurrentPosition() >= %1$s.getDuration())",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "MediaPlayer_Reset_And_Set_Loop",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.mediaplayer ကို reset လုပ်ပြီး Loop ကို %b အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.reset(); %1$s.setLooping(%2$b);",
+    "imports": ""
+  }
+]

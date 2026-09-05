@@ -1,0 +1,321 @@
+[
+  {
+    "name": "ProgressDialog_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== PROGRESS DIALOG • အခြေခံ Show/Hide ==="
+  },
+  {
+    "name": "ProgressDialog_Show",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.progressdialog ကို ပြသမည်",
+    "code": "%1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Dismiss",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.progressdialog ကို ပိတ်မည်",
+    "code": "%1$s.dismiss();",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Is_Showing",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.progressdialog ပြသနေသလား စစ်မည်",
+    "code": "%1$s.isShowing()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "ProgressDialog_Set_Message",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Message ကို %s အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setMessage(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Title",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Title ကို %s အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setTitle(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Cancelable",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.progressdialog ကို Back နှိပ်လျှင် ပိတ်နိုင်ရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setCancelable(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Canceled_On_Touch",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.progressdialog ကို အပြင်ဘက်နှိပ်လျှင် ပိတ်နိုင်ရန် %b သတ်မှတ်မည်",
+    "code": "%1$s.setCanceledOnTouchOutside(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Progress_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== PROGRESS DIALOG • Progress Value ==="
+  },
+  {
+    "name": "ProgressDialog_Set_Max",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ အများဆုံး Progress ကို %d သတ်မှတ်မည်",
+    "code": "%1$s.setMax((int) Math.max(1, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Progress",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ လက်ရှိ Progress ကို %d သတ်မှတ်မည်",
+    "code": "%1$s.setProgress((int) Math.max(0, Math.min(%1$s.getMax(), %2$d)));",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Increment_Progress",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Progress ကို %d တိုးမည်",
+    "code": "%1$s.incrementProgressBy((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Get_Progress",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ လက်ရှိ Progress ကို ရယူမည်",
+    "code": "%1$s.getProgress()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "ProgressDialog_Get_Max",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ အများဆုံး Progress ကို ရယူမည်",
+    "code": "%1$s.getMax()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "ProgressDialog_Get_Percent",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ ပြီးစီးရာခိုင်နှုန်းကို ရယူမည်",
+    "code": "(%1$s.getMax() > 0 ? (%1$s.getProgress() * 100.0 / %1$s.getMax()) : 0.0)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "ProgressDialog_Mode_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== PROGRESS DIALOG • Mode နှင့် Style ==="
+  },
+  {
+    "name": "ProgressDialog_Set_Indeterminate",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.progressdialog ကို Indeterminate Mode %b သတ်မှတ်မည်",
+    "code": "%1$s.setIndeterminate(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Is_Indeterminate",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.progressdialog သည် Indeterminate Mode ဖြစ်သလား စစ်မည်",
+    "code": "%1$s.isIndeterminate()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "ProgressDialog_Set_Horizontal",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.progressdialog ကို Horizontal Progress Style သတ်မှတ်မည်",
+    "code": "%1$s.setProgressStyle(android.app.ProgressDialog.STYLE_HORIZONTAL);",
+    "imports": "android.app.ProgressDialog"
+  },
+  {
+    "name": "ProgressDialog_Set_Spinner",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.progressdialog ကို Spinner Style သတ်မှတ်မည်",
+    "code": "%1$s.setProgressStyle(android.app.ProgressDialog.STYLE_SPINNER);",
+    "imports": "android.app.ProgressDialog"
+  },
+  {
+    "name": "ProgressDialog_Set_Number_Format",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Number Format ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setProgressNumberFormat(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== PROGRESS DIALOG • Safe Control ==="
+  },
+  {
+    "name": "ProgressDialog_Show_If_Hidden",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.progressdialog မပြသသေးလျှင် ပြသမည်",
+    "code": "if (!%1$s.isShowing()) { %1$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Dismiss_If_Showing",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.progressdialog ပြသနေမှသာ ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Progress_Safely",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Progress ကို %d အဖြစ် အကန့်အသတ်နှင့် သတ်မှတ်မည်",
+    "code": "%1$s.setProgress((int) Math.max(0, Math.min(%1$s.getMax(), %2$d)));",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Increment_Safely",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Progress ကို %d တိုးပြီး အများဆုံးတန်ဖိုးထက် မကျော်စေမည်",
+    "code": "%1$s.setProgress((int) Math.max(0, Math.min(%1$s.getMax(), %1$s.getProgress() + %2$d)));",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Percent",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Progress ကို %d ရာခိုင်နှုန်းအဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setProgress((int) Math.max(0, Math.min(%1$s.getMax(), %1$s.getMax() * (Math.max(0, Math.min(100, %2$d)) / 100.0))));",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Reset",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Progress ကို သုညသို့ ပြန်ထားမည်",
+    "code": "%1$s.setProgress(0);",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== PROGRESS DIALOG • Professional Workflow ==="
+  },
+  {
+    "name": "ProgressDialog_Start_Indeterminate",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.progressdialog ကို Indeterminate အဖြစ် သတ်မှတ်ပြီး ပြသမည်",
+    "code": "%1$s.setIndeterminate(true); if (!%1$s.isShowing()) { %1$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Start_Determinate",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Max ကို %d သတ်မှတ်ပြီး Progress %d ဖြင့် ပြသမည်",
+    "code": "%1$s.setProgressStyle(android.app.ProgressDialog.STYLE_HORIZONTAL); %1$s.setIndeterminate(false); %1$s.setMax((int) Math.max(1, %2$d)); %1$s.setProgress((int) Math.max(0, Math.min(%1$s.getMax(), %3$d))); if (!%1$s.isShowing()) { %1$s.show(); }",
+    "imports": "android.app.ProgressDialog"
+  },
+  {
+    "name": "ProgressDialog_Finish_And_Dismiss",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.progressdialog ကို 100 ရာခိုင်နှုန်းသတ်မှတ်ပြီး ပိတ်မည်",
+    "code": "%1$s.setProgress(%1$s.getMax()); if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Message_If_Visible",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.progressdialog ပြသနေပါက Message ကို %s ပြောင်းမည်",
+    "code": "if (%1$s.isShowing()) { %1$s.setMessage(%2$s); }",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Cancel_And_Dismiss",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.progressdialog ကို Cancelable ပြုလုပ်ပြီး ပိတ်မည်",
+    "code": "%1$s.setCancelable(true); if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Dismiss_On_Lifecycle",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Screen Lifecycle ပြောင်းသောအခါ %m.progressdialog ကို လုံခြုံစွာ ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "ProgressDialog_Set_Percent_Message",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.progressdialog ၏ Progress နှင့် Message ကို %d ရာခိုင်နှုန်းဖြင့် Update လုပ်မည်",
+    "code": "%1$s.setProgress((int) Math.max(0, Math.min(%1$s.getMax(), %1$s.getMax() * (Math.max(0, Math.min(100, %2$d)) / 100.0)))); %1$s.setMessage(%3$s);",
+    "imports": ""
+  }
+]

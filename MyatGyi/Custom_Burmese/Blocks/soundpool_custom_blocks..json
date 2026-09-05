@@ -1,0 +1,298 @@
+[
+  {
+    "name": "SoundPool_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SOUND POOL • အခြေခံ Setup နှင့် Load ==="
+  },
+  {
+    "name": "SoundPool_Create_Max_Streams",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.soundpool တွင် တစ်ပြိုင်နက်ဖွင့်နိုင်မည့် Stream အများဆုံး %d ခု သတ်မှတ်မည်",
+    "code": "%1$s.create((int) Math.max(1, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Load_From_Path",
+    "type": "d",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.soundpool ထဲသို့ %s လမ်းကြောင်းရှိ အသံကို Load လုပ်ပြီး Sound ID ပြန်ပေးမည်",
+    "code": "%1$s.load(%2$s, 1)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Load_From_Resource",
+    "type": "d",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.soundpool ထဲသို့ Resource %m.resource ကို Load လုပ်ပြီး Sound ID ပြန်ပေးမည်",
+    "code": "%1$s.load(getApplicationContext(), %2$s, 1)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Play_Default",
+    "type": "d",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.soundpool မှ Sound ID %d ကို ပုံမှန်အသံဖြင့် ဖွင့်မည်",
+    "code": "%1$s.play((int) %2$d, 1.0f, 1.0f, 1, 0, 1.0f)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Play_Loop",
+    "type": "d",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.soundpool မှ Sound ID %d ကို %d ကြိမ် ထပ်ဖွင့်မည်",
+    "code": "%1$s.play((int) %2$d, 1.0f, 1.0f, 1, (int) %3$d, 1.0f)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Play_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SOUND POOL • Playback Control ==="
+  },
+  {
+    "name": "SoundPool_Play_Advanced",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.soundpool မှ Sound ID %d ကို အသံဘယ် %d၊ ညာ %d၊ Priority %d၊ Loop %d၊ Rate %d ဖြင့် ဖွင့်မည်",
+    "code": "%1$s.play((int) %2$d, (float) Math.max(0, Math.min(1, %3$d)), (float) Math.max(0, Math.min(1, %4$d)), (int) %5$d, (int) %6$d, (float) Math.max(0.5, Math.min(2.0, %7$d)))",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Play_Stereo",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.soundpool မှ Sound ID %d ကို အသံ %d ဖြင့် ဖွင့်မည်",
+    "code": "%1$s.play((int) %2$d, (float) Math.max(0, Math.min(1, %3$d)), (float) Math.max(0, Math.min(1, %3$d)), 1, 0, 1.0f)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Pause_Stream",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d ကို ခဏရပ်မည်",
+    "code": "%1$s.pause((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Resume_Stream",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d ကို ပြန်ဖွင့်မည်",
+    "code": "%1$s.resume((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Stop_Stream",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d ကို ရပ်မည်",
+    "code": "%1$s.stop((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Auto_Pause",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.soundpool ၏ ဖွင့်နေသော Stream အားလုံးကို ခဏရပ်မည်",
+    "code": "%1$s.autoPause();",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Auto_Resume",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.soundpool ၏ ခဏရပ်ထားသော Stream အားလုံးကို ပြန်ဖွင့်မည်",
+    "code": "%1$s.autoResume();",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Control_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SOUND POOL • Volume, Rate နှင့် Loop ==="
+  },
+  {
+    "name": "SoundPool_Set_Stream_Volume",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d အသံဘယ် %d နှင့် ညာ %d ကို သတ်မှတ်မည်",
+    "code": "%1$s.setVolume((int) %2$d, (float) Math.max(0, Math.min(1, %3$d)), (float) Math.max(0, Math.min(1, %4$d)));",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Set_Stream_Stereo_Volume",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d အသံကို %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setVolume((int) %2$d, (float) Math.max(0, Math.min(1, %3$d)), (float) Math.max(0, Math.min(1, %3$d)));",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Mute_Stream",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d အသံကို ပိတ်မည်",
+    "code": "%1$s.setVolume((int) %2$d, 0.0f, 0.0f);",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Set_Stream_Rate",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d ဖွင့်နှုန်းကို %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setRate((int) %2$d, (float) Math.max(0.5, Math.min(2.0, %3$d)));",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Set_Stream_Loop",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d ကို %d ကြိမ် ထပ်ဖွင့်ရန် သတ်မှတ်မည်",
+    "code": "%1$s.setLoop((int) %2$d, (int) %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Set_Stream_Priority",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d Priority ကို %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setPriority((int) %2$d, (int) %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SOUND POOL • Safe Validation နှင့် State ==="
+  },
+  {
+    "name": "SoundPool_Play_If_Sound_Valid",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Sound ID %d မှန်ကန်လျှင် %m.soundpool ဖြင့် ဖွင့်မည်",
+    "code": "if (%1$d > 0) { %2$s.play((int) %1$d, 1.0f, 1.0f, 1, 0, 1.0f); }",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Stop_If_Stream_Valid",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Stream ID %d မှန်ကန်လျှင် %m.soundpool ဖြင့် ရပ်မည်",
+    "code": "if (%1$d > 0) { %2$s.stop((int) %1$d); }",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Play_Safely",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.soundpool မှ Sound ID %d ကို Volume %d နှင့် Rate %d ဖြင့် လုံခြုံစွာဖွင့်မည်",
+    "code": "if (%2$d > 0) { %1$s.play((int) %2$d, (float) Math.max(0, Math.min(1, %3$d)), (float) Math.max(0, Math.min(1, %3$d)), 1, 0, (float) Math.max(0.5, Math.min(2.0, %4$d))); }",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Clamp_Loop_Count",
+    "type": "d",
+    "color": "#BA68C8",
+    "palette": "",
+    "spec": "%d loop count ကို -1 မှ %d အတွင်း ကန့်သတ်မည်",
+    "code": "Math.max(-1, Math.min(%2$d, %1$d))",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Advanced_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== SOUND POOL • Professional Resource Management ==="
+  },
+  {
+    "name": "SoundPool_Unload_Sound",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.soundpool ထဲမှ Sound ID %d ကို ဖယ်ရှားမည်",
+    "code": "%1$s.unload((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Release",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Resource အားလုံးကို လွှတ်ပေးမည်",
+    "code": "%1$s.release();",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Stop_And_Release",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d ကို ရပ်ပြီး Resource အားလုံး လွှတ်ပေးမည်",
+    "code": "%1$s.stop((int) %2$d); %1$s.release();",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Play_With_Clamped_Values",
+    "type": "d",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.soundpool မှ Sound ID %d ကို Volume %d၊ Priority %d၊ Loop %d၊ Rate %d ဖြင့် Professional ပုံစံဖွင့်မည်",
+    "code": "%1$s.play((int) %2$d, (float) Math.max(0, Math.min(1, %3$d)), (float) Math.max(0, Math.min(1, %3$d)), (int) %4$d, (int) Math.max(-1, %5$d), (float) Math.max(0.5, Math.min(2.0, %6$d)))",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "SoundPool_Set_Clamped_Rate",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d Rate ကို %d နှင့် 2 ကြားတွင် ကန့်သတ်မည်",
+    "code": "%1$s.setRate((int) %2$d, (float) Math.max(0.5, Math.min(2.0, %3$d)));",
+    "imports": ""
+  },
+  {
+    "name": "SoundPool_Set_Clamped_Volume",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.soundpool ၏ Stream ID %d Volume ကို %d နှင့် 1 ကြားတွင် ကန့်သတ်မည်",
+    "code": "%1$s.setVolume((int) %2$d, (float) Math.max(0, Math.min(1, %3$d)), (float) Math.max(0, Math.min(1, %3$d)));",
+    "imports": ""
+  }
+]

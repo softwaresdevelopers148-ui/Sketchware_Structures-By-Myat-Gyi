@@ -1,0 +1,423 @@
+[
+  {
+    "name": "Calendar_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== CALENDAR • အခြေခံ စီမံခန့်ခွဲမှု ==="
+  },
+  {
+    "name": "Calendar_Clear",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.calendar ၏ ရက်စွဲနှင့် အချိန်ကို ရှင်းလင်းမည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Set_Now",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.calendar ကို လက်ရှိရက်စွဲနှင့် အချိန်အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setTimeInMillis(System.currentTimeMillis());",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Set_Millis",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.calendar ၏ အချိန်ကို %d milliseconds အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setTimeInMillis(%2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Get_Millis",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar ထံမှ milliseconds အချိန်ကို ရယူမည်",
+    "code": "%1$s.getTimeInMillis()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Set_Timezone",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.calendar ၏ Timezone ကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setTimeZone(java.util.TimeZone.getTimeZone(%2$s));",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Get_Timezone",
+    "type": "s",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar ၏ Timezone အမည်ကို ရယူမည်",
+    "code": "%1$s.getTimeZone().getID()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Calendar_Date_Set_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== CALENDAR • ရက်စွဲ သတ်မှတ်ခြင်း ==="
+  },
+  {
+    "name": "Calendar_Set_Date",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.calendar ကို ခုနှစ် %d၊ လ %d၊ ရက် %d အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.set(%2$d, (%3$d) - 1, %4$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Set_Date_Time",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.calendar ကို ခုနှစ် %d၊ လ %d၊ ရက် %d၊ နာရီ %d၊ မိနစ် %d၊ စက္ကန့် %d အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.set(%2$d, (%3$d) - 1, %4$d, %5$d, %6$d, %7$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Set_Start_Day",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.calendar ၏ အချိန်ကို ထိုနေ့၏ အစ 00:00:00 အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.set(java.util.Calendar.HOUR_OF_DAY, 0); %1$s.set(java.util.Calendar.MINUTE, 0); %1$s.set(java.util.Calendar.SECOND, 0); %1$s.set(java.util.Calendar.MILLISECOND, 0);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Set_End_Day",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.calendar ၏ အချိန်ကို ထိုနေ့၏ အဆုံး 23:59:59 အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.set(java.util.Calendar.HOUR_OF_DAY, 23); %1$s.set(java.util.Calendar.MINUTE, 59); %1$s.set(java.util.Calendar.SECOND, 59); %1$s.set(java.util.Calendar.MILLISECOND, 999);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Read_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== CALENDAR • ရက်စွဲနှင့် အချိန်ကို ဖတ်ခြင်း ==="
+  },
+  {
+    "name": "Calendar_Get_Year",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ ခုနှစ် ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.YEAR)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Month",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ လ (1 မှ 12) ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.MONTH) + 1",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Day",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ လ၏ ရက် ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.DAY_OF_MONTH)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Day_Of_Week",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ အပတ်၏နေ့ (တနင်္ဂနွေ=1) ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.DAY_OF_WEEK)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Hour",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ နာရီ (24-hour) ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.HOUR_OF_DAY)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Minute",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ မိနစ် ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.MINUTE)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Second",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ စက္ကန့် ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.SECOND)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Week_Of_Year",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar မှ ထိုရက်စွဲ၏ အပတ်နံပါတ် ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.WEEK_OF_YEAR)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Get_Days_In_Month",
+    "type": "d",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.calendar ၏ ထိုလတွင် ရက်ပေါင်းမည်မျှရှိသည်ကို ရယူမည်",
+    "code": "%1$s.getActualMaximum(java.util.Calendar.DAY_OF_MONTH)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Arithmetic_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== CALENDAR • အချိန်တွက်ချက်ခြင်း ==="
+  },
+  {
+    "name": "Calendar_Add_Years",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.calendar သို့ %d ခုနှစ် ပေါင်းထည့်မည်",
+    "code": "%1$s.add(java.util.Calendar.YEAR, %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Add_Months",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.calendar သို့ %d လ ပေါင်းထည့်မည်",
+    "code": "%1$s.add(java.util.Calendar.MONTH, %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Add_Days",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.calendar သို့ %d ရက် ပေါင်းထည့်မည်",
+    "code": "%1$s.add(java.util.Calendar.DAY_OF_MONTH, %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Add_Hours",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.calendar သို့ %d နာရီ ပေါင်းထည့်မည်",
+    "code": "%1$s.add(java.util.Calendar.HOUR_OF_DAY, %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Add_Minutes",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.calendar သို့ %d မိနစ် ပေါင်းထည့်မည်",
+    "code": "%1$s.add(java.util.Calendar.MINUTE, %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Add_Seconds",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.calendar သို့ %d စက္ကန့် ပေါင်းထည့်မည်",
+    "code": "%1$s.add(java.util.Calendar.SECOND, %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Compare_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== CALENDAR • နှိုင်းယှဉ်ခြင်းနှင့် စစ်ဆေးခြင်း ==="
+  },
+  {
+    "name": "Calendar_Is_Before",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.calendar သည် %m.calendar ထက် စောသလား စစ်မည်",
+    "code": "%1$s.before(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Calendar_Is_After",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.calendar သည် %m.calendar ထက် နောက်ကျသလား စစ်မည်",
+    "code": "%1$s.after(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Calendar_Is_Same_Day",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.calendar နှင့် %m.calendar သည် ရက်တူသလား စစ်မည်",
+    "code": "(%1$s.get(java.util.Calendar.ERA) == %2$s.get(java.util.Calendar.ERA) && %1$s.get(java.util.Calendar.YEAR) == %2$s.get(java.util.Calendar.YEAR) && %1$s.get(java.util.Calendar.DAY_OF_YEAR) == %2$s.get(java.util.Calendar.DAY_OF_YEAR))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Calendar_Difference_Days",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.calendar နှင့် %m.calendar ကြား ရက်အကွာအဝေးကို ရယူမည်",
+    "code": "((%1$s.getTimeInMillis() - %2$s.getTimeInMillis()) / 86400000.0)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Is_Leap_Year",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.calendar ၏ ခုနှစ်သည် Leap Year ဟုတ်မဟုတ် စစ်မည်",
+    "code": "(%1$s.get(java.util.Calendar.YEAR) % 4 == 0 && (%1$s.get(java.util.Calendar.YEAR) % 100 != 0 || %1$s.get(java.util.Calendar.YEAR) % 400 == 0))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Calendar_Format_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== CALENDAR • Format နှင့် Parse ==="
+  },
+  {
+    "name": "Calendar_Format",
+    "type": "s",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.calendar ကို %s Format ဖြင့် စာသားပြောင်းမည်",
+    "code": "new java.text.SimpleDateFormat(%2$s, java.util.Locale.getDefault()).format(%1$s.getTime())",
+    "imports": "java.text.SimpleDateFormat\njava.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "Calendar_Format_Iso",
+    "type": "s",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.calendar ကို ISO yyyy-MM-dd စာသားအဖြစ် ပြောင်းမည်",
+    "code": "new java.text.SimpleDateFormat(\"yyyy-MM-dd\", java.util.Locale.US).format(%1$s.getTime())",
+    "imports": "java.text.SimpleDateFormat\njava.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "Calendar_Parse",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.calendar ထဲသို့ %s စာသားကို %s Format ဖြင့် ဖတ်ထည့်မည်",
+    "code": "try { %1$s.setTime(new java.text.SimpleDateFormat(%3$s, java.util.Locale.getDefault()).parse(%2$s)); } catch (Exception _e) { _e.printStackTrace(); }",
+    "imports": "java.text.SimpleDateFormat\njava.util.Locale"
+  },
+  {
+    "name": "Calendar_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== CALENDAR • Professional Utility Blocks ==="
+  },
+  {
+    "name": "Calendar_Set_First_Day_Of_Week",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.calendar ၏ အပတ်စတင်ရက်ကို %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setFirstDayOfWeek((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Set_Minimal_Days",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.calendar ၏ အပတ်နံပါတ်တွက်ရန် အနည်းဆုံးရက်ကို %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setMinimalDaysInFirstWeek((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Get_Offset",
+    "type": "d",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.calendar ၏ UTC Offset milliseconds ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.ZONE_OFFSET) + %1$s.get(java.util.Calendar.DST_OFFSET)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Calendar_Sync",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.calendar ကို %m.calendar ၏ အချိန်နှင့် ထပ်တူပြုမည်",
+    "code": "%1$s.setTimeInMillis(%2$s.getTimeInMillis());",
+    "imports": ""
+  },
+  {
+    "name": "Calendar_Is_Weekend",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.calendar သည် စနေ သို့မဟုတ် တနင်္ဂနွေ ဟုတ်မဟုတ် စစ်မည်",
+    "code": "(%1$s.get(java.util.Calendar.DAY_OF_WEEK) == java.util.Calendar.SATURDAY || %1$s.get(java.util.Calendar.DAY_OF_WEEK) == java.util.Calendar.SUNDAY)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Calendar_Get_Day_Of_Year",
+    "type": "d",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.calendar ၏ တစ်နှစ်အတွင်း ရက်အမှတ်ကို ရယူမည်",
+    "code": "%1$s.get(java.util.Calendar.DAY_OF_YEAR)",
+    "imports": "",
+    "typeName": "double"
+  }
+]

@@ -1,0 +1,415 @@
+[
+  {
+    "name": "DatePicker_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DATE PICKER • အခြေခံ Show နှင့် Date သတ်မှတ်ခြင်း ==="
+  },
+  {
+    "name": "DatePicker_Show",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.datepicker ကို ပြသမည်",
+    "code": "%1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Dismiss",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.datepicker ကို ပိတ်မည်",
+    "code": "%1$s.dismiss();",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Is_Showing",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.datepicker ပြသနေသလား စစ်မည်",
+    "code": "%1$s.isShowing()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Update_Date",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.datepicker ၏ Date ကို Year %d၊ Month %d၊ Day %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.updateDate((int) %2$d, (int) Math.max(0, Math.min(11, %3$d - 1)), (int) Math.max(1, Math.min(31, %4$d)));",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Update_Date_Java_Month",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.datepicker ၏ Date ကို Year %d၊ Java Month %d၊ Day %d ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.updateDate((int) %2$d, (int) Math.max(0, Math.min(11, %3$d)), (int) Math.max(1, Math.min(31, %4$d)));",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Get_DatePicker",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.datepicker ထဲရှိ DatePicker ကို ရယူမည်",
+    "code": "%1$s.getDatePicker()",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Limits_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DATE PICKER • Min/Max Date ကန့်သတ်ခြင်း ==="
+  },
+  {
+    "name": "DatePicker_Set_Min_Date",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.datepicker တွင် ရွေးချယ်နိုင်သော အနည်းဆုံး Date ကို %d milliseconds သတ်မှတ်မည်",
+    "code": "%1$s.getDatePicker().setMinDate((long) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Set_Max_Date",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.datepicker တွင် ရွေးချယ်နိုင်သော အများဆုံး Date ကို %d milliseconds သတ်မှတ်မည်",
+    "code": "%1$s.getDatePicker().setMaxDate((long) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Clear_Min_Date",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.datepicker ၏ အနည်းဆုံး Date ကန့်သတ်ချက်ကို ဖယ်မည်",
+    "code": "%1$s.getDatePicker().setMinDate(Long.MIN_VALUE);",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Clear_Max_Date",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.datepicker ၏ အများဆုံး Date ကန့်သတ်ချက်ကို ဖယ်မည်",
+    "code": "%1$s.getDatePicker().setMaxDate(Long.MAX_VALUE);",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Set_Min_Today",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.datepicker တွင် ယနေ့မှစ၍သာ ရွေးချယ်နိုင်အောင် သတ်မှတ်မည်",
+    "code": "%1$s.getDatePicker().setMinDate(System.currentTimeMillis());",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Values_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DATE PICKER • လက်ရှိ Selected Date တန်ဖိုးများ ==="
+  },
+  {
+    "name": "DatePicker_Get_Selected_Year",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.datepicker ၏ လက်ရှိ Year ကို ရယူမည်",
+    "code": "%1$s.getDatePicker().getYear()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_Get_Selected_Month",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.datepicker ၏ လက်ရှိ Month ကို 1-12 ဖြင့် ရယူမည်",
+    "code": "%1$s.getDatePicker().getMonth() + 1",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_Get_Selected_Day",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.datepicker ၏ လက်ရှိ Day ကို ရယူမည်",
+    "code": "%1$s.getDatePicker().getDayOfMonth()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_Get_Selected_Java_Month",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.datepicker ၏ လက်ရှိ Java Month ကို 0-11 ဖြင့် ရယူမည်",
+    "code": "%1$s.getDatePicker().getMonth()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_Is_Valid_Date",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Year %d၊ Month %d၊ Day %d သည် မှန်ကန်သော Date ဟုတ်မဟုတ် စစ်မည်",
+    "code": "try { java.util.Calendar _dp_c = java.util.Calendar.getInstance(); _dp_c.setLenient(false); _dp_c.set((int) %1$d, (int) %2$d - 1, (int) %3$d, 0, 0, 0); _dp_c.set(java.util.Calendar.MILLISECOND, 0); _dp_c.getTimeInMillis(); true; } catch (Exception _dp_e) { false; }",
+    "imports": "java.util.Calendar",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Conversion_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DATE PICKER • Date Conversion နှင့် Format ==="
+  },
+  {
+    "name": "DatePicker_To_Epoch_Millis",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Year %d၊ Month %d၊ Day %d ကို Epoch milliseconds အဖြစ် ပြောင်းမည်",
+    "code": "(new java.util.GregorianCalendar((int) %1$d, (int) %2$d - 1, (int) %3$d, 0, 0, 0)).getTimeInMillis()",
+    "imports": "java.util.GregorianCalendar",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_Today_Epoch_Millis",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "ယနေ့ Date ၏ Epoch milliseconds ကို ရယူမည်",
+    "code": "java.util.Calendar.getInstance().getTimeInMillis()",
+    "imports": "java.util.Calendar",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_Format_Epoch",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Epoch milliseconds %d ကို Date Format %s ဖြင့် စာသားပြောင်းမည်",
+    "code": "new java.text.SimpleDateFormat(%2$s, java.util.Locale.getDefault()).format(new java.util.Date((long) %1$d))",
+    "imports": "java.text.SimpleDateFormat,java.util.Date,java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "DatePicker_Format_YMD",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Year %d၊ Month %d၊ Day %d ကို %s Format ဖြင့် စာသားပြောင်းမည်",
+    "code": "new java.text.SimpleDateFormat(%4$s, java.util.Locale.getDefault()).format(new java.util.GregorianCalendar((int) %1$d, (int) %2$d - 1, (int) %3$d).getTime())",
+    "imports": "java.text.SimpleDateFormat,java.util.GregorianCalendar,java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "DatePicker_Default_Format",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Year %d၊ Month %d၊ Day %d ကို yyyy-MM-dd စာသားအဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%04d-%02d-%02d\", (int) %1$d, (int) %2$d, (int) %3$d)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "DatePicker_Compare_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DATE PICKER • Date Compare နှင့် Range ==="
+  },
+  {
+    "name": "DatePicker_Days_Between",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Date milliseconds %d နှင့် %d ကြား ရက်အရေအတွက်ကို တွက်မည်",
+    "code": "Math.abs((long) %2$d - (long) %1$d) / 86400000L",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_Is_Before",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Date milliseconds %d သည် %d ထက် အရင်ဖြစ်သလား စစ်မည်",
+    "code": "(long) %1$d < (long) %2$d",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Is_After",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Date milliseconds %d သည် %d ထက် နောက်ဖြစ်သလား စစ်မည်",
+    "code": "(long) %1$d > (long) %2$d",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Is_Same_Day",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Date milliseconds %d နှင့် %d သည် တစ်ရက်တည်းလား စစ်မည်",
+    "code": "new java.text.SimpleDateFormat(\"yyyy-MM-dd\", java.util.Locale.US).format(new java.util.Date((long) %1$d)).equals(new java.text.SimpleDateFormat(\"yyyy-MM-dd\", java.util.Locale.US).format(new java.util.Date((long) %2$d)))",
+    "imports": "java.text.SimpleDateFormat,java.util.Date,java.util.Locale",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Is_In_Range",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Date milliseconds %d သည် %d နှင့် %d ကြားတွင် ရှိသလား စစ်မည်",
+    "code": "(long) %1$d >= Math.min((long) %2$d, (long) %3$d) && (long) %1$d <= Math.max((long) %2$d, (long) %3$d)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Is_Leap_Year",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Year %d သည် Leap Year ဟုတ်မဟုတ် စစ်မည်",
+    "code": "((%1$d % 4 == 0) && (%1$d % 100 != 0 || %1$d % 400 == 0))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DATE PICKER • Safe Date Workflow ==="
+  },
+  {
+    "name": "DatePicker_Show_If_Hidden",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.datepicker မပြသသေးလျှင် ပြသမည်",
+    "code": "if (!%1$s.isShowing()) { %1$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Dismiss_If_Showing",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.datepicker ပြသနေမှသာ ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Update_If_Valid",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Valid ဖြစ်သော Year %d၊ Month %d၊ Day %d ကို %m.datepicker တွင် သတ်မှတ်မည်",
+    "code": "try { java.util.Calendar _dp_c = java.util.Calendar.getInstance(); _dp_c.setLenient(false); _dp_c.set((int) %2$d, (int) %3$d - 1, (int) %4$d); _dp_c.getTimeInMillis(); %1$s.updateDate((int) %2$d, (int) %3$d - 1, (int) %4$d); } catch (Exception _dp_e) { }",
+    "imports": "java.util.Calendar"
+  },
+  {
+    "name": "DatePicker_Set_Min_Max_Range",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.datepicker တွင် Min %d နှင့် Max %d milliseconds သတ်မှတ်မည်",
+    "code": "%1$s.getDatePicker().setMinDate(Math.min((long) %2$d, (long) %3$d)); %1$s.getDatePicker().setMaxDate(Math.max((long) %2$d, (long) %3$d));",
+    "imports": ""
+  },
+  {
+    "name": "DatePicker_Set_Selection_From_Epoch",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.datepicker တွင် Epoch milliseconds %d ကို ရွေးထားမည်",
+    "code": "java.util.Calendar _dp_c = java.util.Calendar.getInstance(); _dp_c.setTimeInMillis((long) %2$d); %1$s.updateDate(_dp_c.get(java.util.Calendar.YEAR), _dp_c.get(java.util.Calendar.MONTH), _dp_c.get(java.util.Calendar.DAY_OF_MONTH));",
+    "imports": "java.util.Calendar"
+  },
+  {
+    "name": "DatePicker_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== DATE PICKER • Professional onDateSet Workflow ==="
+  },
+  {
+    "name": "DatePicker_OnDateSet_To_Epoch",
+    "type": "d",
+    "color": "#009688",
+    "palette": "",
+    "spec": "onDateSet မှ Year %d၊ Month %d၊ Day %d ကို Epoch milliseconds အဖြစ် ပြောင်းမည်",
+    "code": "(new java.util.GregorianCalendar((int) %1$d, (int) %2$d, (int) %3$d, 0, 0, 0)).getTimeInMillis()",
+    "imports": "java.util.GregorianCalendar",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_OnDateSet_Month_1_Based",
+    "type": "d",
+    "color": "#009688",
+    "palette": "",
+    "spec": "onDateSet ၏ Java Month %d ကို User Month 1-12 အဖြစ် ပြောင်းမည်",
+    "code": "((int) %1$d + 1)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "DatePicker_OnDateSet_Format",
+    "type": "s",
+    "color": "#009688",
+    "palette": "",
+    "spec": "onDateSet မှ Year %d၊ Java Month %d၊ Day %d ကို %s Format ဖြင့် ပြောင်းမည်",
+    "code": "new java.text.SimpleDateFormat(%4$s, java.util.Locale.getDefault()).format(new java.util.GregorianCalendar((int) %1$d, (int) %2$d, (int) %3$d).getTime())",
+    "imports": "java.text.SimpleDateFormat,java.util.GregorianCalendar,java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "DatePicker_Is_Past_Date",
+    "type": "b",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Date milliseconds %d သည် ယနေ့မတိုင်မီ ဖြစ်သလား စစ်မည်",
+    "code": "(long) %1$d < java.util.Calendar.getInstance().getTimeInMillis()",
+    "imports": "java.util.Calendar",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Is_Today",
+    "type": "b",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Date milliseconds %d သည် ယနေ့ဖြစ်သလား စစ်မည်",
+    "code": "new java.text.SimpleDateFormat(\"yyyy-MM-dd\", java.util.Locale.US).format(new java.util.Date((long) %1$d)).equals(new java.text.SimpleDateFormat(\"yyyy-MM-dd\", java.util.Locale.US).format(new java.util.Date()))",
+    "imports": "java.text.SimpleDateFormat,java.util.Date,java.util.Locale",
+    "typeName": "boolean"
+  },
+  {
+    "name": "DatePicker_Dismiss_After_Set",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.datepicker ကို Date ရွေးပြီးနောက် လုံခြုံစွာ ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  }
+]

@@ -1,0 +1,374 @@
+[
+  {
+    "name": "Timer_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIMER • အခြေခံ ထိန်းချုပ်မှု ==="
+  },
+  {
+    "name": "Timer_Set_Interval",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timer ၏ interval ကို %d milliseconds ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setInterval((long) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Set_Interval_Seconds",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timer ၏ interval ကို %d seconds ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setInterval((long) (%2$d * 1000L));",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Start",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timer ကို စတင်မည်",
+    "code": "%1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Cancel",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timer ကို ရပ်တန့်မည်",
+    "code": "%1$s.cancel();",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Restart",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.timer ကို ရပ်ပြီး ပြန်စတင်မည်",
+    "code": "%1$s.cancel(); %1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Is_Enabled",
+    "type": "b",
+    "color": "#8BC34A",
+    "palette": "",
+    "spec": "%m.timer သည် အလုပ်လုပ်နေသလား စစ်မည်",
+    "code": "%1$s.isEnabled()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Timer_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIMER • Safe Start / Stop ==="
+  },
+  {
+    "name": "Timer_Start_If_Stopped",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.timer မအလုပ်လုပ်သေးလျှင် စတင်မည်",
+    "code": "if (!%1$s.isEnabled()) { %1$s.start(); }",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Cancel_If_Running",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.timer အလုပ်လုပ်နေမှသာ ရပ်တန့်မည်",
+    "code": "if (%1$s.isEnabled()) { %1$s.cancel(); }",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Set_And_Start",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.timer ၏ interval ကို %d milliseconds သတ်မှတ်ပြီး စတင်မည်",
+    "code": "%1$s.setInterval((long) %2$d); %1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Set_Seconds_And_Start",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.timer ၏ interval ကို %d seconds သတ်မှတ်ပြီး စတင်မည်",
+    "code": "%1$s.setInterval((long) (%2$d * 1000L)); %1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Set_If_Valid",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.timer ၏ interval ကို %d milliseconds ဖြင့် မှန်ကန်မှသာ သတ်မှတ်မည်",
+    "code": "if (%2$d > 0) { %1$s.setInterval((long) %2$d); }",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Set_And_Start_If_Valid",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.timer ကို %d milliseconds ဖြင့် မှန်ကန်မှသာ စတင်မည်",
+    "code": "if (%2$d > 0) { %1$s.setInterval((long) %2$d); %1$s.start(); }",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Time_Convert_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIMER • Time Unit ပြောင်းလဲခြင်း ==="
+  },
+  {
+    "name": "Timer_Milliseconds_To_Seconds",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%d milliseconds ကို seconds အဖြစ် ပြောင်းမည်",
+    "code": "((double) %1$d / 1000.0)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Timer_Seconds_To_Milliseconds",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%d seconds ကို milliseconds အဖြစ် ပြောင်းမည်",
+    "code": "((double) %1$d * 1000.0)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Timer_Minutes_To_Milliseconds",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%d minutes ကို milliseconds အဖြစ် ပြောင်းမည်",
+    "code": "((double) %1$d * 60000.0)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Timer_Hours_To_Milliseconds",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%d hours ကို milliseconds အဖြစ် ပြောင်းမည်",
+    "code": "((double) %1$d * 3600000.0)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Timer_Current_Time_Millis",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "လက်ရှိ system time ကို milliseconds အဖြစ် ရယူမည်",
+    "code": "System.currentTimeMillis()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Timer_Elapsed_Millis",
+    "type": "d",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%d milliseconds စတင်ချိန်မှ ယခုအချိန်အထိ ကြာချိန်ကို ရယူမည်",
+    "code": "(System.currentTimeMillis() - (long) %1$d)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Timer_Duration_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIMER • Duration Format ==="
+  },
+  {
+    "name": "Timer_Format_Seconds",
+    "type": "s",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%d seconds ကို HH:mm:ss စာသားအဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d:%02d\", (long) %1$d / 3600L, ((long) %1$d % 3600L) / 60L, (long) %1$d % 60L)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "Timer_Format_Millis",
+    "type": "s",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%d milliseconds ကို HH:mm:ss စာသားအဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d:%02d\", (long) (%1$d / 1000.0) / 3600L, ((long) (%1$d / 1000.0) % 3600L) / 60L, (long) (%1$d / 1000.0) % 60L)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "Timer_Format_Minutes_Seconds",
+    "type": "s",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%d seconds ကို MM:ss စာသားအဖြစ် ပြောင်းမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%02d:%02d\", (long) %1$d / 60L, (long) %1$d % 60L)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "Timer_Format_Millis_Number",
+    "type": "d",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%d milliseconds ကို integer seconds အဖြစ် ပြောင်းမည်",
+    "code": "((long) %1$d / 1000L)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "Timer_Variable_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIMER • Countdown Variable Utilities ==="
+  },
+  {
+    "name": "Timer_Decrement_Number",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.varInt ကို 1 လျှော့မည်",
+    "code": "%1$s--;",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Increment_Number",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.varInt ကို 1 တိုးမည်",
+    "code": "%1$s++;",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Add_To_Number",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.varInt သို့ %d ပေါင်းမည်",
+    "code": "%1$s += %2$d;",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Subtract_From_Number",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.varInt ထံမှ %d နုတ်မည်",
+    "code": "%1$s -= %2$d;",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Reset_Number",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.varInt ကို %d ဖြင့် ပြန်သတ်မှတ်မည်",
+    "code": "%1$s = %2$d;",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Number_Is_Zero_Or_Less",
+    "type": "b",
+    "color": "#BA68C8",
+    "palette": "",
+    "spec": "%m.varInt သည် သုည သို့မဟုတ် သုညအောက် ဖြစ်သလား စစ်မည်",
+    "code": "%1$s <= 0",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Timer_Number_Is_Positive",
+    "type": "b",
+    "color": "#BA68C8",
+    "palette": "",
+    "spec": "%m.varInt သည် သုညထက် ကြီးသလား စစ်မည်",
+    "code": "%1$s > 0",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Timer_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== TIMER • Professional Utilities ==="
+  },
+  {
+    "name": "Timer_Clamp_Number",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.varInt ကို %d နှင့် %d ကြားတွင် ကန့်သတ်မည်",
+    "code": "%1$s = Math.max(%2$d, Math.min(%1$s, %3$d));",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Is_Interval_Valid",
+    "type": "b",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%d milliseconds interval သည် မှန်ကန်သလား စစ်မည်",
+    "code": "%1$d > 0",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Timer_Set_Minimum_Interval",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.timer ၏ interval ကို အနည်းဆုံး %d milliseconds ဖြစ်အောင် သတ်မှတ်မည်",
+    "code": "%1$s.setInterval((long) Math.max(1, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Set_Seconds_And_Restart",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.timer ကို %d seconds interval ဖြင့် ပြန်စတင်မည်",
+    "code": "%1$s.cancel(); %1$s.setInterval((long) (%2$d * 1000L)); %1$s.start();",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Cancel_On_Lifecycle",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "%m.timer ကို lifecycle ပြောင်းချိန်တွင် လုံခြုံစွာ ရပ်တန့်မည်",
+    "code": "if (%1$s.isEnabled()) { %1$s.cancel(); }",
+    "imports": ""
+  },
+  {
+    "name": "Timer_Now_Seconds",
+    "type": "d",
+    "color": "#795548",
+    "palette": "",
+    "spec": "လက်ရှိ system time ကို seconds အဖြစ် ရယူမည်",
+    "code": "(System.currentTimeMillis() / 1000.0)",
+    "imports": "",
+    "typeName": "double"
+  }
+]

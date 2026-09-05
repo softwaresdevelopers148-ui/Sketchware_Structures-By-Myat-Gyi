@@ -1,0 +1,403 @@
+[
+  {
+    "name": "UniversalDialog_Create_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== UNIVERSAL CUSTOM DIALOG • ဖန်တီးခြင်းနှင့် အခြေခံထိန်းချုပ်မှု ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Create",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Custom Dialog %m.dialog ကို Activity %m.activity တွင် Layout %s ဖြင့် ဖန်တီးမည်",
+    "code": "final android.app.AlertDialog %1$s = new android.app.AlertDialog.Builder(%2$s.this).create(); final android.view.LayoutInflater _ud_li = %2$s.this.getLayoutInflater(); final android.view.View _ud_view = _ud_li.inflate(R.layout.%3$s, null); %1$s.setView(_ud_view); if (%1$s.getWindow() != null) { %1$s.getWindow().setBackgroundDrawableResource(android.R.color.transparent); }",
+    "imports": "android.app.AlertDialog\nandroid.view.LayoutInflater\nandroid.view.View"
+  },
+  {
+    "name": "UniversalDialog_Set_Cancelable",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ကို အပြင်ဘက်နှိပ်ပါက ပိတ်ခွင့် %b သတ်မှတ်မည်",
+    "code": "%1$s.setCanceledOnTouchOutside(%2$b); %1$s.setCancelable(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Background_Color",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ၏ နောက်ခံအရောင်ကို %m.color သို့ သတ်မှတ်မည်",
+    "code": "if (%1$s.getWindow() != null) { %1$s.getWindow().setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(%2$s)); }",
+    "imports": "android.graphics.drawable.ColorDrawable"
+  },
+  {
+    "name": "UniversalDialog_Show",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ကို ပြသမည်",
+    "code": "%1$s.show();",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Show_If_Hidden",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog မပြသရသေးလျှင်သာ ပြသမည်",
+    "code": "if (!(%1$s.isShowing())) { %1$s.show(); }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Dismiss",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ကို ပိတ်မည်",
+    "code": "if (%1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Is_Showing",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.dialog ပြသနေသလား စစ်မည်",
+    "code": "%1$s.isShowing()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "UniversalDialog_Content_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== UNIVERSAL CUSTOM DIALOG • Title, Message နှင့် Custom View ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Title",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ ခေါင်းစဉ်ကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setTitle(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Message",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ အကြောင်းအရာကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setMessage(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Title_Message",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog တွင် ခေါင်းစဉ် %s နှင့် အကြောင်းအရာ %s သတ်မှတ်မည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s);",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Find_View_By_ID",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ထဲမှ View ID %s ကို View Variable %s ထဲ ရယူမည်",
+    "code": "android.view.View %2$s = %1$s.findViewById(R.id.%3$s);",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_View",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog တွင် View Variable %s ကို Custom View အဖြစ် သတ်မှတ်မည်",
+    "code": "%1$s.setView(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Width_Height",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ Width %d နှင့် Height %d ကို သတ်မှတ်မည်",
+    "code": "if (%1$s.getWindow() != null) { %1$s.getWindow().setLayout((int)%2$d, (int)%3$d); }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Window_Gravity",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ Window Gravity ကို %d သတ်မှတ်မည်",
+    "code": "if (%1$s.getWindow() != null) { %1$s.getWindow().setGravity((int)%2$d); }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Position",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.dialog ၏ X %d နှင့် Y %d တည်နေရာကို သတ်မှတ်မည်",
+    "code": "if (%1$s.getWindow() != null) { %1$s.getWindow().getAttributes().x = (int)%2$d; %1$s.getWindow().getAttributes().y = (int)%3$d; %1$s.getWindow().setAttributes(%1$s.getWindow().getAttributes()); }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Buttons_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== UNIVERSAL CUSTOM DIALOG • Button များနှင့် Callback Action ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Set_Positive",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ၏ အတည်ပြုခလုတ်စာသားကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_POSITIVE, %2$s, (android.content.DialogInterface.OnClickListener)null);",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Set_Negative",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ၏ ပယ်ဖျက်ခလုတ်စာသားကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_NEGATIVE, %2$s, (android.content.DialogInterface.OnClickListener)null);",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Set_Neutral",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ၏ အလယ်ခလုတ်စာသားကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_NEUTRAL, %2$s, (android.content.DialogInterface.OnClickListener)null);",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Set_Positive_Action",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ၏ အတည်ပြုခလုတ် %s နှိပ်လျှင် Action Code လုပ်မည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_POSITIVE, %2$s, new android.content.DialogInterface.OnClickListener() { @Override public void onClick(android.content.DialogInterface _ud_d, int _ud_w) { %3$s; } });",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Set_Negative_Action",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ၏ ပယ်ဖျက်ခလုတ် %s နှိပ်လျှင် Action Code လုပ်မည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_NEGATIVE, %2$s, new android.content.DialogInterface.OnClickListener() { @Override public void onClick(android.content.DialogInterface _ud_d, int _ud_w) { %3$s; } });",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Set_Neutral_Action",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog ၏ အလယ်ခလုတ် %s နှိပ်လျှင် Action Code လုပ်မည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_NEUTRAL, %2$s, new android.content.DialogInterface.OnClickListener() { @Override public void onClick(android.content.DialogInterface _ud_d, int _ud_w) { %3$s; } });",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Set_All_Buttons",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.dialog တွင် အတည်ပြု %s၊ ပယ်ဖျက် %s နှင့် အလယ် %s ခလုတ်များ ထည့်မည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_POSITIVE, %2$s, (android.content.DialogInterface.OnClickListener)null); %1$s.setButton(android.content.DialogInterface.BUTTON_NEGATIVE, %3$s, (android.content.DialogInterface.OnClickListener)null); %1$s.setButton(android.content.DialogInterface.BUTTON_NEUTRAL, %4$s, (android.content.DialogInterface.OnClickListener)null);",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== UNIVERSAL CUSTOM DIALOG • Safe နှင့် Composeable Workflow ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Show_Info_If_Valid",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Message %s မလွတ်လျှင် Title %s ဖြင့် %m.dialog ကို ပြသမည်",
+    "code": "if (%1$s != null && !%1$s.toString().trim().isEmpty()) { %3$s.setTitle(%2$s); %3$s.setMessage(%1$s); if (!(%3$s.isShowing())) { %3$s.show(); } }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Show_Error_If_Empty",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "စာသား %s လွတ်လျှင် Error Dialog %m.dialog တွင် Title %s နှင့် Message %s ပြမည်",
+    "code": "if (%1$s == null || %1$s.toString().trim().isEmpty()) { %2$s.setTitle(%3$s); %2$s.setMessage(%4$s); %2$s.setButton(android.content.DialogInterface.BUTTON_POSITIVE, \"OK\", (android.content.DialogInterface.OnClickListener)null); if (!(%2$s.isShowing())) { %2$s.show(); } }",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Show_Confirm",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.dialog တွင် Title %s၊ Message %s၊ Confirm %s နှင့် Cancel %s ဖြင့် ပြသမည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setButton(android.content.DialogInterface.BUTTON_POSITIVE, %4$s, (android.content.DialogInterface.OnClickListener)null); %1$s.setButton(android.content.DialogInterface.BUTTON_NEGATIVE, %5$s, (android.content.DialogInterface.OnClickListener)null); if (!(%1$s.isShowing())) { %1$s.show(); }",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_Dismiss_If_Showing",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.dialog ပြသနေမှသာ ပိတ်မည်",
+    "code": "if (%1$s != null && %1$s.isShowing()) { %1$s.dismiss(); }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Clear_Buttons",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.dialog ၏ Button များကို ဖယ်ရှားမည်",
+    "code": "%1$s.setButton(android.content.DialogInterface.BUTTON_POSITIVE, (CharSequence)null, (android.content.DialogInterface.OnClickListener)null); %1$s.setButton(android.content.DialogInterface.BUTTON_NEGATIVE, (CharSequence)null, (android.content.DialogInterface.OnClickListener)null); %1$s.setButton(android.content.DialogInterface.BUTTON_NEUTRAL, (CharSequence)null, (android.content.DialogInterface.OnClickListener)null);",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "UniversalDialog_AppInfo_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== APP INFORMATION • Safe Diagnostic Helpers ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "AppInfo_Get_Package",
+    "type": "s",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "လက်ရှိ App ၏ Package Name ကို ရယူမည်",
+    "code": "getApplicationContext().getPackageName()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "AppInfo_Get_App_Name",
+    "type": "s",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "လက်ရှိ App ၏ အမည်ကို ရယူမည်",
+    "code": "getApplicationContext().getApplicationInfo().loadLabel(getApplicationContext().getPackageManager()).toString()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "AppInfo_Save_Version_Name",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "လက်ရှိ App ၏ Version Name ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "try { %1$s = getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0).versionName; } catch (Exception _ud_e) { %1$s = \"Unknown\"; }",
+    "imports": ""
+  },
+  {
+    "name": "AppInfo_Save_Version_Code",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "လက်ရှိ App ၏ Version Code ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "try { if (android.os.Build.VERSION.SDK_INT >= 28) { %1$s = getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0).getLongVersionCode(); } else { %1$s = getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0).versionCode; } } catch (Exception _ud_e) { %1$s = 0; }",
+    "imports": "android.os.Build"
+  },
+  {
+    "name": "AppInfo_Is_Debuggable",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "App သည် Debug Build ဖြစ်သလား စစ်မည်",
+    "code": "(getApplicationContext().getApplicationInfo().flags & android.content.pm.ApplicationInfo.FLAG_DEBUGGABLE) != 0",
+    "imports": "android.content.pm.ApplicationInfo",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Security_Show_Warning",
+    "type": " ",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "Security Warning ကို %m.dialog တွင် Title %s၊ Message %s ဖြင့် ပြမည်",
+    "code": "%1$s.setTitle(%2$s); %1$s.setMessage(%3$s); %1$s.setButton(android.content.DialogInterface.BUTTON_POSITIVE, \"OK\", (android.content.DialogInterface.OnClickListener)null); if (!(%1$s.isShowing())) { %1$s.show(); }",
+    "imports": "android.content.DialogInterface"
+  },
+  {
+    "name": "Security_Is_Expected_Package",
+    "type": "b",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "လက်ရှိ Package သည် မျှော်မှန်း Package %s နှင့် တူသလား စစ်မည်",
+    "code": "getApplicationContext().getPackageName().equals(%1$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Security_Save_Version_Match",
+    "type": " ",
+    "color": "#F44336",
+    "palette": "",
+    "spec": "လက်ရှိ Version Name သည် မျှော်မှန်း Version %s နှင့် တူပါက Boolean Variable %s ကို True ထားမည်",
+    "code": "try { %2$s = getApplicationContext().getPackageManager().getPackageInfo(getApplicationContext().getPackageName(), 0).versionName.equals(%1$s); } catch (Exception _ud_e) { %2$s = false; }",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Notes_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== UNIVERSAL CUSTOM DIALOG • Notes နှင့် Compatibility ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Note_No_Fixed_Event",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Dialog Event ကို ပုံသေမချိတ်ဘဲ သီးခြား Event တွင် Logic ထည့်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Keep button/dismiss logic in the project's own event or action input; this block does not bind a fixed event.",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Note_Context",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "Dialog ကို Activity Context ဖြင့် အသုံးပြုရန် မှတ်ချက်ထားမည်",
+    "code": "// Create/show Dialog on a live Activity context; do not use application context for window UI.",
+    "imports": ""
+  },
+  {
+    "name": "UniversalDialog_Note_Security",
+    "type": " ",
+    "color": "#795548",
+    "palette": "",
+    "spec": "App integrity check ကို server-side ထပ်စစ်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Client-side package/version checks are not tamper-proof; enforce authorization and integrity-sensitive decisions on a trusted backend.",
+    "imports": ""
+  }
+]

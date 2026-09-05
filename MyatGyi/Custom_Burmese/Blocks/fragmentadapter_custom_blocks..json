@@ -1,0 +1,383 @@
+[
+  {
+    "name": "FragmentAdapter_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FRAGMENT ADAPTER • အခြေခံ Adapter Control ==="
+  },
+  {
+    "name": "FragmentAdapter_Set_Tab_Count",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ Tab အရေအတွက်ကို %d သတ်မှတ်မည်",
+    "code": "%1$s.setTabCount((int) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Get_Tab_Count",
+    "type": "d",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ Tab အရေအတွက်ကို ရယူမည်",
+    "code": "%1$s.getTabCount()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "FragmentAdapter_Notify_Data_Changed",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ Data ပြောင်းလဲမှုကို အသိပေးမည်",
+    "code": "%1$s.notifyDataSetChanged();",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Set_Current_Position",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ လက်ရှိ Position ကို %d သတ်မှတ်မည်",
+    "code": "%1$s.setCurrentItem((int) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Get_Current_Position",
+    "type": "d",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ လက်ရှိ Position ကို ရယူမည်",
+    "code": "%1$s.getCurrentItem()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "FragmentAdapter_Set_Swipe_Enabled",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ Swipe လုပ်နိုင်မှုကို %b သတ်မှတ်မည်",
+    "code": "%1$s.setSwipeEnabled(%2$b);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Is_Swipe_Enabled",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ Swipe ဖွင့်ထားသလား စစ်မည်",
+    "code": "%1$s.isSwipeEnabled()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FragmentAdapter_Event_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FRAGMENT ADAPTER • Event Return Blocks ==="
+  },
+  {
+    "name": "FragmentAdapter_Return_Tab_Title",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onTabAdded Event တွင် Tab Title %s ကို Return ပြန်မည်",
+    "code": "return %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Return_Tab_Title_By_Position",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onTabAdded Event တွင် Position %d အလိုက် Title %s ကို Return ပြန်မည်",
+    "code": "return %2$s;",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Return_Fragment",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onFragmentAdded Event တွင် Fragment %s ကို Return ပြန်မည်",
+    "code": "return %1$s;",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Return_New_Fragment",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onFragmentAdded Event တွင် Fragment Class %s အသစ်ကို Return ပြန်မည်",
+    "code": "return new %1$s();",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Return_Tab_Title_Safe",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Tab Title %s မလွတ်လပ်လျှင် Return ပြန်မည်၊ မဟုတ်လျှင် %s ပြန်မည်",
+    "code": "return (%1$s != null && !%1$s.toString().trim().isEmpty()) ? %1$s : %2$s;",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Return_Fragment_Safe",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "Fragment %s မရှိလျှင် Default Fragment %s ကို Return ပြန်မည်",
+    "code": "return %1$s != null ? %1$s : %2$s;",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Return_Tab_From_List",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "onTabAdded Event တွင် List %s ထဲမှ Position %d Title ကို Return ပြန်မည်",
+    "code": "return (%1$s != null && (int) %2$d >= 0 && (int) %2$d < %1$s.size()) ? String.valueOf(%1$s.get((int) %2$d)) : \"\";",
+    "imports": "java.util.List"
+  },
+  {
+    "name": "FragmentAdapter_Tab_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FRAGMENT ADAPTER • Tab Data နှင့် Icon ==="
+  },
+  {
+    "name": "FragmentAdapter_Set_Tab_Title",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Position %d ၏ Tab Title ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setTabTitle((int) %2$d, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Get_Tab_Title",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.fragmentadapter မှ Position %d ၏ Tab Title ကို ရယူမည်",
+    "code": "%1$s.getTabTitle((int) %2$d)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "FragmentAdapter_Set_Tab_Icon",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Position %d ၏ Tab Icon Resource ကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setTabIcon((int) %2$d, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Set_Tab_Badge",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Position %d ၏ Badge စာသားကို %s သတ်မှတ်မည်",
+    "code": "%1$s.setTabBadge((int) %2$d, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Clear_Tab_Badge",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Position %d ၏ Badge ကို ဖယ်မည်",
+    "code": "%1$s.setTabBadge((int) %2$d, \"\");",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Is_Valid_Position",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ Position %d သည် မှန်ကန်သလား စစ်မည်",
+    "code": "((int) %2$d >= 0 && (int) %2$d < %1$s.getTabCount())",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FragmentAdapter_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FRAGMENT ADAPTER • Safe Position Control ==="
+  },
+  {
+    "name": "FragmentAdapter_Set_Position_Safely",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Position %d မှန်ကန်လျှင် %m.fragmentadapter ၏ Current Item သတ်မှတ်မည်",
+    "code": "if ((int) %2$d >= 0 && (int) %2$d < %1$s.getTabCount()) { %1$s.setCurrentItem((int) %2$d); }",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Set_Tab_Title_Safely",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Position %d မှန်ကန်ပြီး Title %s မလွတ်လပ်လျှင် %m.fragmentadapter တွင် သတ်မှတ်မည်",
+    "code": "if ((int) %2$d >= 0 && (int) %2$d < %1$s.getTabCount() && %3$s != null && !%3$s.toString().trim().isEmpty()) { %1$s.setTabTitle((int) %2$d, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Set_Tab_Icon_Safely",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Position %d မှန်ကန်လျှင် %m.fragmentadapter တွင် Icon %s သတ်မှတ်မည်",
+    "code": "if ((int) %2$d >= 0 && (int) %2$d < %1$s.getTabCount()) { %1$s.setTabIcon((int) %2$d, %3$s); }",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Set_Count_Safely",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Tab Count %d ကို အနုတ်မဖြစ်အောင် %m.fragmentadapter တွင် သတ်မှတ်မည်",
+    "code": "%1$s.setTabCount((int) Math.max(0, %2$d));",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Notify_If_Ready",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Tab Count %d ထားပြီး %m.fragmentadapter ၏ Data ပြောင်းလဲမှုကို အသိပေးမည်",
+    "code": "%1$s.setTabCount((int) Math.max(0, %2$d)); %1$s.notifyDataSetChanged();",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FRAGMENT ADAPTER • Professional Workflow ==="
+  },
+  {
+    "name": "FragmentAdapter_Add_Tab",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter သို့ Tab Title %s နှင့် Fragment %s ကို ထည့်မည်",
+    "code": "%1$s.addTab(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Remove_Tab",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter မှ Position %d ၏ Tab ကို ဖယ်မည်",
+    "code": "%1$s.removeTab((int) %2$d);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Move_Tab",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Tab Position %d ကို Position %d သို့ ရွှေ့မည်",
+    "code": "%1$s.moveTab((int) %2$d, (int) %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Clear_Tabs",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter ၏ Tab အားလုံးကို ရှင်းမည်",
+    "code": "%1$s.clearTabs();",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Rebuild",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter ကို Data အသစ်ဖြင့် ပြန်တည်ဆောက်မည်",
+    "code": "%1$s.notifyDataSetChanged();",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Select_First_Valid",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Tab ရှိလျှင် ပထမ Tab ကို ရွေးမည်",
+    "code": "if (%1$s.getTabCount() > 0) { %1$s.setCurrentItem(0); }",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Select_Last_Valid",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Tab ရှိလျှင် နောက်ဆုံး Tab ကို ရွေးမည်",
+    "code": "if (%1$s.getTabCount() > 0) { %1$s.setCurrentItem(%1$s.getTabCount() - 1); }",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Has_Position",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.fragmentadapter တွင် Position %d ရှိသလား စစ်မည်",
+    "code": "((int) %2$d >= 0 && (int) %2$d < %1$s.getTabCount())",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "FragmentAdapter_Event_Workflow_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== FRAGMENT ADAPTER • onTabAdded/onFragmentAdded Workflow ==="
+  },
+  {
+    "name": "FragmentAdapter_Tab_Title_From_Position",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "onTabAdded Event တွင် Position %d အလိုက် Title ကို Return ပြန်မည်",
+    "code": "return \"Tab \" + ((int) %1$d + 1);",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Tab_Title_From_Map",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "onTabAdded Event တွင် Map %s ထဲမှ Position %d ၏ Title ကို Return ပြန်မည်",
+    "code": "return (%1$s != null && %1$s.containsKey(String.valueOf((int) %2$d))) ? String.valueOf(%1$s.get(String.valueOf((int) %2$d))) : \"\";",
+    "imports": "java.util.Map"
+  },
+  {
+    "name": "FragmentAdapter_Notify_After_Tab_Change",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "Tab သို့မဟုတ် Fragment ပြောင်းပြီးနောက် %m.fragmentadapter ကို Refresh လုပ်မည်",
+    "code": "%1$s.notifyDataSetChanged();",
+    "imports": ""
+  },
+  {
+    "name": "FragmentAdapter_Reset_To_First",
+    "type": " ",
+    "color": "#009688",
+    "palette": "",
+    "spec": "%m.fragmentadapter ကို ပထမ Tab သို့ Safe ပြန်ရွှေ့မည်",
+    "code": "if (%1$s.getTabCount() > 0) { %1$s.setCurrentItem(0); }",
+    "imports": ""
+  }
+]

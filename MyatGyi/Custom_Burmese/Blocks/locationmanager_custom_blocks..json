@@ -1,0 +1,347 @@
+[
+  {
+    "name": "LocationManager_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== LOCATION MANAGER • အခြေခံ Location စစ်ဆေးခြင်း ==="
+  },
+  {
+    "name": "LocationManager_Is_Provider_Enabled",
+    "type": "b",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.locationmanager တွင် Provider %s ဖွင့်ထားသလား စစ်မည်",
+    "code": "%1$s.isProviderEnabled(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Get_Last_Known",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.locationmanager မှ Provider %s ၏ နောက်ဆုံး Location ကို ရယူမည်",
+    "code": "%1$s.getLastKnownLocation(%2$s)",
+    "imports": ""
+  },
+  {
+    "name": "LocationManager_Request_Updates",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.locationmanager မှ Provider %s ဖြင့် %d milliseconds နှင့် %d meters အကြား Location Update တောင်းမည်",
+    "code": "%1$s.requestLocationUpdates(%2$s, (long) Math.max(0, %3$d), (float) Math.max(0, %4$d), _locationManager_locationListener);",
+    "imports": ""
+  },
+  {
+    "name": "LocationManager_Remove_Updates",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.locationmanager ၏ Location Update များကို ရပ်မည်",
+    "code": "%1$s.removeUpdates(_locationManager_locationListener);",
+    "imports": ""
+  },
+  {
+    "name": "LocationManager_Request_GPS",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.locationmanager မှ GPS Provider ဖြင့် %d milliseconds နှင့် %d meters အကြား Update တောင်းမည်",
+    "code": "%1$s.requestLocationUpdates(android.location.LocationManager.GPS_PROVIDER, (long) Math.max(0, %2$d), (float) Math.max(0, %3$d), _locationManager_locationListener);",
+    "imports": "android.location.LocationManager"
+  },
+  {
+    "name": "LocationManager_Request_Network",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.locationmanager မှ Network Provider ဖြင့် %d milliseconds နှင့် %d meters အကြား Update တောင်းမည်",
+    "code": "%1$s.requestLocationUpdates(android.location.LocationManager.NETWORK_PROVIDER, (long) Math.max(0, %2$d), (float) Math.max(0, %3$d), _locationManager_locationListener);",
+    "imports": "android.location.LocationManager"
+  },
+  {
+    "name": "LocationManager_Values_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== LOCATION MANAGER • Location တန်ဖိုးများ ရယူခြင်း ==="
+  },
+  {
+    "name": "LocationManager_Get_Latitude",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location ၏ Latitude ကို ရယူမည်",
+    "code": "%1$s.getLatitude()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Get_Longitude",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location ၏ Longitude ကို ရယူမည်",
+    "code": "%1$s.getLongitude()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Get_Accuracy",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location ၏ Accuracy meters ကို ရယူမည်",
+    "code": "%1$s.getAccuracy()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Get_Altitude",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location ၏ Altitude meters ကို ရယူမည်",
+    "code": "%1$s.getAltitude()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Get_Bearing",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location ၏ Bearing degree ကို ရယူမည်",
+    "code": "%1$s.getBearing()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Get_Speed",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location ၏ Speed meters/second ကို ရယူမည်",
+    "code": "%1$s.getSpeed()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Get_Time",
+    "type": "d",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location ၏ Timestamp milliseconds ကို ရယူမည်",
+    "code": "%1$s.getTime()",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Has_Accuracy",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location တွင် Accuracy တန်ဖိုး ပါဝင်သလား စစ်မည်",
+    "code": "%1$s.hasAccuracy()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Is_Mock",
+    "type": "b",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.location သည် Mock Location ဖြစ်သလား စစ်မည်",
+    "code": "%1$s.isMock()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Safe_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== LOCATION MANAGER • Safe Permission နှင့် Provider Workflow ==="
+  },
+  {
+    "name": "LocationManager_Request_If_Enabled",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Provider %s ဖွင့်ထားလျှင် %m.locationmanager ဖြင့် Location Update တောင်းမည်",
+    "code": "if (%1$s.isProviderEnabled(%2$s)) { %1$s.requestLocationUpdates(%2$s, (long) Math.max(0, %3$d), (float) Math.max(0, %4$d), _locationManager_locationListener); }",
+    "imports": ""
+  },
+  {
+    "name": "LocationManager_Request_GPS_If_Enabled",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "GPS ဖွင့်ထားလျှင် %m.locationmanager ဖြင့် Location Update တောင်းမည်",
+    "code": "if (%1$s.isProviderEnabled(android.location.LocationManager.GPS_PROVIDER)) { %1$s.requestLocationUpdates(android.location.LocationManager.GPS_PROVIDER, (long) Math.max(0, %2$d), (float) Math.max(0, %3$d), _locationManager_locationListener); }",
+    "imports": "android.location.LocationManager"
+  },
+  {
+    "name": "LocationManager_Remove_If_Active",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.locationmanager ၏ Location Update များကို ရပ်ပြီး Battery သက်သာစေမည်",
+    "code": "%1$s.removeUpdates(_locationManager_locationListener);",
+    "imports": ""
+  },
+  {
+    "name": "LocationManager_Is_Accurate_Enough",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.location ၏ Accuracy သည် %d meters အတွင်း ဖြစ်သလား စစ်မည်",
+    "code": "%1$s.hasAccuracy() && %1$s.getAccuracy() <= Math.max(0, %2$d)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Is_Not_Null",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "%m.location ရရှိထားသလား စစ်မည်",
+    "code": "%1$s != null",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Distance_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== LOCATION MANAGER • Distance နှင့် Bearing ==="
+  },
+  {
+    "name": "LocationManager_Distance_Between",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Coordinate နှစ်ခုကြား Distance meters ကို တွက်မည်",
+    "code": "android.location.Location.distanceBetween((double) %1$d, (double) %2$d, (double) %3$d, (double) %4$d, new float[1])",
+    "imports": "android.location.Location",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Distance_Meters",
+    "type": "d",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Coordinate နှစ်ခုကြား Distance meters ကို တိကျစွာ တွက်မည်",
+    "code": "(double) android.location.Location.distanceBetween((double) %1$d, (double) %2$d, (double) %3$d, (double) %4$d, new float[1])",
+    "imports": "android.location.Location",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Format_Coordinate",
+    "type": "s",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Latitude %d နှင့် Longitude %d ကို Coordinate စာသားအဖြစ် ဖန်တီးမည်",
+    "code": "String.format(java.util.Locale.getDefault(), \"%.6f, %.6f\", (double) %1$d, (double) %2$d)",
+    "imports": "java.util.Locale",
+    "typeName": "String"
+  },
+  {
+    "name": "LocationManager_Is_Valid_Latitude",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Latitude %d သည် မှန်ကန်သောအကွာအဝေးရှိသလား စစ်မည်",
+    "code": "%1$d >= -90.0 && %1$d <= 90.0",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Is_Valid_Longitude",
+    "type": "b",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Longitude %d သည် မှန်ကန်သောအကွာအဝေးရှိသလား စစ်မည်",
+    "code": "%1$d >= -180.0 && %1$d <= 180.0",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== LOCATION MANAGER • Professional Location Handling ==="
+  },
+  {
+    "name": "LocationManager_Request_Balanced",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.locationmanager မှ Provider %s ဖြင့် %d seconds နှင့် %d meters အကြား Update တောင်းမည်",
+    "code": "%1$s.requestLocationUpdates(%2$s, (long) Math.max(0, %3$d * 1000L), (float) Math.max(0, %4$d), _locationManager_locationListener);",
+    "imports": ""
+  },
+  {
+    "name": "LocationManager_Get_Provider_Name",
+    "type": "s",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.location ၏ Provider အမည်ကို ရယူမည်",
+    "code": "%1$s.getProvider() == null ? \"\" : %1$s.getProvider()",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "LocationManager_Get_Elapsed_Age",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.location ၏ လက်ရှိအချိန်နှင့် ကွာခြားသော seconds ကို ရယူမည်",
+    "code": "Math.max(0L, (System.currentTimeMillis() - %1$s.getTime()) / 1000L)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Is_Fresh",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.location သည် %d seconds အတွင်း ရရှိသော Location ဖြစ်သလား စစ်မည်",
+    "code": "(%1$s != null && Math.max(0L, (System.currentTimeMillis() - %1$s.getTime()) / 1000L) <= Math.max(0, %2$d))",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "LocationManager_Clamp_Interval",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Location interval %d milliseconds ကို အနည်းဆုံး %d milliseconds ဖြစ်အောင် သတ်မှတ်မည်",
+    "code": "Math.max(%2$d, %1$d)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Clamp_Distance",
+    "type": "d",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Location distance %d meters ကို အနည်းဆုံး %d meters ဖြစ်အောင် သတ်မှတ်မည်",
+    "code": "Math.max(%2$d, %1$d)",
+    "imports": "",
+    "typeName": "double"
+  },
+  {
+    "name": "LocationManager_Stop_On_Lifecycle",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.locationmanager ၏ Update များကို Lifecycle အတွက် ရပ်မည်",
+    "code": "%1$s.removeUpdates(_locationManager_locationListener);",
+    "imports": ""
+  }
+]

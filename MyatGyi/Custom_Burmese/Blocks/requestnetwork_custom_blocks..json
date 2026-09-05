@@ -1,0 +1,326 @@
+[
+  {
+    "name": "RequestNetwork_Basics_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== REQUEST NETWORK • အခြေခံ Request Setup ==="
+  },
+  {
+    "name": "RequestNetwork_Set_Header",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.map ထဲတွင် Header အမည် %s နှင့် တန်ဖိုး %s ကို သတ်မှတ်မည်",
+    "code": "%1$s.put(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Set_Param",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.map ထဲတွင် Parameter အမည် %s နှင့် တန်ဖိုး %s ကို သတ်မှတ်မည်",
+    "code": "%1$s.put(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Remove_Map_Key",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.map ထဲမှ %s Key ကို ဖယ်ရှားမည်",
+    "code": "%1$s.remove(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Clear_Map",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.map ထဲရှိ Header/Parameter အားလုံးကို ရှင်းမည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Set_Bearer_Header",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.map ထဲတွင် Bearer Token ကို %s ဖြင့် သတ်မှတ်မည်",
+    "code": "%1$s.put(\"Authorization\", \"Bearer \" + %2$s);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Set_Json_Content_Type",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "%m.map ထဲတွင် JSON Content-Type သတ်မှတ်မည်",
+    "code": "%1$s.put(\"Content-Type\", \"application/json\");",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Start_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== REQUEST NETWORK • GET / POST / PUT / DELETE ==="
+  },
+  {
+    "name": "RequestNetwork_Start_Get",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် GET Request ကို URL %s၊ Tag %s နှင့် စတင်မည်",
+    "code": "%1$s.startRequestNetwork(RequestNetworkController.GET, %2$s, %3$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Start_Post",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် POST Request ကို URL %s၊ Tag %s နှင့် စတင်မည်",
+    "code": "%1$s.startRequestNetwork(RequestNetworkController.POST, %2$s, %3$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Start_Put",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် PUT Request ကို URL %s၊ Tag %s နှင့် စတင်မည်",
+    "code": "%1$s.startRequestNetwork(RequestNetworkController.PUT, %2$s, %3$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Start_Delete",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် DELETE Request ကို URL %s၊ Tag %s နှင့် စတင်မည်",
+    "code": "%1$s.startRequestNetwork(RequestNetworkController.DELETE, %2$s, %3$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Start_Get_With_Headers",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် Header များသတ်မှတ်ပြီး GET Request စတင်မည်",
+    "code": "%1$s.setHeaders(%2$s); %1$s.startRequestNetwork(RequestNetworkController.GET, %3$s, %4$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Start_Post_With_Headers_And_Params",
+    "type": " ",
+    "color": "#03A9F4",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် Header နှင့် Parameter များပါသော POST Request စတင်မည်",
+    "code": "%1$s.setHeaders(%2$s); %1$s.setParams(%3$s, RequestNetworkController.REQUEST_PARAM); %1$s.startRequestNetwork(RequestNetworkController.POST, %4$s, %5$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Response_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== REQUEST NETWORK • Response စစ်ဆေးခြင်း ==="
+  },
+  {
+    "name": "RequestNetwork_Is_Success_Code",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "HTTP Status Code %d သည် အောင်မြင်သော Response ဟုတ်မဟုတ် စစ်မည်",
+    "code": "%1$d >= 200 && %1$d < 300",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "RequestNetwork_Is_Redirection_Code",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "HTTP Status Code %d သည် Redirect Response ဟုတ်မဟုတ် စစ်မည်",
+    "code": "%1$d >= 300 && %1$d < 400",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "RequestNetwork_Is_Client_Error_Code",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "HTTP Status Code %d သည် Client Error ဟုတ်မဟုတ် စစ်မည်",
+    "code": "%1$d >= 400 && %1$d < 500",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "RequestNetwork_Is_Server_Error_Code",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "HTTP Status Code %d သည် Server Error ဟုတ်မဟုတ် စစ်မည်",
+    "code": "%1$d >= 500 && %1$d < 600",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "RequestNetwork_Is_Response_Not_Empty",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Response စာသား %s သည် လွတ်မနေဘူးလား စစ်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "RequestNetwork_Is_Tag_Match",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Response Tag %s သည် မျှော်မှန်း Tag %s နှင့် တူသလား စစ်မည်",
+    "code": "%1$s != null && %1$s.equals(%2$s)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "RequestNetwork_Get_Error_Summary",
+    "type": "s",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Error Code %d နှင့် Error Message %s ကို စာသားအဖြစ် ဖန်တီးမည်",
+    "code": "\"Error \" + %1$d + \": \" + %2$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "RequestNetwork_Professional_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== REQUEST NETWORK • Professional Request Workflow ==="
+  },
+  {
+    "name": "RequestNetwork_Safe_Get",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "URL %s မလွတ်လပ်လျှင် %m.requestnetwork ဖြင့် GET Request စတင်မည်",
+    "code": "if (%1$s != null && !%1$s.toString().trim().isEmpty()) { %2$s.startRequestNetwork(RequestNetworkController.GET, %1$s, %3$s, _requestNetwork_request_listener); }",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Safe_Post",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "URL %s နှင့် Body Parameter ရှိလျှင် %m.requestnetwork ဖြင့် POST Request စတင်မည်",
+    "code": "if (%1$s != null && !%1$s.toString().trim().isEmpty()) { %2$s.setParams(%3$s, RequestNetworkController.REQUEST_PARAM); %2$s.startRequestNetwork(RequestNetworkController.POST, %1$s, %4$s, _requestNetwork_request_listener); }",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Safe_Get_With_Headers",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "URL %s မလွတ်လပ်လျှင် Header နှင့် GET Request စတင်မည်",
+    "code": "if (%1$s != null && !%1$s.toString().trim().isEmpty()) { %2$s.setHeaders(%3$s); %2$s.startRequestNetwork(RequestNetworkController.GET, %1$s, %4$s, _requestNetwork_request_listener); }",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Add_Accept_Json_Header",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.map ထဲတွင် JSON Accept Header ထည့်မည်",
+    "code": "%1$s.put(\"Accept\", \"application/json\");",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Add_User_Agent_Header",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.map ထဲတွင် User-Agent %s ထည့်မည်",
+    "code": "%1$s.put(\"User-Agent\", %2$s);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Retry_Get",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် URL %s၊ Tag %s ကို ထပ်မံ GET Request ပြုလုပ်မည်",
+    "code": "%1$s.startRequestNetwork(RequestNetworkController.GET, %2$s, %3$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Retry_Post",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.requestnetwork ဖြင့် URL %s၊ Tag %s ကို Parameter များနှင့် ထပ်မံ POST Request ပြုလုပ်မည်",
+    "code": "%1$s.setParams(%2$s, RequestNetworkController.REQUEST_PARAM); %1$s.startRequestNetwork(RequestNetworkController.POST, %3$s, %4$s, _requestNetwork_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Is_Retryable_Error",
+    "type": "b",
+    "color": "#BA68C8",
+    "palette": "",
+    "spec": "Error Code %d သည် Retry ပြုလုပ်နိုင်သော Error ဟုတ်မဟုတ် စစ်မည်",
+    "code": "(%1$d == 408 || %1$d == 429 || %1$d >= 500)",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "RequestNetwork_Sanitize_Empty_Text",
+    "type": "s",
+    "color": "#BA68C8",
+    "palette": "",
+    "spec": "စာသား %s သည် null/လွတ်လပ်လျှင် အစားထိုးစာသား %s ကို အသုံးပြုမည်",
+    "code": "(%1$s == null || %1$s.toString().trim().isEmpty()) ? %2$s : %1$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "RequestNetwork_Status_Text",
+    "type": "s",
+    "color": "#BA68C8",
+    "palette": "",
+    "spec": "HTTP Status Code %d ကို အခြေအနေစာသားအဖြစ် ပြောင်းမည်",
+    "code": "(%1$d >= 200 && %1$d < 300) ? \"အောင်မြင်သည်\" : ((%1$d >= 400 && %1$d < 500) ? \"Client Error\" : ((%1$d >= 500) ? \"Server Error\" : \"အခြား Response\"))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "RequestNetwork_Event_Header",
+    "type": "h",
+    "color": "#FF000000",
+    "palette": "",
+    "spec": "=== REQUEST NETWORK • onResponse / onErrorResponse Event Guide ==="
+  },
+  {
+    "name": "RequestNetwork_Clear_Request_Data",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.map ထဲရှိ Request Data ကို ရှင်းပြီး အသစ်ပြင်ဆင်မည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "RequestNetwork_Add_Form_Content_Type",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "%m.map ထဲတွင် Form URL Encoded Content-Type သတ်မှတ်မည်",
+    "code": "%1$s.put(\"Content-Type\", \"application/x-www-form-urlencoded\");",
+    "imports": ""
+  }
+]

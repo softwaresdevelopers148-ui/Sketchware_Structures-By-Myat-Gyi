@@ -1,0 +1,446 @@
+[
+  {
+    "name": "SupabaseMM_Header_Core",
+    "type": "h",
+    "color": "#00796B",
+    "palette": "",
+    "spec": "=== Supabase MM • အခြေခံ Headers နှင့် Map ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Init_Map",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Map %m.varMap ကို အသစ်စတင်မည်",
+    "code": "%1$s = new java.util.HashMap<>();",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Map_Put_String",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Map %m.varMap ထဲ Key %s နှင့် စာသား Value %s ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Map_Put_Number",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Map %m.varMap ထဲ Key %s နှင့် Number Value %d ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Map_Put_Boolean",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Map %m.varMap ထဲ Key %s နှင့် Boolean Value %b ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$b);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Map_Remove",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Map %m.varMap ထဲမှ Key %s ကို ဖယ်ရှားမည်",
+    "code": "%1$s.remove(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Map_Clear",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Map %m.varMap ကို ရှင်းလင်းမည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Set_Headers",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Headers Map %m.varMap တွင် API Key %s နှင့် JSON Header သတ်မှတ်မည်",
+    "code": "%1$s.put(\"apikey\", %2$s); %1$s.put(\"Content-Type\", \"application/json\"); %1$s.put(\"Accept\", \"application/json\");",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Set_Auth_Headers",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Headers Map %m.varMap တွင် API Key %s နှင့် Access Token %s သတ်မှတ်မည်",
+    "code": "%1$s.put(\"apikey\", %2$s); %1$s.put(\"Authorization\", \"Bearer \" + String.valueOf(%3$s)); %1$s.put(\"Content-Type\", \"application/json\"); %1$s.put(\"Accept\", \"application/json\");",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Add_Header",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Headers Map %m.varMap ထဲ Key %s နှင့် Value %s ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Header_URL",
+    "type": "h",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "=== Supabase MM • URL နှင့် Query ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Normalize_URL",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Base URL %s ၏ နောက်ဆုံး Slash ကို ဖယ်ရှားမည်",
+    "code": "(%1$s == null ? \"\" : String.valueOf(%1$s).replaceAll(\"/+$\", \"\"))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Table_URL",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Base URL %s နှင့် Table %s အတွက် REST URL တည်ဆောက်မည်",
+    "code": "(%1$s == null ? \"\" : String.valueOf(%1$s).replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Auth_URL",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Base URL %s မှ Auth Endpoint %s ကို တည်ဆောက်မည်",
+    "code": "(%1$s == null ? \"\" : String.valueOf(%1$s).replaceAll(\"/+$\", \"\")) + \"/auth/v1/\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Storage_URL",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Base URL %s နှင့် Storage Path %s ကို တည်ဆောက်မည်",
+    "code": "(%1$s == null ? \"\" : String.valueOf(%1$s).replaceAll(\"/+$\", \"\")) + \"/storage/v1/object/\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Query_Equals",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Value %s နှင့် တူသော Filter တည်ဆောက်မည်",
+    "code": "String.valueOf(%1$s) + \"=eq.\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Query_Not_Equals",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Value %s နှင့် မတူသော Filter တည်ဆောက်မည်",
+    "code": "String.valueOf(%1$s) + \"=neq.\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Query_Like",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s အတွက် Like Value %s Filter တည်ဆောက်မည်",
+    "code": "String.valueOf(%1$s) + \"=like.\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Query_Order",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s နှင့် အစီအစဉ် %b အတွက် Order တည်ဆောက်မည်",
+    "code": "\"order=\" + String.valueOf(%1$s) + \".\" + (%2$b ? \"asc\" : \"desc\")",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Query_Limit",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "အရေအတွက် %d အတွက် Limit Query တည်ဆောက်မည်",
+    "code": "\"limit=\" + String.valueOf(%1$d)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Query_Join",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Query %s နှင့် Query %s ကို & ဖြင့် ပေါင်းမည်",
+    "code": "String.valueOf(%1$s) + \"&\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Header_Request",
+    "type": "h",
+    "color": "#8E24AA",
+    "palette": "",
+    "spec": "=== Supabase MM • RequestNetwork CRUD ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_GET",
+    "type": " ",
+    "color": "#8E24AA",
+    "palette": "",
+    "spec": "GET Request %m.RequestNetwork သို့ URL %s နှင့် Headers %m.varMap ပို့မည်",
+    "code": "%1$s.setHeaders(%3$s); %1$s.startRequestNetwork(RequestNetworkController.GET, %2$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_POST",
+    "type": " ",
+    "color": "#8E24AA",
+    "palette": "",
+    "spec": "POST Request %m.RequestNetwork သို့ URL %s၊ Headers %m.varMap နှင့် Body %s ပို့မည်",
+    "code": "%1$s.setHeaders(%3$s); %1$s.setParams(%4$s, RequestNetworkController.REQUEST_PARAM); %1$s.startRequestNetwork(RequestNetworkController.POST, %2$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_PATCH",
+    "type": " ",
+    "color": "#8E24AA",
+    "palette": "",
+    "spec": "PATCH Request %m.RequestNetwork သို့ URL %s၊ Headers %m.varMap နှင့် Body %s ပို့မည်",
+    "code": "%1$s.setHeaders(%3$s); %1$s.setParams(%4$s, RequestNetworkController.REQUEST_PARAM); %1$s.startRequestNetwork(RequestNetworkController.PATCH, %2$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_DELETE",
+    "type": " ",
+    "color": "#8E24AA",
+    "palette": "",
+    "spec": "DELETE Request %m.RequestNetwork သို့ URL %s နှင့် Headers %m.varMap ပို့မည်",
+    "code": "%1$s.setHeaders(%3$s); %1$s.startRequestNetwork(RequestNetworkController.DELETE, %2$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Request_Tag",
+    "type": "s",
+    "color": "#8E24AA",
+    "palette": "",
+    "spec": "Request Tag %s ကို သတ်မှတ်ထားသော စာသားအဖြစ် ပြန်ပေးမည်",
+    "code": "String.valueOf(%1$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Header_Auth",
+    "type": "h",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "=== Supabase MM • Authentication ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Auth_Signup",
+    "type": " ",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "Signup Body Map %m.varMap ထဲ Email %s နှင့် Password %s ထည့်မည်",
+    "code": "%1$s.put(\"email\", %2$s); %1$s.put(\"password\", %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Auth_Login",
+    "type": " ",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "Login Body Map %m.varMap ထဲ Email %s နှင့် Password %s ထည့်မည်",
+    "code": "%1$s.put(\"email\", %2$s); %1$s.put(\"password\", %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Auth_Password_Reset_Request",
+    "type": " ",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "Password Reset Request Map %m.varMap ထဲ Email %s ထည့်မည်",
+    "code": "%1$s.put(\"email\", %2$s);",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Auth_Extract_Access_Token",
+    "type": "s",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "JSON Response %s မှ Access Token ကို ရယူမည်",
+    "code": "new org.json.JSONObject(String.valueOf(%1$s)).optString(\"access_token\", \"\")",
+    "imports": "org.json.JSONObject",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Auth_Extract_Refresh_Token",
+    "type": "s",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "JSON Response %s မှ Refresh Token ကို ရယူမည်",
+    "code": "new org.json.JSONObject(String.valueOf(%1$s)).optString(\"refresh_token\", \"\")",
+    "imports": "org.json.JSONObject",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Auth_Error_Message",
+    "type": "s",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "Auth Error JSON %s မှ Error Message ကို ရယူမည်",
+    "code": "new org.json.JSONObject(String.valueOf(%1$s)).optString(\"msg\", new org.json.JSONObject(String.valueOf(%1$s)).optString(\"error_description\", \"မသိရှိရသော Auth Error\"))",
+    "imports": "org.json.JSONObject",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Header_Storage",
+    "type": "h",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "=== Supabase MM • Storage ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Storage_Public_URL",
+    "type": "s",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "Public Bucket %s ထဲ File Path %s အတွက် URL တည်ဆောက်မည်",
+    "code": "String.valueOf(%3$s).replaceAll(\"/+$\", \"\") + \"/storage/v1/object/public/\" + String.valueOf(%1$s) + \"/\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Storage_Upload_Headers",
+    "type": " ",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "Storage Headers Map %m.varMap တွင် API Key %s နှင့် MIME %s သတ်မှတ်မည်",
+    "code": "%1$s.put(\"apikey\", %2$s); %1$s.put(\"Content-Type\", %3$s); %1$s.put(\"x-upsert\", \"true\");",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Storage_Path",
+    "type": "s",
+    "color": "#00897B",
+    "palette": "",
+    "spec": "Bucket %s နှင့် File Name %s ကို Storage Path အဖြစ် တည်ဆောက်မည်",
+    "code": "String.valueOf(%1$s) + \"/\" + String.valueOf(%2$s)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Header_JSON",
+    "type": "h",
+    "color": "#5E35B1",
+    "palette": "",
+    "spec": "=== Supabase MM • JSON နှင့် Safety ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_JSON_Get_String",
+    "type": "s",
+    "color": "#5E35B1",
+    "palette": "",
+    "spec": "JSON %s ထဲ Key %s ၏ စာသား Value ကို ရယူမည်",
+    "code": "new org.json.JSONObject(String.valueOf(%1$s)).optString(String.valueOf(%2$s), \"\")",
+    "imports": "org.json.JSONObject",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_JSON_Is_Array",
+    "type": "b",
+    "color": "#5E35B1",
+    "palette": "",
+    "spec": "JSON Response %s သည် Array ဖြစ်/မဖြစ် စစ်မည်",
+    "code": "String.valueOf(%1$s).trim().startsWith(\"[\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "SupabaseMM_Safe_Filter_Required",
+    "type": "b",
+    "color": "#C62828",
+    "palette": "",
+    "spec": "Filter %s သည် မလွတ်ကြောင်း စစ်မည်",
+    "code": "%1$s != null && !String.valueOf(%1$s).trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "SupabaseMM_Header_Security",
+    "type": "h",
+    "color": "#C62828",
+    "palette": "",
+    "spec": "=== Supabase MM • လုံခြုံရေး သတိပေးချက် ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_No_Service_Role_Client",
+    "type": "h",
+    "color": "#C62828",
+    "palette": "",
+    "spec": "Service Role Key ကို Android App ထဲ မထည့်ရပါ။ Backend/Edge Function သုံးပါ။",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Response_Header",
+    "type": "h",
+    "color": "#455A64",
+    "palette": "",
+    "spec": "=== အသုံးပြုပုံ • onResponse နှင့် onErrorResponse ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "SupabaseMM_Response_Body",
+    "type": "s",
+    "color": "#455A64",
+    "palette": "",
+    "spec": "RequestNetwork Response Body ကို ပြန်ပေးမည်",
+    "code": "%s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "SupabaseMM_Response_Is_Success",
+    "type": "b",
+    "color": "#455A64",
+    "palette": "",
+    "spec": "HTTP Code %d အောင်မြင်မှု ရှိ/မရှိ စစ်မည်",
+    "code": "%1$d >= 200 && %1$d < 300",
+    "imports": "",
+    "typeName": "boolean"
+  }
+]

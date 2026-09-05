@@ -1,0 +1,547 @@
+[
+  {
+    "name": "Supabase_Core_Header",
+    "type": "h",
+    "color": "#00796B",
+    "palette": "",
+    "spec": "=== SUPABASE • Core, Headers နှင့် Map ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Init_Maps",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Headers Map %m.varMap နှင့် Data Map %m.varMap ကို အသစ်စတင်မည်",
+    "code": "%1$s = new java.util.HashMap<>(); %2$s = new java.util.HashMap<>();",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Set_Default_Headers",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Headers Map %m.varMap တွင် API Key %s နှင့် JSON headers သတ်မှတ်မည်",
+    "code": "%1$s.put(\"apikey\", %2$s); %1$s.put(\"Content-Type\", \"application/json\"); %1$s.put(\"Accept\", \"application/json\");",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Set_Auth_Headers",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Headers Map %m.varMap တွင် API Key %s နှင့် Bearer Token %s သတ်မှတ်မည်",
+    "code": "%1$s.put(\"apikey\", %2$s); %1$s.put(\"Authorization\", \"Bearer \".concat(String.valueOf(%3$s))); %1$s.put(\"Content-Type\", \"application/json\"); %1$s.put(\"Accept\", \"application/json\");",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Add_Header",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Headers Map %m.varMap တွင် Key %s နှင့် Value %s ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Map_Put_String",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Data Map %m.varMap တွင် String Key %s နှင့် Value %s ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$s);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Map_Put_Number",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Data Map %m.varMap တွင် Number Key %s နှင့် Value %d ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$d);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Map_Put_Boolean",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Data Map %m.varMap တွင် Boolean Key %s နှင့် Value %b ထည့်မည်",
+    "code": "%1$s.put(%2$s, %3$b);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Map_Remove_Key",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Data Map %m.varMap မှ Key %s ကို ဖယ်ရှားမည်",
+    "code": "%1$s.remove(%2$s);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Map_Clear",
+    "type": " ",
+    "color": "#4CAF50",
+    "palette": "",
+    "spec": "Map %m.varMap ကို ရှင်းလင်းမည်",
+    "code": "%1$s.clear();",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_URL_Query_Header",
+    "type": "h",
+    "color": "#1565C0",
+    "palette": "",
+    "spec": "=== SUPABASE • URL နှင့် PostgREST Query Builder ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Normalize_Base_URL",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Supabase Base URL %s ၏ နောက်ဆုံး Slash ကို ဖယ်ရှားမည်",
+    "code": "%1$s == null ? \"\" : %1$s.replaceAll(\"/+$\", \"\")",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Rest_Table_URL",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Base URL %s နှင့် Table %s အတွက် REST URL တည်ဆောက်မည်",
+    "code": "(%1$s == null ? \"\" : %1$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Rest_Query_URL",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Base URL %s၊ Table %s နှင့် Query %s ဖြင့် REST URL တည်ဆောက်မည်",
+    "code": "(%1$s == null ? \"\" : %1$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s + ((%3$s == null || %3$s.toString().isEmpty()) ? \"\" : (%3$s.toString().startsWith(\"?\") ? %3$s : \"?\" + %3$s))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Filter_Equals",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Value %s နှင့် တူရန် Filter ပြုလုပ်မည်",
+    "code": "%1$s + \"=eq.\" + android.net.Uri.encode(String.valueOf(%2$s))",
+    "imports": "android.net.Uri",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Filter_Not_Equals",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Value %s နှင့် မတူရန် Filter ပြုလုပ်မည်",
+    "code": "%1$s + \"=neq.\" + android.net.Uri.encode(String.valueOf(%2$s))",
+    "imports": "android.net.Uri",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Filter_Like",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Pattern %s နှင့် Like ဖြစ်ရန် Filter ပြုလုပ်မည်",
+    "code": "%1$s + \"=like.\" + android.net.Uri.encode(String.valueOf(%2$s))",
+    "imports": "android.net.Uri",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Filter_Ilike",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Pattern %s နှင့် Case-insensitive Like ဖြစ်ရန် Filter ပြုလုပ်မည်",
+    "code": "%1$s + \"=ilike.\" + android.net.Uri.encode(String.valueOf(%2$s))",
+    "imports": "android.net.Uri",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Filter_Greater",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Value %d ထက် ကြီးရန် Filter ပြုလုပ်မည်",
+    "code": "%1$s + \"=gt.\" + String.valueOf(%2$d)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Filter_Less",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s သည် Value %d ထက် ငယ်ရန် Filter ပြုလုပ်မည်",
+    "code": "%1$s + \"=lt.\" + String.valueOf(%2$d)",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Query_Order",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Column %s အလိုက် Order %s ဖြင့် Query ပြုလုပ်မည်",
+    "code": "\"order=\" + %1$s + \".\" + %2$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Query_Limit",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Result Limit %d Query ပြုလုပ်မည်",
+    "code": "\"limit=\" + String.valueOf(Math.max(0, (int)%1$d))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Query_Offset",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Result Offset %d Query ပြုလုပ်မည်",
+    "code": "\"offset=\" + String.valueOf(Math.max(0, (int)%1$d))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Query_Join",
+    "type": "s",
+    "color": "#2196F3",
+    "palette": "",
+    "spec": "Query %s နှင့် Query %s ကို & ဖြင့် ဆက်မည်",
+    "code": "(%1$s == null || %1$s.toString().isEmpty()) ? String.valueOf(%2$s) : String.valueOf(%1$s).concat(\"&\").concat(String.valueOf(%2$s))",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Database_Header",
+    "type": "h",
+    "color": "#7B1FA2",
+    "palette": "",
+    "spec": "=== SUPABASE • Database REST CRUD ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Select",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.RequestNetwork ဖြင့် Table %s မှ Data ရယူမည် | Headers %m.varMap | Base URL %s",
+    "code": "%1$s.setHeaders(%3$s); %1$s.startRequestNetwork(RequestNetworkController.GET, (%4$s == null ? \"\" : %4$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Select_Query",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.RequestNetwork ဖြင့် Table %s နှင့် Query %s မှ Data ရယူမည် | Headers %m.varMap | Base URL %s",
+    "code": "{ %1$s.setHeaders(%4$s); String _sp_url = (%5$s == null ? \"\" : %5$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s + ((%3$s == null || %3$s.toString().isEmpty()) ? \"\" : (%3$s.toString().startsWith(\"?\") ? %3$s : \"?\" + %3$s)); %1$s.startRequestNetwork(RequestNetworkController.GET, _sp_url, \"\", _%1$s_request_listener); }",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Insert",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.RequestNetwork သို့ Table %s ထဲ Data Map %m.varMap ထည့်မည် | Headers %m.varMap | Base URL %s",
+    "code": "%1$s.setHeaders(%4$s); %1$s.setParams(%3$s, RequestNetworkController.REQUEST_PARAM); %1$s.startRequestNetwork(RequestNetworkController.POST, (%5$s == null ? \"\" : %5$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Update",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.RequestNetwork ဖြင့် Table %s ၏ Filter %s ကို Data Map %m.varMap ဖြင့် Update မည် | Headers %m.varMap | Base URL %s",
+    "code": "%1$s.setHeaders(%5$s); %1$s.setParams(%4$s, RequestNetworkController.REQUEST_PARAM); %1$s.startRequestNetwork(RequestNetworkController.PATCH, (%6$s == null ? \"\" : %6$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s + \"?\" + %3$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Delete",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.RequestNetwork ဖြင့် Table %s ၏ Filter %s Data ကို ဖျက်မည် | Headers %m.varMap | Base URL %s",
+    "code": "%1$s.setHeaders(%4$s); %1$s.startRequestNetwork(RequestNetworkController.DELETE, (%5$s == null ? \"\" : %5$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s + \"?\" + %3$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Upsert",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "%m.RequestNetwork ဖြင့် Table %s ထဲ Data Map %m.varMap ကို Upsert မည် | Headers %m.varMap | Base URL %s",
+    "code": "%1$s.setHeaders(%4$s); %1$s.setParams(%3$s, RequestNetworkController.REQUEST_PARAM); %1$s.startRequestNetwork(RequestNetworkController.POST, (%5$s == null ? \"\" : %5$s.replaceAll(\"/+$\", \"\")) + \"/rest/v1/\" + %2$s, \"\", _%1$s_request_listener);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Add_Return_Representation",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Headers Map %m.varMap တွင် Return Representation header ထည့်မည်",
+    "code": "%1$s.put(\"Prefer\", \"return=representation\");",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_DB_Add_Upsert_Prefer",
+    "type": " ",
+    "color": "#9C27B0",
+    "palette": "",
+    "spec": "Headers Map %m.varMap တွင် Upsert Prefer header ထည့်မည်",
+    "code": "%1$s.put(\"Prefer\", \"resolution=merge-duplicates,return=representation\");",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Response_Header",
+    "type": "h",
+    "color": "#EF6C00",
+    "palette": "",
+    "spec": "=== SUPABASE • Response နှင့် JSON စစ်ဆေးခြင်း ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Response_Not_Empty",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Response %s သည် Empty မဟုတ်လျှင် True ပြန်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Supabase_Response_Is_JSON_Object",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Response %s သည် JSON Object ပုံစံဖြစ်လျှင် True ပြန်မည်",
+    "code": "%1$s != null && %1$s.toString().trim().startsWith(\"{\") && %1$s.toString().trim().endsWith(\"}\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Supabase_Response_Is_JSON_Array",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Response %s သည် JSON Array ပုံစံဖြစ်လျှင် True ပြန်မည်",
+    "code": "%1$s != null && %1$s.toString().trim().startsWith(\"[\") && %1$s.toString().trim().endsWith(\"]\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Supabase_Response_Is_Empty_Array",
+    "type": "b",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Response %s သည် Empty Array ဖြစ်လျှင် True ပြန်မည်",
+    "code": "%1$s != null && %1$s.toString().trim().equals(\"[]\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Supabase_JSON_Object_Get_String",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "JSON Object %s မှ Key %s ၏ String value ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "try { %3$s = new org.json.JSONObject(String.valueOf(%1$s)).optString(String.valueOf(%2$s), \"\"); } catch (Exception _sp_e) { %3$s = \"\"; }",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_JSON_Object_Get_Number",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "JSON Object %s မှ Key %s ၏ Number value ကို Variable %s ထဲ သိမ်းမည်",
+    "code": "try { %3$s = new org.json.JSONObject(String.valueOf(%1$s)).optDouble(String.valueOf(%2$s), 0); } catch (Exception _sp_e) { %3$s = 0; }",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_JSON_Object_Has_Key_Save",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "JSON Object %s တွင် Key %s ပါလျှင် Boolean Variable %s ကို True ထားမည်",
+    "code": "try { %3$s = new org.json.JSONObject(String.valueOf(%1$s)).has(String.valueOf(%2$s)); } catch (Exception _sp_e) { %3$s = false; }",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Response_Save_Raw",
+    "type": " ",
+    "color": "#FF9800",
+    "palette": "",
+    "spec": "Response %s ကို String Variable %s ထဲ သိမ်းမည်",
+    "code": "%2$s = (%1$s == null) ? \"\" : String.valueOf(%1$s);",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Storage_Header",
+    "type": "h",
+    "color": "#00838F",
+    "palette": "",
+    "spec": "=== SUPABASE • Storage URL နှင့် File Helpers ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Storage_Public_URL",
+    "type": "s",
+    "color": "#0097A7",
+    "palette": "",
+    "spec": "Base URL %s၊ Bucket %s နှင့် File Path %s အတွက် Public Storage URL တည်ဆောက်မည်",
+    "code": "(%1$s == null ? \"\" : %1$s.replaceAll(\"/+$\", \"\")) + \"/storage/v1/object/public/\" + %2$s + \"/\" + %3$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Storage_Object_URL",
+    "type": "s",
+    "color": "#0097A7",
+    "palette": "",
+    "spec": "Base URL %s၊ Bucket %s နှင့် File Path %s အတွက် Storage Object URL တည်ဆောက်မည်",
+    "code": "(%1$s == null ? \"\" : %1$s.replaceAll(\"/+$\", \"\")) + \"/storage/v1/object/\" + %2$s + \"/\" + %3$s",
+    "imports": "",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Storage_Encode_Path",
+    "type": "s",
+    "color": "#0097A7",
+    "palette": "",
+    "spec": "Storage File Path %s ကို URL-safe Path အဖြစ် ပြောင်းမည်",
+    "code": "android.net.Uri.encode(String.valueOf(%1$s), \"/\")",
+    "imports": "android.net.Uri",
+    "typeName": "String"
+  },
+  {
+    "name": "Supabase_Storage_Validate_Path",
+    "type": "b",
+    "color": "#0097A7",
+    "palette": "",
+    "spec": "Storage Bucket %s နှင့် File Path %s သည် Empty မဟုတ်လျှင် True ပြန်မည်",
+    "code": "%1$s != null && !%1$s.toString().trim().isEmpty() && %2$s != null && !%2$s.toString().trim().isEmpty()",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Supabase_Auth_Header",
+    "type": "h",
+    "color": "#6A1B9A",
+    "palette": "",
+    "spec": "=== SUPABASE • Auth Request Helpers (Event မချိတ်ထားသော Universal Blocks) ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Auth_Signup",
+    "type": " ",
+    "color": "#7B1FA2",
+    "palette": "",
+    "spec": "Email %s၊ Password %s၊ Base URL %s၊ API Key %s၊ Success Code %s၊ Failure Code %s ဖြင့် Signup ပြုလုပ်မည်",
+    "code": "{ final okhttp3.OkHttpClient _sp_client = new okhttp3.OkHttpClient(); final org.json.JSONObject _sp_json = new org.json.JSONObject(); try { _sp_json.put(\"email\", %1$s); _sp_json.put(\"password\", %2$s); } catch (Exception _sp_e) {} final okhttp3.RequestBody _sp_body = okhttp3.RequestBody.create(okhttp3.MediaType.parse(\"application/json; charset=utf-8\"), _sp_json.toString()); final okhttp3.Request _sp_request = new okhttp3.Request.Builder().url((%3$s == null ? \"\" : %3$s.toString().replaceAll(\"/+$\", \"\")) + \"/auth/v1/signup\").addHeader(\"apikey\", String.valueOf(%4$s)).addHeader(\"Content-Type\", \"application/json\").post(_sp_body).build(); _sp_client.newCall(_sp_request).enqueue(new okhttp3.Callback() { public void onFailure(okhttp3.Call _sp_call, java.io.IOException _sp_error) { final String _sp_errorMessage = String.valueOf(_sp_error.getMessage()); runOnUiThread(new Runnable() { public void run() { %6$s; } }); } public void onResponse(okhttp3.Call _sp_call, okhttp3.Response _sp_response) throws java.io.IOException { final String _sp_responseBody = _sp_response.body() == null ? \"\" : _sp_response.body().string(); final boolean _sp_success = _sp_response.isSuccessful(); runOnUiThread(new Runnable() { public void run() { if (_sp_success) { %5$s; } else { %6$s; } } }); } }); }",
+    "imports": "okhttp3.OkHttpClient\nokhttp3.Request\nokhttp3.RequestBody\nokhttp3.MediaType\nokhttp3.Call\nokhttp3.Callback\nokhttp3.Response\njava.io.IOException\norg.json.JSONObject"
+  },
+  {
+    "name": "Supabase_Auth_Login",
+    "type": " ",
+    "color": "#7B1FA2",
+    "palette": "",
+    "spec": "Email %s၊ Password %s၊ Base URL %s၊ API Key %s၊ Success Code %s၊ Failure Code %s ဖြင့် Login ပြုလုပ်မည်",
+    "code": "{ final okhttp3.OkHttpClient _sp_client = new okhttp3.OkHttpClient(); final org.json.JSONObject _sp_json = new org.json.JSONObject(); try { _sp_json.put(\"email\", %1$s); _sp_json.put(\"password\", %2$s); } catch (Exception _sp_e) {} final okhttp3.RequestBody _sp_body = okhttp3.RequestBody.create(okhttp3.MediaType.parse(\"application/json; charset=utf-8\"), _sp_json.toString()); final okhttp3.Request _sp_request = new okhttp3.Request.Builder().url((%3$s == null ? \"\" : %3$s.toString().replaceAll(\"/+$\", \"\")) + \"/auth/v1/token?grant_type=password\").addHeader(\"apikey\", String.valueOf(%4$s)).addHeader(\"Content-Type\", \"application/json\").post(_sp_body).build(); _sp_client.newCall(_sp_request).enqueue(new okhttp3.Callback() { public void onFailure(okhttp3.Call _sp_call, java.io.IOException _sp_error) { final String _sp_errorMessage = String.valueOf(_sp_error.getMessage()); runOnUiThread(new Runnable() { public void run() { %6$s; } }); } public void onResponse(okhttp3.Call _sp_call, okhttp3.Response _sp_response) throws java.io.IOException { final String _sp_responseBody = _sp_response.body() == null ? \"\" : _sp_response.body().string(); final boolean _sp_success = _sp_response.isSuccessful(); runOnUiThread(new Runnable() { public void run() { if (_sp_success) { %5$s; } else { %6$s; } } }); } }); }",
+    "imports": "okhttp3.OkHttpClient\nokhttp3.Request\nokhttp3.RequestBody\nokhttp3.MediaType\nokhttp3.Call\nokhttp3.Callback\nokhttp3.Response\njava.io.IOException\norg.json.JSONObject"
+  },
+  {
+    "name": "Supabase_Auth_Reset_Email",
+    "type": " ",
+    "color": "#7B1FA2",
+    "palette": "",
+    "spec": "Email %s၊ Base URL %s၊ API Key %s၊ Success Code %s၊ Failure Code %s ဖြင့် Password Reset Email ပို့မည်",
+    "code": "{ final okhttp3.OkHttpClient _sp_client = new okhttp3.OkHttpClient(); final org.json.JSONObject _sp_json = new org.json.JSONObject(); try { _sp_json.put(\"email\", %1$s); } catch (Exception _sp_e) {} final okhttp3.RequestBody _sp_body = okhttp3.RequestBody.create(okhttp3.MediaType.parse(\"application/json; charset=utf-8\"), _sp_json.toString()); final okhttp3.Request _sp_request = new okhttp3.Request.Builder().url((%2$s == null ? \"\" : %2$s.toString().replaceAll(\"/+$\", \"\")) + \"/auth/v1/recover\").addHeader(\"apikey\", String.valueOf(%3$s)).addHeader(\"Content-Type\", \"application/json\").post(_sp_body).build(); _sp_client.newCall(_sp_request).enqueue(new okhttp3.Callback() { public void onFailure(okhttp3.Call _sp_call, java.io.IOException _sp_error) { final String _sp_errorMessage = String.valueOf(_sp_error.getMessage()); runOnUiThread(new Runnable() { public void run() { %5$s; } }); } public void onResponse(okhttp3.Call _sp_call, okhttp3.Response _sp_response) throws java.io.IOException { final String _sp_responseBody = _sp_response.body() == null ? \"\" : _sp_response.body().string(); final boolean _sp_success = _sp_response.isSuccessful(); runOnUiThread(new Runnable() { public void run() { if (_sp_success) { %4$s; } else { %5$s; } } }); } }); }",
+    "imports": "okhttp3.OkHttpClient\nokhttp3.Request\nokhttp3.RequestBody\nokhttp3.MediaType\nokhttp3.Call\nokhttp3.Callback\nokhttp3.Response\njava.io.IOException\norg.json.JSONObject"
+  },
+  {
+    "name": "Supabase_Auth_Signout_Note",
+    "type": " ",
+    "color": "#7B1FA2",
+    "palette": "",
+    "spec": "Supabase Auth Sign-out အတွက် Local Session Token ကို ဖျက်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Clear the locally stored access token and refresh token. Do not expose tokens in logs or public storage.",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Quality_Header",
+    "type": "h",
+    "color": "#455A64",
+    "palette": "",
+    "spec": "=== SUPABASE • Quality, Security နှင့် Event Workflow ===",
+    "code": "",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Validate_Base_URL",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Base URL %s သည် https:// ဖြင့် စတင်လျှင် True ပြန်မည်",
+    "code": "%1$s != null && %1$s.toString().trim().startsWith(\"https://\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Supabase_Validate_Table_Name",
+    "type": "b",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Table Name %s တွင် လုံခြုံသော identifier ပုံစံရှိလျှင် True ပြန်မည်",
+    "code": "%1$s != null && %1$s.toString().matches(\"[A-Za-z_][A-Za-z0-9_]*\")",
+    "imports": "",
+    "typeName": "boolean"
+  },
+  {
+    "name": "Supabase_Note_Response_Event",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Response Code ကို RequestNetwork ၏ onResponse Event အတွင်း သီးခြားစစ်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Put response parsing and UI updates inside RequestNetwork's onResponse event. This block intentionally binds no callback event.",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Note_Error_Event",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Error ကို RequestNetwork ၏ onErrorResponse Event အတွင်း သီးခြားစစ်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Put retry and user-facing error handling inside onErrorResponse. Do not import callback fragments as standalone blocks.",
+    "imports": ""
+  },
+  {
+    "name": "Supabase_Note_Secret",
+    "type": " ",
+    "color": "#607D8B",
+    "palette": "",
+    "spec": "Service Role Key ကို Client App ထဲ မထည့်ရန် မှတ်ချက်ထားမည်",
+    "code": "// Never ship the Supabase service_role key in a Sketchware APK; use a trusted backend for privileged operations.",
+    "imports": ""
+  }
+]
